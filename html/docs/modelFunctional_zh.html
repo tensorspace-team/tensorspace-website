@@ -336,7 +336,6 @@
     // 模型参数配置
     inputs: [ input ],
     outputs: [ addLayer ],
-    outputsOrder: [ "conv1", "conv2", "conv3", "add" ],
     layerShape: "rect",
     layerInitStatus: "close",
     stats: true
@@ -405,7 +404,6 @@ let model = new TSP.model.Model(container, {
     ...
     inputs: [ input ],
     outputs: [ addLayer ],
-    outputsOrder: [ "conv1", "conv2", "conv3", "add" ],
     ...
 
 } );</code></pre>
@@ -470,25 +468,6 @@ model.init();</code></pre>
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     模型的输出可以为多个。
-                </li>
-            </ul>
-        </div>
-
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/Model.js#L277">.outputsOrder</a> : String[]</div>
-        <div>
-            <ul class="list-content">
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    <span class="span_bold">必要</span>.
-                    只可用于<span class="highlight-text">Model()</span>。
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    表示输出层对象的名称列表。
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    列表中的每一个名称对应了 TSP 模型中，各个 TSP.Layer 对象的 "name" 属性的值。
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    其输出顺序代表了预处理的神经网络模型的中间层计算输出的顺序。
                 </li>
             </ul>
         </div>

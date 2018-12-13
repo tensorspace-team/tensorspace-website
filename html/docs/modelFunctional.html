@@ -336,7 +336,6 @@
     // necessary configurations
     inputs: [ input ],
     outputs: [ addLayer ],
-    outputsOrder: [ "conv1", "conv2", "conv3", "add" ],
     layerShape: "rect",
     layerInitStatus: "close",
     stats: true
@@ -406,7 +405,6 @@ let model = new TSP.model.Model(container, {
     ...
     inputs: [ input ],
     outputs: [ addLayer ],
-    outputsOrder: [ "conv1", "conv2", "conv3", "add" ],
     ...
 
 } );</code></pre>
@@ -472,25 +470,6 @@ model.init();</code></pre>
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     The output of the model could be multiple.
-                </li>
-            </ul>
-        </div>
-
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/Model.js#L277">.outputsOrder</a> : String[]</div>
-        <div>
-            <ul class="list-content">
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    <span class="span_bold">Required</span>.
-                    Used by <span class="highlight-text">Model()</span> ONLY.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Represents the list of all layer object names in the model.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Each name string in the list corresponds to the <span class="span_bold">"name"</span> property of the TSP.Layer object in the TSP model.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    The order of the list matches the order of intermediate outputs computed from the preprocessed deep learning model.
                 </li>
             </ul>
         </div>
