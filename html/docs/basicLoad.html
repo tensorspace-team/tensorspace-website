@@ -349,8 +349,6 @@
 
     type: "keras",
     url: '/PATH_TO_MODEL/model.json',
-    multiInputs: true,
-    inputShapes: [[100], [1]],
 
     onComplete: function() {
 
@@ -395,41 +393,6 @@
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/predictor/Predictor.js#L32" target="_blank">.multiInputs</a> : Boolean</div>
-
-        <div>
-            <ul class="list-content">
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Optional. <span class="span_bold">Required</span> use for ML model with multiple inputs.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Represents the input is multiple or not.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    <span class="highlight-text">true</span> or <span class="highlight-text">false</span>. Default <span class="highlight-text">false</span>.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    <span class="highlight-text">true</span> if the input of the network is multiple; <span class="highlight-text">false</span> otherwise.
-                </li>
-            </ul>
-        </div>
-
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/predictor/Predictor.js#L40" target="_blank">.inputShapes</a> : <span class="highlight-text">Int[]</span></div>
-
-        <div>
-            <ul class="list-content">
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Optional. <span class="span_bold">Required</span> use for ML model with multiple inputs or using the <a href="modelFunctional.html">Model()</a> implementation.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Represents the dimensions (shapes) for each claimed inputs.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    The order of the shapes should follow the order of TensorSpace layers.
-                </li>
-            </ul>
-        </div>
-
         <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40" target="_blank">.onComplete</a> : void</div>
 
         <div>
@@ -453,8 +416,6 @@
 
     type: "tfjs",
     url: '/PATH_TO_MODEL/mnist.json',
-    multiInputs: true,
-    inputShapes: [[100], [1]],
 
     onComplete: function() {
 
@@ -499,41 +460,6 @@
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/predictor/Predictor.js#L32" target="_blank">.multiInputs</a> : Boolean</div>
-
-        <div>
-            <ul class="list-content">
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Optional. <span class="span_bold">Required</span> use for ML model with multiple inputs.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Represents the input is multiple or not.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    <span class="highlight-text">true</span> or <span class="highlight-text">false</span>. Default <span class="highlight-text">false</span>.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    <span class="highlight-text">true</span> if the input of the network is multiple; <span class="highlight-text">false</span> otherwise.
-                </li>
-            </ul>
-        </div>
-
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/predictor/Predictor.js#L40" target="_blank">.inputShapes</a> : <span class="highlight-text">Int[]</span></div>
-
-        <div>
-            <ul class="list-content">
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Optional. <span class="span_bold">Required</span> use for ML model with multiple inputs or using the <a href="modelFunctional.html">Model()</a> implementation.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Represents the dimensions (shapes) for each claimed inputs.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    The order of the shapes should follow the order of TensorSpace layers.
-                </li>
-            </ul>
-        </div>
-
         <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40" target="_blank">.onComplete</a> : void</div>
 
         <div>
@@ -561,8 +487,6 @@
     outputsName: [ "Maximum", "Const_1", "Maximum_1", "Const_2", "Maximum_2",
         "Const_3", "Maximum_3", "Const_4", "Maximum_4", "Const_5",
         "Maximum_5", "Const_6", "Const_7", "Const_8", "add_8" ],
-    multiInputs: true,
-    inputShapes: [[100], [1]],
 
     onComplete: function() {
 
@@ -638,41 +562,6 @@
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     Make sure the name order is the same as the one implemented in TensorSpace.
-                </li>
-            </ul>
-        </div>
-
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/predictor/Predictor.js#L32" target="_blank">.multiInputs</a> : Boolean</div>
-
-        <div>
-            <ul class="list-content">
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Optional. <span class="span_bold">Required</span> use for ML model with multiple inputs.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Represents the input is multiple or not.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    <span class="highlight-text">true</span> or <span class="highlight-text">false</span>. Default <span class="highlight-text">false</span>.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    <span class="highlight-text">true</span> if the input of the network is multiple; <span class="highlight-text">false</span> otherwise.
-                </li>
-            </ul>
-        </div>
-
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/predictor/Predictor.js#L40" target="_blank">.inputShapes</a> : <span class="highlight-text">Int[]</span></div>
-
-        <div>
-            <ul class="list-content">
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Optional. <span class="span_bold">Required</span> use for ML model with multiple inputs or using the <a href="modelFunctional.html">Model()</a> implementation.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Represents the dimensions (shapes) for each claimed inputs.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    The order of the shapes should follow the order of TensorSpace layers.
                 </li>
             </ul>
         </div>
