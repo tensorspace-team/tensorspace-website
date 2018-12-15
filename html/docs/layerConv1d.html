@@ -328,9 +328,9 @@
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Conv1d( { filters : Int, kernelSize: Int, strides: Int } );</code></pre>
         </div>
-        <div>〔Method 2〕Use <span class="span_bold">shape</span> and <span class="span_bold">filters</span></div>
+        <div>〔Method 2〕Use <span class="span_bold">shape</span>, the 2-dimension is the amount of filters</div>
         <div class="code-snippet">
-            <pre><code class="Javascript">TSP.layers.Conv1d( { filters : Int , shape : [ Int ] } );</code></pre>
+            <pre><code class="Javascript">TSP.layers.Conv1d( { shape : [ Int, Int ] } );</code></pre>
         </div>
         <img class="tag-img" src="../../assets/img/docs/Conv1d.jpg">
         <div class="img-label">
@@ -353,7 +353,7 @@
                     <p><a href="#iconRequired">⭐</a><a href="#iconModel">📦</a>️</p>
                 </th>
                 <td><span class="highlight-text">Int</span></td>
-                <td>Amount of filters</td>
+                <td>Amount of filters, not require if use <span class="span_bold">shape</span> to construct</td>
                 <td>filters: 16</td>
             </tr>
             <tr>
