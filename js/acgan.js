@@ -28,7 +28,8 @@ function createModel() {
 
 	model = new TSP.models.Sequential(container, {
 
-		stats: true
+		stats: true,
+		feedInputs: [ 0 ]
 
 	});
 
