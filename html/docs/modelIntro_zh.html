@@ -595,6 +595,39 @@
             </ul>
         </div>
 
+        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L15">.predictDataShapes</a> : Array</div>
+        <div>
+            <ul class="list-content">
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    如果 TensorSpace 载入的与训练的模型的输入形状不确定，使用该属性来配置一个确定的形状。
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    举个栗子，在 Keras application 中的 InceptionV3 模型的输入是 [ null, null, null, 3 ]，这样的模型可以接受输入不同形状的 Input，在 TensorSpace 中可视化此类模型时需要配置一个特定的形状，在之后 predict 是输入的数据均为这个形状：
+                    <pre><code class="Javascript">let model = new TSP.models.Model( modelContainer, {
+
+    predictDataShapes: [ [ 299, 299, 3 ] ]
+
+} );</code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L16">.feedInputs</a> : Array</div>
+        <div>
+            <ul class="list-content">
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    如果 TensorSpace 的输入和载入的预处理模型的输入数量不同，可以使用该属性将两个模型的输入对应起来。
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    举个栗子，ACGAN 的生成模型有两个输入 [1, 100] 和 [1, 1]，如果我们只想要在 TensorSpace 中可视化该网络不过只想要可视化[1, 100]这个输入，那么可以这样配置：
+                    <pre><code class="Javascript">let model = TSP.models.Sequential({
+    feedInputs: [ 0 ]
+});</code></pre>
+                    <span class="highlight-text">0</span> 代表着预处理模型的第一个输入的值会被用于渲染 TensorSpace 模型的输入（假设 TensorSpace 模型只展示两个输入中的一个）。
+                </li>
+            </ul>
+        </div>
+
         <div class="sub-title" id="modelMethod"> 方法 </div>
 
         <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L255">.init( callbackFunction )</a> : void</div>

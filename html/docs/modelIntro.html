@@ -603,6 +603,39 @@
             </ul>
         </div>
 
+        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L15">.predictDataShapes</a> : Array</div>
+        <div>
+            <ul class="list-content">
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    Configure input shapes for pre-trained model if pre-trained model's input shape is dynamical.
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    For example, InceptionV3 from Keras, you can feed different size of input into the model, if you want to visualize this model in TensorSpace, must provide a specific input shape.
+                    <pre><code class="Javascript">let model = new TSP.models.Model( modelContainer, {
+
+    predictDataShapes: [ [ 299, 299, 3 ] ]
+
+} );</code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L16">.feedInputs</a> : Array</div>
+        <div>
+            <ul class="list-content">
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    Configure which inputs of pre-trained model to be applied into TensorSpace model's input.
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    For example, ACGAN's generative model, has two inputs random data ( tf.randomNormal([1, 100]) ) and label ( tf.randomNromal([1, 1]) ), if we only want to visualize the random data, we can config model like:
+                    <pre><code class="Javascript">let model = TSP.models.Sequential({
+    feedInputs: [ 0 ]
+});</code></pre>
+                    <span class="highlight-text">0</span> means the first input of pre-trained model to be applied into TensorSpace model. In this example, as pre-trained model has two inputs, default to: [ 0, 1 ].
+                </li>
+            </ul>
+        </div>
+
         <div class="sub-title" id="modelMethod"> Method </div>
 
         <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L255">.init( callbackFunction )</a> : void</div>
