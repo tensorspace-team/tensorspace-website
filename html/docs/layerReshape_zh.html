@@ -324,7 +324,7 @@
         <div class="sub-title">构造器</div>
         <div>
             <span class="highlight-text">Reshape</span> 为工厂对象，
-            根据参数 <span class="highlight-text">targetShape</span> 形状创建相对应的对象。
+            根据参数 <span class="highlight-text">targetShape</span> 形状创建相对应的对象。在构造对象的时候可以使用 <span class="highlight-text">shape</span> 替代 <span class="highlight-text">targetShape</span>
             <p>如果输入为1维，例如 <span class="highlight-text">targetShape=[100]</span>，
                 那么创建<span class="highlight-text">TSP.layers.Reshape1d</span>，输出为1维；</p>
             <p>如果输入为2维，例如 <span class="highlight-text">targetShape=[24, 24]</span>，
@@ -335,6 +335,10 @@
         <div>〔方法一〕使用<span class="highlight-text"> targetShape </span>参数进行构造</div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Reshape( { targetShape : Int[] } )</code></pre>
+        </div>
+        <div>〔方法二〕使用<span class="span_bold"> shape </span>参数进行构造</div>
+        <div class="code-snippet">
+            <pre><code class="Javascript">TSP.layers.Reshape( { shape : Int[] } );</code></pre>
         </div>
         <img class="tag-img" src="../../assets/img/docs/Reshape.jpg">
         <div class="img-label">
