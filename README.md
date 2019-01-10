@@ -14,7 +14,7 @@ This repository is the official website for `TensorSpace`.
 
 ## Development
 
-All changes in master branch will be reflected in TensorSpace Website (https://tensorspace.org). To add network to [playground](https://tensorspace.org/html/playground/index.html), add html page [here](https://github.com/tensorspace-team/tensorspace-website/tree/master/html/playground), add javascript file [here](https://github.com/tensorspace-team/tensorspace-website/tree/master/js). To modify TensorSpace [documentation](https://tensorspace.org/html/docs/startIntro.html), all documentation are placed in [this](https://github.com/tensorspace-team/tensorspace-website/tree/master/html/docs) folder.
+All changes in master branch will be reflected in TensorSpace Website (https://tensorspace.org). To add network examples to [playground](https://tensorspace.org/html/playground/index.html), add html page [this folder](https://github.com/tensorspace-team/tensorspace-website/tree/master/html/playground), add relative javascript file [this folder](https://github.com/tensorspace-team/tensorspace-website/tree/master/js). To modify TensorSpace [documentation](https://tensorspace.org/html/docs/startIntro.html), all documentations are placed in [this](https://github.com/tensorspace-team/tensorspace-website/tree/master/html/docs) folder.
 
 ## Contributors
 
