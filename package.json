@@ -1,0 +1,48 @@
+{
+  "name": "tensorspace-website",
+  "version": "0.0.1",
+  "description": "official website for tensorspace",
+  "main": "index.js",
+  "devDependencies": {
+    "all-contributors-cli": "^5.3.0"
+  },
+  "scripts": {
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tensorspace-team/tensorspace-website.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "tensorspace-team",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/tensorspace-team/tensorspace-website/issues"
+  },
+  "homepage": "https://github.com/tensorspace-team/tensorspace-website#readme",
+  "contributors": [
+    {
+      "name": "syt123450",
+      "email": "syt123450@gmail.com",
+      "url": "https://github.com/syt123450"
+    },
+    {
+      "name": "CharlesLiuyx",
+      "email": "charlesliuyx@gmail.com",
+      "url": "https://github.com/CharlesLiuyx"
+    },
+    {
+      "name": "zchholmes",
+      "email": "zchholmes@gmail.com",
+      "url": "https://github.com/zchholmes"
+    },
+    {
+      "name": "lq3297401",
+      "email": "noraliu3648@gmail.com",
+      "url": "https://github.com/lq3297401"
+    }
+  ]
+}
