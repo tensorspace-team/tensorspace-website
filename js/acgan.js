@@ -89,7 +89,8 @@ function createModel() {
 		kernelSize: 3,
 		filters: 1,
 		strides: 1,
-		padding: "same"
+		padding: "same",
+		name: "digitLayer"
 	}));
 
 	model.load({
@@ -123,5 +124,10 @@ function generateDigitImage() {
 
 	let randomData = tf.randomNormal([1,100]).dataSync();
 	model.predict( [randomData, [labelIndex]] );
+	let digitLayer = model.getLayerByName("digitLayer");
+	renderDigitCanvas(digitLayer.neuralValue);
+}
 
+function renderDigitCanvas(digitDataArray) {
+	let digitCanvas = $("#generatedDigit");
 }
