@@ -129,5 +129,80 @@ function generateDigitImage() {
 }
 
 function renderDigitCanvas(digitDataArray) {
-	let digitCanvas = $("#generatedDigit");
+	// let digitCanvas = $("#generatedDigit");
+
+    // console.log("oldarray", digitDataArray);
+
+    let inputData = digitDataArray;
+    console.log("input length", inputData.length);
+    // let inputData =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0.011764705882352941,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.00784313725490196,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,1,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,1,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0.5411764705882353,0,0.9607843137254902,0.32941176470588235,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.3764705882352941,1,1,1,1,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0.0392156862745098,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0392156862745098,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,1,1,0.8274509803921568,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,0.03137254901960784,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.6392156862745098,1,1,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+    let c = document.getElementById("generatedDigit");
+    let ctx = c.getContext("2d");
+    let imgData = ctx.createImageData(224, 224);
+
+    let count = 0;
+    let tempArray = [];
+    let rearrangedArray = [];
+
+    for (let j = 0; j < inputData.length; j++) {
+        if (count === 28) {
+            rearrangedArray.push(tempArray);
+            tempArray = [];
+            count = 0;
+        }
+        tempArray.push(inputData[j]);
+        count++;
+    }
+
+    function resultArrayWithZeros(dimensions) {
+        let array = [];
+        for (let i = 0; i < dimensions[0]; ++i) {
+            array.push(dimensions.length === 1 ? 0 : resultArrayWithZeros(dimensions.slice(1)));
+        }
+        return array;
+    }
+
+    let row = 224;
+    let col = 224;
+    let resultArrayAllZeros = resultArrayWithZeros([row, col]);
+    // console.log(resultArrayAllZeros);
+
+    for (let m = 0; m < rearrangedArray.length; m++) {
+        for (let n = 0; n < rearrangedArray[0].length; n++) {
+            resultArrayMinMax(m, n, rearrangedArray[m][n]);
+        }
+    }
+
+    function resultArrayMinMax(a, b, num) {
+        let rowMultiple = 8, colMultiple = 8;
+        let rowMin = a * rowMultiple;
+        let rowMax = a * rowMultiple + rowMultiple - 1;
+        let colMin = b * colMultiple;
+        let colMax = b * colMultiple + colMultiple - 1;
+
+        for (let p = rowMin; p <= rowMax; p++) {
+            for (let q = colMin; q <= colMax; q++) {
+                resultArrayAllZeros[p][q] = num;
+            }
+        }
+    }
+
+    let resultArray = [];
+
+    for (let h = 0; h < resultArrayAllZeros.length; h++) {
+        resultArray = resultArray.concat(resultArrayAllZeros[h]);
+    }
+
+    for (let u = 0, w = 0; w < resultArray.length; u += 4, w++) {
+        imgData.data[u + 0] = 0;
+        imgData.data[u + 1] = 0;
+        imgData.data[u + 2] = 0;
+        imgData.data[u + 3] = resultArray[w] * 255;
+    }
+
+    ctx.putImageData(imgData, 0, 0);
+
+    // console.log("newarray", digitDataArray);
+
 }

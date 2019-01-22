@@ -49,5 +49,6 @@
     width: 224px;
     height: 224px;
     margin-left: 38px;
-    background-color: red;
+    background-color: white;
+    border:1px solid #233d45;
 }
