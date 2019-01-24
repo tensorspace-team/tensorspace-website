@@ -129,8 +129,6 @@ function generateDigitImage() {
 }
 
 function renderDigitCanvas(digitDataArray) {
-	// let digitCanvas = $("#generatedDigit");
-
     let inputData = digitDataArray;
     // let inputData =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0.011764705882352941,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.00784313725490196,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,1,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,1,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0.5411764705882353,0,0.9607843137254902,0.32941176470588235,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.3764705882352941,1,1,1,1,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0.0392156862745098,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0392156862745098,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,1,1,0.8274509803921568,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,0.03137254901960784,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.6392156862745098,1,1,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
@@ -164,9 +162,9 @@ function renderDigitCanvas(digitDataArray) {
     let col = 224;
     let resultArrayAllZeros = resultArrayWithZeros([row, col]);
 
-    for (let m = 0; m < rearrangedArray.length; m++) {
-        for (let n = 0; n < rearrangedArray[0].length; n++) {
-            resultArrayMinMax(m, n, rearrangedArray[m][n]);
+    for (let i = 0; i < rearrangedArray.length; i++) {
+        for (let j = 0; j < rearrangedArray[0].length; j++) {
+            resultArrayMinMax(i, j, rearrangedArray[i][j]);
         }
     }
 
@@ -177,24 +175,24 @@ function renderDigitCanvas(digitDataArray) {
         let colMin = b * colMultiple;
         let colMax = b * colMultiple + colMultiple - 1;
 
-        for (let p = rowMin; p <= rowMax; p++) {
-            for (let q = colMin; q <= colMax; q++) {
-                resultArrayAllZeros[p][q] = num;
+        for (let i = rowMin; i <= rowMax; i++) {
+            for (let j = colMin; j <= colMax; j++) {
+                resultArrayAllZeros[i][j] = num;
             }
         }
     }
 
     let resultArray = [];
 
-    for (let h = 0; h < resultArrayAllZeros.length; h++) {
-        resultArray = resultArray.concat(resultArrayAllZeros[h]);
+    for (let i = 0; i < resultArrayAllZeros.length; i++) {
+        resultArray = resultArray.concat(resultArrayAllZeros[i]);
     }
 
-    for (let u = 0, w = 0; w < resultArray.length; u += 4, w++) {
-        imgData.data[u + 0] = 0;
-        imgData.data[u + 1] = 0;
-        imgData.data[u + 2] = 0;
-        imgData.data[u + 3] = resultArray[w] * 255;
+    for (let i = 0, j = 0; j < resultArray.length; i += 4, j++) {
+        imgData.data[i] = 0;
+        imgData.data[i + 1] = 0;
+        imgData.data[i + 2] = 0;
+        imgData.data[i + 3] = resultArray[j] * 255;
     }
 
     ctx.putImageData(imgData, 0, 0);
