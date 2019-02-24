@@ -436,12 +436,12 @@
             </tr>
             <tr>
                 <th scope="row">
-                    <br>animation-<br>TimeRatio</p>
+                    <br>animeTime</p>
                     <p><a href="#iconOptional">⚙️</a><a href="#iconAnimation">🎦</a>️</p>
                 </th>
                 <td><span class="highlight-text">Int</span></td>
                 <td>The speed of open and close animation</td>
-                <td>Integer for multiple of speed. For example, 2 for 2 times of basic speed.</td>
+                <td>For example, 2000 means 2 seconds. Note: Configure animeTime in a specific layer will override model's animeTime configuration.</td>
             </tr>
             </tbody>
         </table>
@@ -546,7 +546,7 @@ conv1dLayer.closeLayer();</code></pre>
     kernelSize: 5,
     filters: 6,
     strides: 1,
-    animationTimeRatio: 2,
+    animeTime: 4000,
     name: "conv1d1",
     initStatus: "open"
 

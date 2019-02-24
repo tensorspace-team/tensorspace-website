@@ -402,12 +402,12 @@
             </tr>
             <tr>
                 <th scope="row">
-                    <p>animation-<br>TimeRatio</p>
+                    <p>animeTime</p>
                     <p><a href="#iconOptional">⚙️</a><a href="#iconAnimation">🎦</a>️</p>
                 </th>
                 <td><span class="highlight-text">Int</span></td>
                 <td>The speed of open and close animation</td>
-                <td>Integer for multiple of speed. For example, 2 for 2 times of basic speed.</td>
+                <td>For example, 2000 means 2 seconds. Note: Configure animeTime in a specific layer will override model's animeTime configuration.</td>
             </tr>
             </tbody>
         </table>
@@ -453,7 +453,7 @@ let reshapeLayer = new TSP.layers.Reshape( {
     targetShape: [ 7, 7, 16 ],
     name: "Reshape1",
     initStatus: "open",
-    animationTimeRatio: 2
+    animeTime: 4000
 
 } );
 
@@ -513,7 +513,7 @@ reshapedLayer.closeLayer();</code></pre>
     targetShape: [ 24, 24 ],
     name: "Reshape1",
     initStatus: "open",
-    animationTimeRatio: 2
+    animeTime: 4000
 
 } );
 
@@ -527,7 +527,7 @@ model.add( reshapedLayer );</code></pre>
     targetShape: [ 24, 24 ],
     name: "Reshape1",
     initStatus: "open",
-    animationTimeRatio: 2
+    animeTime: 4000
 
 } ));</code></pre>
         </div>

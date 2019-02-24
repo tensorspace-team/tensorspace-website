@@ -394,12 +394,12 @@
             </tr>
             <tr>
                 <th scope="row">
-                    <p>animation-<br>TimeRatio</p>
+                    <p>animeTime</p>
                     <p><a href="#iconOptional">⚙️</a><a href="#iconAnimation">🎦</a>️</p>
                 </th>
                 <td><span class="highlight-text">Int</span></td>
-                <td>张开和伸缩的调整速度，呈倍速关系</td>
-                <td>例如2就是2倍，数字越大速度越快</td>
+                <td>张开和伸缩的速度</td>
+                <td>例如2000就是2秒，如果在layer中配置animeTime属性将会覆盖model中的animeTime。</td>
             </tr>
             </tbody>
         </table>
@@ -500,7 +500,7 @@ paddingLayer.closeLayer();</code></pre>
             <pre><code class="Javascript">let paddingLayer = new TSP.layers.Padding2d( {
 
     padding: [2, 2],
-    animationTimeRatio: 2,
+    animeTime: 4000,
     name: "padding2d1",
     opacityRatio: 2
     initStatus: "open"
@@ -515,7 +515,7 @@ model.add( paddingLayer );</code></pre>
             <pre><code class="Javascript">model.add( new TSP.layers.Padding2d( {
 
     padding: [2, 2],
-    animationTimeRatio: 2,
+    animeTime: 4000,
     name: "padding2d2",
     opacityRatio: 2
     initStatus: "open"

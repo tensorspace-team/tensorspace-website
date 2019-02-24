@@ -365,7 +365,7 @@
     layerShape: "rect",
     textSystem: "enable",
     relationSystem: "enable",
-    animationTimeRatio: 0.1,
+    animeTime: 200,
     stats: true,
 
     color: {
@@ -536,30 +536,29 @@
             <span class="img-label-number">Fig. 9</span> - Disabled relation line display
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L134">.animationTimeRatio</a> : Double</div>
+        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L134">.animeTime</a> : Double</div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Ratio of time spent for actual animation over default animation.
+                    Time spent for animation.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Default to <span class="highlight-text">1</span>.
+                    Default to <span class="highlight-text">2000</span> (2 second).
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     The range of the value should be larger than 0.
                 </li>
-
             </ul>
         </div>
 
         <img class="tag-img" src="../../assets/img/docs/Model_animate_1.gif">
         <div class="img-label">
-            <span class="img-label-number">Fig. 10</span> - Expansion animation with animationTimeRatio 1
+            <span class="img-label-number">Fig. 10</span> - Expansion animation with animeTime 2000 (default)
         </div>
 
         <img class="tag-img" src="../../assets/img/docs/Model_animate_3.gif">
         <div class="img-label">
-            <span class="img-label-number">Fig. 11</span> - Expansion animation with animationTimeRatio 3
+            <span class="img-label-number">Fig. 11</span> - Expansion animation with animeTime 6000
         </div>
 
 
