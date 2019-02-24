@@ -350,6 +350,12 @@
     type: "keras",
     url: '/PATH_TO_MODEL/model.json',
 
+    onProgress: function( fraction ) {
+
+        console.log( fraction );
+
+    }
+
     onComplete: function() {
 
         console.log( "Complete load model." );
@@ -393,6 +399,22 @@
             </ul>
         </div>
 
+        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48" target="_blank">.onProgress</a> : void</div>
+
+        <div>
+            <ul class="list-content">
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    Optional.
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    Progress Callback, fired periodically before loading process completed.
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    This callback can be used to monitor the model-loading process, for example, get "fraction" (in range [0, 1]) of model loaded at the moment as parameter.
+                </li>
+            </ul>
+        </div>
+
         <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40" target="_blank">.onComplete</a> : void</div>
 
         <div>
@@ -416,6 +438,12 @@
 
     type: "tfjs",
     url: '/PATH_TO_MODEL/mnist.json',
+
+    onProgress: function( fraction ) {
+
+        console.log( fraction );
+
+    }
 
     onComplete: function() {
 
@@ -460,6 +488,22 @@
             </ul>
         </div>
 
+        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48" target="_blank">.onProgress</a> : void</div>
+
+        <div>
+            <ul class="list-content">
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    Optional.
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    Progress Callback, fired periodically before loading process completed.
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    This callback can be used to monitor the model-loading process, for example, get "fraction" (in range [0, 1]) of model loaded at the moment as parameter.
+                </li>
+            </ul>
+        </div>
+
         <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40" target="_blank">.onComplete</a> : void</div>
 
         <div>
@@ -486,6 +530,12 @@
     outputsName: [ "Maximum", "Const_1", "Maximum_1", "Const_2", "Maximum_2",
         "Const_3", "Maximum_3", "Const_4", "Maximum_4", "Const_5",
         "Maximum_5", "Const_6", "Const_7", "Const_8", "add_8" ],
+
+    onProgress: function( fraction ) {
+
+        console.log( fraction );
+
+    }
 
     onComplete: function() {
 
@@ -545,6 +595,22 @@
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     Make sure the name order is the same as the one implemented in TensorSpace.
+                </li>
+            </ul>
+        </div>
+
+        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48" target="_blank">.onProgress</a> : void</div>
+
+        <div>
+            <ul class="list-content">
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    Optional.
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    Progress Callback, fired periodically before loading process completed.
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    This callback can be used to monitor the model-loading process, for example, get "fraction" (in range [0, 1]) of model loaded at the moment as parameter.
                 </li>
             </ul>
         </div>

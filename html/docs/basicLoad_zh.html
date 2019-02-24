@@ -351,6 +351,12 @@
     type: "keras",
     url: '/PATH_TO_MODEL/model.json',
 
+    onProgress: function( fraction ) {
+
+        console.log( fraction );
+
+    }
+
     onComplete: function() {
 
         console.log( "Complete load model." );
@@ -394,6 +400,22 @@
             </ul>
         </div>
 
+        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48" target="_blank">.onProgress</a> : void</div>
+
+        <div>
+            <ul class="list-content">
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    可选。
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    当完成加载完成之前周期性调用的函数。
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    该函数被设计用来监控加载进度，回调函数会拿到此时模型加载的比例参数 fraction （在 0 - 1 之间）。
+                </li>
+            </ul>
+        </div>
+
         <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40" target="_blank">.onComplete</a> : void</div>
 
         <div>
@@ -417,6 +439,12 @@
 
     type: "tfjs",
     url: '/PATH_TO_MODEL/mnist.json',
+
+    onProgress: function( fraction ) {
+
+        console.log( fraction );
+
+    }
 
     onComplete: function() {
 
@@ -461,6 +489,22 @@
             </ul>
         </div>
 
+        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48" target="_blank">.onProgress</a> : void</div>
+
+        <div>
+            <ul class="list-content">
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    可选。
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    当完成加载完成之前周期性调用的函数。
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    该函数被设计用来监控加载进度，回调函数会拿到此时模型加载的比例参数 fraction （在 0 - 1 之间）。
+                </li>
+            </ul>
+        </div>
+
         <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40" target="_blank">.onComplete</a> : void</div>
 
         <div>
@@ -487,6 +531,12 @@
     outputsName: [ "Maximum", "Const_1", "Maximum_1", "Const_2", "Maximum_2",
         "Const_3", "Maximum_3", "Const_4", "Maximum_4", "Const_5",
         "Maximum_5", "Const_6", "Const_7", "Const_8", "add_8" ],
+
+    onProgress: function( fraction ) {
+
+        console.log( fraction );
+
+    }
 
     onComplete: function() {
 
@@ -546,6 +596,22 @@
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     请确保 tensor 名称的顺序与所构建的 TensorSpace 模型保持一致。
+                </li>
+            </ul>
+        </div>
+
+        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48" target="_blank">.onProgress</a> : void</div>
+
+        <div>
+            <ul class="list-content">
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    可选。
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    当完成加载完成之前周期性调用的函数。
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    该函数被设计用来监控加载进度，回调函数会拿到此时模型加载的比例参数 fraction （在 0 - 1 之间）。
                 </li>
             </ul>
         </div>
