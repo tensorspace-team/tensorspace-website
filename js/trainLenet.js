@@ -242,7 +242,7 @@ function constructorTspModel() {
 
 	let tspModel = new TSP.models.Sequential( modelContainer, {
 
-		animationTimeRatio: 0.1,
+		animeTime: 200,
 		stats: true
 
 	} );

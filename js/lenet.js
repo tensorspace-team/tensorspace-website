@@ -37,7 +37,7 @@ function createModel() {
 
 	model = new TSP.models.Sequential( container, {
 
-		animationTimeRatio: 0.1,
+		animeTime: 200,
 		stats: true
 
 	} );
