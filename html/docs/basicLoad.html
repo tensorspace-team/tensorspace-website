@@ -482,8 +482,7 @@
             <pre><code class="Javascript">model.load( {
 
     type: "tensorflow",
-    modelUrl: "/PATH_TO_MODEL/tensorflowjs_model.pb",
-    weightUrl: "/PATH_TO_MODEL/weights_manifest.json",
+    url: "/PATH_TO_MODEL/tensorflowjs_model.pb",
     outputsName: [ "Maximum", "Const_1", "Maximum_1", "Const_2", "Maximum_2",
         "Const_3", "Maximum_3", "Const_4", "Maximum_4", "Const_5",
         "Maximum_5", "Const_6", "Const_7", "Const_8", "add_8" ],
@@ -515,7 +514,7 @@
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/TfLoader.js#L29" target="_blank">.modelUrl</a> : <span class="highlight-text">String</span></div>
+        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/TfLoader.js#L29" target="_blank">.url</a> : <span class="highlight-text">String</span></div>
 
         <div>
             <ul class="list-content">
@@ -527,22 +526,6 @@
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     It is usually a ".pb" file which is converted after <a href="https://github.com/tensorflow/tfjs-converter">tfjs-converter</a>.
-                </li>
-            </ul>
-        </div>
-
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/TfLoader.js#L38" target="_blank">.weightUrl</a> : <span class="highlight-text">String</span></div>
-
-        <div>
-            <ul class="list-content">
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    <span class="span_bold">Required.</span>
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Represents the URL to the target ML model weight manifest.
-                </li>
-                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    It is usually a ".json" file which represents the weight manifest of the corresponded network.
                 </li>
             </ul>
         </div>
