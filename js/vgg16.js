@@ -49,17 +49,6 @@ let dataLookup = {
 
 $(function() {
 
-	registerProgress( 132, ( percent ) => {
-
-		$("#downloadProgress").html( ( 100 * percent ).toFixed( 2 ) + "%" );
-
-	}, () => {
-
-		$("#downloadNotice").hide();
-		$("#creationNotice").show();
-
-	} );
-
 	$.ajax({
 		url: '../../assets/data/imagenet_result.json',
 		type: 'GET',
@@ -302,7 +291,20 @@ function createModel() {
 	model.load( {
 
 		type: "tfjs",
-		url: '../../assets/model/vgg16/model.json'
+		url: '../../assets/model/vgg16/model.json',
+		
+		onProgress: function( fraction ) {
+			
+			$("#downloadProgress").html( ( 100 * fraction ).toFixed( 2 ) + "%" );
+			
+		},
+		
+		onComplete: function() {
+			
+			$("#downloadNotice").hide();
+			$("#creationNotice").show();
+			
+		}
 
 	} );
 

@@ -49,17 +49,6 @@ let dataLookup = {
 
 $(function() {
 
-	registerProgress( 23, ( percent ) => {
-
-		$("#downloadProgress").html( ( 100 * percent ).toFixed( 2 ) + "%" );
-
-	}, () => {
-
-		$("#downloadNotice").hide();
-		$("#creationNotice").show();
-
-	} );
-
 	$.ajax({
 		url: '../../assets/data/imagenet_result.json',
 		type: 'GET',
@@ -1503,6 +1492,19 @@ function createModel() {
 
 		type: "keras",
 		url: '../../assets/model/inception/model.json',
+		
+		onProgress: function( fraction ) {
+			
+			$("#downloadProgress").html( ( 100 * fraction ).toFixed( 2 ) + "%" );
+			
+		},
+		
+		onComplete: function() {
+			
+			$("#downloadNotice").hide();
+			$("#creationNotice").show();
+			
+		}
 
 	} );
 

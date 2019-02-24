@@ -49,17 +49,6 @@ let dataLookup = {
 
 $(function() {
 
-	registerProgress( 59, ( percent ) => {
-
-		$("#downloadProgress").html( ( 100 * percent ).toFixed( 2 ) + "%" );
-
-	}, () => {
-
-		$("#downloadNotice").hide();
-		$("#creationNotice").show();
-
-	} );
-
 	$.ajax({
 		url: '../../assets/data/imagenet_result.json',
 		type: 'GET',
@@ -216,7 +205,20 @@ function createModel() {
 
 		type: "tensorflow",
 		url: "../../assets/model/alexnet/tensorflowjs_model.pb",
-		outputsName: [ "norm1", "pool1", "norm2", "pool2", "conv3_1", "conv4_1", "conv5_1", "pool5", "Relu", "Relu_1", "Softmax" ]
+		outputsName: [ "norm1", "pool1", "norm2", "pool2", "conv3_1", "conv4_1", "conv5_1", "pool5", "Relu", "Relu_1", "Softmax" ],
+		
+		onProgress: function( fraction ) {
+			
+			$("#downloadProgress").html( ( 100 * fraction ).toFixed( 2 ) + "%" );
+			
+		},
+		
+		onComplete: function() {
+			
+			$("#downloadNotice").hide();
+			$("#creationNotice").show();
+			
+		}
 
 	} );
 
