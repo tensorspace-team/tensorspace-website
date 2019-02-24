@@ -215,8 +215,7 @@ function createModel() {
 	model.load( {
 
 		type: "tensorflow",
-		modelUrl: "../../assets/model/alexnet/tensorflowjs_model.pb",
-		weightUrl: "../../assets/model/alexnet/weights_manifest.json",
+		url: "../../assets/model/alexnet/tensorflowjs_model.pb",
 		outputsName: [ "norm1", "pool1", "norm2", "pool2", "conv3_1", "conv4_1", "conv5_1", "pool5", "Relu", "Relu_1", "Softmax" ]
 
 	} );

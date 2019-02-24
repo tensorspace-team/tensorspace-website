@@ -261,8 +261,7 @@ function createModel() {
 	model.load( {
 
 		type: "tensorflow",
-		modelUrl: "../../assets/model/yolov2-tiny/tensorflowjs_model.pb",
-		weightUrl: "../../assets/model/yolov2-tiny/weights_manifest.json",
+		url: "../../assets/model/yolov2-tiny/tensorflowjs_model.pb",
 		outputsName: [ "Maximum", "MaxPool", "Maximum_1", "MaxPool_1", "Maximum_2",
 			"MaxPool_2", "Maximum_3", "MaxPool_3", "Maximum_4", "MaxPool_4",
 			"Maximum_5", "MaxPool_5", "Maximum_6", "Maximum_7", "add_8" ],
