@@ -90,6 +90,7 @@
 
 #selector > main > div {
     width: 33.3%;
+    height: 210px;
     float: left;
     padding: 10px;
     box-sizing: border-box;
