@@ -131,9 +131,6 @@ function bindLabelClickEvent() {
 		$(chapterLabel).click(function() {
 			if (!$(chapterLabel).parent().hasClass("open")) {
 				hidePreNav();
-
-				console.log("666");
-
 				showNowNav(chapterLabel);
 			} else {
 				hidePreNav();
