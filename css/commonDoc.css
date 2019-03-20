@@ -1,6 +1,6 @@
-/*.panel-heading {*/
-    /*padding: 0 15px;*/
-/*}*/
+.panel-heading {
+    padding: 5px 15px!important;
+}
 
 .panel-heading > i {
 
@@ -225,7 +225,6 @@ main > div > ul > li {
     width: auto;
     padding-left: 20px;
     min-height: 30px;
-    line-height: 30px;
     box-sizing: border-box;
 }
 
@@ -391,6 +390,12 @@ td, th {
 
 .codepen-wrapper {
     width: 100%;
+}
+
+.model-type-title {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 footer {
@@ -703,6 +708,14 @@ footer {
         width: 250px;
     }
 
+    aside > div > div {
+        padding-left: 12px;
+    }
+
+    aside > div > ul > li {
+        padding-left: 25px;
+    }
+
 }
 
 @media (max-width: 700px) {
@@ -727,6 +740,10 @@ footer {
 
         font-size: 18px;
 
+    }
+
+    .model-type-title {
+        font-size: 16px;
     }
 
     .property-title {
