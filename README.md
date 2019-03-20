@@ -32,7 +32,7 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 If you have any issue or doubt, feel free to contact us by:
 * Email: tensorspaceteam@gmail.com
-* GitHub Issues: [create issue](https://github.com/tensorspace-team/tensorspace-website/issues/new)
+* GitHub Issues: [create issue](https://github.com/tensorspace-team/tensorspace/issues/new) (create issue in [TensorSpace](https://github.com/tensorspace-team/tensorspace) Repo)
 * Slack: [#questions](https://tensorspace.slack.com/messages/CDSB58A5P)
 * Gitter: [#Lobby](https://gitter.im/tensorspacejs/Lobby#)
 
