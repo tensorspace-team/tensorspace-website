@@ -138,9 +138,7 @@
             <li><a href="install_zh.html">安装</a></li>
             <li><a href="docker_zh.html">在 Docker 中使用</a></li>
             <li class="nowLabel">Converter API</li>
-            <li><a href="tensorflow_zh.html">TensorFlow</a></li>
-            <li><a href="keras_zh.html">Keras</a></li>
-            <li><a href="tfjs_zh.html">TensorFlow.js</a></li>
+            <li><a href="usage_zh.html">使用样例</a></li>
         </ul>
     </div>
     <div>
@@ -265,9 +263,7 @@
                 <li><a href="install_zh.html">安装</a></li>
                 <li><a href="docker_zh.html">在 Docker 中使用</a></li>
                 <li class="nowLabel">Converter API</li>
-                <li><a href="tensorflow_zh.html">TensorFlow</a></li>
-                <li><a href="keras_zh.html">Keras</a></li>
-                <li><a href="tfjs_zh.html">TensorFlow.js</a></li>
+                <li><a href="usage_zh.html">使用样例</a></li>
             </ul>
         </div>
         <div>
@@ -346,6 +342,58 @@
 
     <main>
         <header>TensorSpace Converter API</header>
+        <div>TensorSpace-Converter 示例脚本：</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="XXX" \
+    --input_model_format="YYY" \
+    --output_layer_names="EEE1,EEE2,EEE3" \
+    input_path \
+    output_path</code></pre>
+        </div>
+        <div>参数介绍：</div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Positional Arguments</th>
+                <th>介绍</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>input_path</td>
+                <td>模型输入路径，TensorSpace-Converter 将会读取该路径中的模型进行转化</td>
+            </tr>
+            <tr>
+                <td>output_path</td>
+                <td>模型输出路径（文件夹），TensorSpace-Converter 会将经过转化的模型输出到该路径中</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>可选参数</th>
+                <th>介绍</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>input_model_from</td>
+                <td>配置模型是使用哪种深度学习库训练并保存的，如果模型是使用TensorFlow 训练并保存的的，配置 <span class="highlight-text">tensorflow</span>，如果模型是使用 Keras 训练并保存的，配置 <span class="highlight-text">keras</span>，如果模型是使用 TensorFlow.js 训练并保存的，配置 <span class="highlight-text">tfjs</span></td>
+            </tr>
+            <tr>
+                <td>input_model_format</td>
+                <td>模型的格式。</td>
+            </tr>
+            <tr>
+                <td>output_layer_names</td>
+                <td>输出希望在TensorSpace 中可视化的 layer，使用英文半角逗号“,”分割。</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div>在 <a href="usage_zh.html">使用样例</a> 中具体介绍了如何为不同类型的模型设置 converter 参数。</div>
 
     </main>
 </div>

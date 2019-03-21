@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TensorSpace Converter - Convert TensorFlow.js</title>
+    <title>TensorSpace Converter - Convert TensorFlow</title>
 
     <meta name="description" content="Documentation page of TensorSpace.js">
     <meta name="author" content="syt123450 / https://github.com/syt123450">
@@ -84,7 +84,7 @@
             <div>EN</div>
         </div>
         <div>
-            <div><a href="index_zh.html">中</a></div>
+            <div><a href="usage_zh.html">中</a></div>
         </div>
     </div>
 
@@ -140,9 +140,7 @@
             <li><a href="install.html">Installation</a></li>
             <li><a href="docker.html">Docker Usage</a></li>
             <li><a href="api.html">Converter API</a></li>
-            <li><a href="tensorflow.html">TensorFlow</a></li>
-            <li><a href="keras.html">Keras</a></li>
-            <li class="nowLabel">TensorFlow.js</li>
+            <li class="nowLabel">Usage Examples</li>
         </ul>
     </div>
     <div>
@@ -267,9 +265,7 @@
                 <li><a href="install.html">Installation</a></li>
                 <li><a href="docker.html">Docker Usage</a></li>
                 <li><a href="api.html">Converter API</a></li>
-                <li><a href="tensorflow.html">TensorFlow</a></li>
-                <li><a href="keras.html">Keras</a></li>
-                <li class="nowLabel">TensorFlow.js</li>
+                <li class="nowLabel">Usage Examples</li>
             </ul>
         </div>
         <div>
@@ -347,7 +343,114 @@
     </aside>
 
     <main>
-        <header>Convert TensorFlow.js Model</header>
+        <header>Usage Example</header>
+        <div>This section introduces the usage of TensorSpace-Converter for different types of pre-trained model from TensorFlow, Keras, TensorFlow.js.</div>
+        <div class="panel-heading"><i class="material-icons">flare</i>
+            <a href="#tensorflow">
+                Convert TensorFlow Models
+            </a>
+        </div>
+        <div class="panel-heading"><i class="material-icons">flare</i>
+            <a href="#keras">
+                Convert Keras Models
+            </a>
+        </div>
+        <div class="panel-heading"><i class="material-icons">flare</i>
+            <a href="#tfjs">
+                Convert TensorFlow.js Models
+            </a>
+        </div>
+        <img id="tensorflow" class="logo-img" src="../assets/img/converter/converter_logo_tf.png">
+        <div class="sub-title">TensorFlow</div>
+        <div>A pre-trained model built by TensorFlow can be saved as saved model, frozen model, combined HDF5 model or separated HDF5 model. Use different TensorSpace-Converter commands for different kinds of TensorFlow model formats. TensorSpace-Converter collects the data from <span class="highlight-text">tensor</span>, then use the outputs as the inputs of <span class="highlight-text">layer</span> of TensorSpace visualization. The developer can collect all necessary tensor names and set the name list as <span class="highlight-text">output_layer_names</span>.</div>
+
+        <div class="model-type-title"><span class="span_bold">tf.keras model</span></div>
+        <div>For a combined HDF5 model, topology and weights are saved in a combined HDF5 file <span class="highlight-text">xxx.h5</span>. Set <span class="highlight-text">input_model_format</span> to be <span class="highlight-text">tf_keras</span>. The sample command script should be like:</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="tensorflow" \
+    --input_model_format="tf_keras" \
+    --output_layer_names="layer1Name,layer2Name,layer3Name" \
+    ./PATH/TO/MODEL/xxx.h5 \
+    ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div class="model-type-title"><span class="span_bold">tf.keras (separated)</span></div>
+        <div>For a separated HDF5 model, topology and weights are saved in separate files, topology file <span class="highlight-text">xxx.json</span> and weights file <span class="highlight-text">xxx.h5</span>. Set <span class="highlight-text">input_model_format</span> to be <span class="highlight-text">tf_keras_separated</span>. In this case, the model have two input files, merge two file's paths and separate them with comma (.json first, .h5 last), and then set the combined path to positional argument <span class="highlight-text">input_path</span>. The sample command script should be like:</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="tensorflow" \
+    --input_model_format="tf_keras_separated" \
+    --output_layer_names="layer1Name,layer2Name,layer3Name" \
+    ./PATH/TO/MODEL/xxx.json,./PATH/TO/MODEL/eee.h5 \
+    ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div class="model-type-title"><span class="span_bold">frozen model</span></div>
+        <div>For a TensorFlow frozen model. Set <span class="highlight-text">input_model_format</span> to be <span class="highlight-text">tf_frozen</span>. The sample command script should be like:</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="tensorflow" \
+    --input_model_format="tf_frozen" \
+    --output_layer_names="layer1Name,layer2Name,layer3Name" \
+    ./PATH/TO/MODEL/xxx.pb \
+    ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div class="model-type-title"><span class="span_bold">saved model</span></div>
+        <div>For a TensorFlow saved model. Set <span class="highlight-text">input_model_format</span> to be <span class="highlight-text">tf_saved</span>. The sample command script should be like:</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="tensorflow" \
+    --input_model_format="tf_saved" \
+    --output_layer_names="layer1Name,layer2Name,layer3Name" \
+    ./PATH/TO/SAVED/MODEL/FOLDER \
+    ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div>Checkout this <a href="../html/docs/preTf.html">TensorFlow Preprocessing Tutorial</a> for more practical usage of TensorSpace-Converter for TensorFlow models.</div>
+
+        <img id="keras" class="logo-img" src="../assets/img/converter/converter_logo_keras.png">
+        <div class="sub-title">Keras</div>
+        <div>A pre-trained model built by Keras, may have two formats: topology and weights are saved in a single HDF5 file, or topology and weights are saved in separated files. Use different TensorSpace-Converter commands for these two saved Keras models.</div>
+
+        <div class="model-type-title"><span class="span_bold">Combined .h5</span></div>
+        <div>For a Keras model, topology and weights are saved in a single HDF5 file, i.e. <span class="highlight-text">xxx.h5</span>. Set <span class="highlight-text">input_model_format</span> to be <span class="highlight-text">topology_weights_combined</span>. The sample command script should be like:</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="keras" \
+    --input_model_format="topology_weights_combined" \
+    --output_layer_names="layer1Name,layer2Name,layer3Name" \
+    ./PATH/TO/MODEL/xxx.h5 \
+    ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div class="model-type-title"><span class="span_bold">Separated .json & .h5</span></div>
+        <div>For a Keras model, topology and weights are saved in separated files, i.e. a topology file <span class="highlight-text">xxx.json</span> and a weights file <span class="highlight-text">xxx.h5</span>. Set <span class="highlight-text">input_model_format</span> to be <span class="highlight-text">topology_weights_separated</span>. In this case, the model have two input files, merge two file's paths and separate them with comma (.json first, .h5 last), and then set the combined path to positional argument <span class="highlight-text">input_path</span>. The sample command script should be like:</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="keras" \
+    --input_model_format="topology_weights_separated" \
+    --output_layer_names="layer1Name,layer2Name,layer3Name" \
+    ./PATH/TO/MODEL/xxx.json,./PATH/TO/MODEL/eee.h5 \
+    ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div>Checkout this <a href="../html/docs/preKeras.html">Keras Preprocessing Tutorial</a> for more practical usage of TensorSpace-Converter for Keras models.</div>
+
+        <img id="tfjs" class="logo-img" src="../assets/img/converter/converter_logo_tfjs.png">
+        <div class="sub-title">TensorFlow.js</div>
+        <div>A pre-trained model built by TensorFlow.js, may have a topology file <span class="highlight-text">xxx.json</span> and a weights file <span class="highlight-text">xxx.weight.bin</span>. To converter the model with TensorSpace-Converter, the two files should be put in the same folder and set topology file's path to <span class="highlight-text">input_path</span>. The sample command script should be like:</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="tfjs" \
+    --output_layer_names="layer1Name,layer2Name,layer3Name" \
+    ./PATH/TO/MODEL/xxx.json \
+    ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div>Checkout this <a href="../html/docs/preTfjs.html">TensorFlow.js Preprocessing tutorial</a> for more practical usage of TensorSpace-Converter for TensorFlow.js models.</div>
+
     </main>
 </div>
 

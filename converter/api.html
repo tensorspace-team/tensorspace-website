@@ -140,9 +140,7 @@
             <li><a href="install.html">Installation</a></li>
             <li><a href="docker.html">Docker Usage</a></li>
             <li class="nowLabel">Converter API</li>
-            <li><a href="tensorflow.html">TensorFlow</a></li>
-            <li><a href="keras.html">Keras</a></li>
-            <li><a href="tfjs.html">TensorFlow.js</a></li>
+            <li><a href="usage.html">Usage Examples</a></li>
         </ul>
     </div>
     <div>
@@ -267,9 +265,7 @@
                 <li><a href="install.html">Installation</a></li>
                 <li><a href="docker.html">Docker Usage</a></li>
                 <li class="nowLabel">Converter API</li>
-                <li><a href="tensorflow.html">TensorFlow</a></li>
-                <li><a href="keras.html">Keras</a></li>
-                <li><a href="tfjs.html">TensorFlow.js</a></li>
+                <li><a href="usage.html">Usage Examples</a></li>
             </ul>
         </div>
         <div>
@@ -348,6 +344,59 @@
 
     <main>
         <header>TensorSpace Converter API</header>
+        <div>Sample TensorSpace-Converter script:</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="XXX" \
+    --input_model_format="YYY" \
+    --output_layer_names="EEE1,EEE2,EEE3" \
+    input_path \
+    output_path</code></pre>
+        </div>
+        <div>Arguments explanation:</div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Positional Arguments</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>input_path</td>
+                <td>Path for model input artifacts.</td>
+            </tr>
+            <tr>
+                <td>output_path</td>
+                <td>Folder for all output artifacts.</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Options</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>input_model_from</td>
+                <td>Configure the training library for pre-trained model, use: <span class="highlight-text">tensorflow</span> for TensorFlow, <span class="highlight-text">keras</span> for Keras, <span class="highlight-text">tfjs</span> for TensorFlow.js.</td>
+            </tr>
+            <tr>
+                <td>input_model_format</td>
+                <td>The format of input model, set different attributes for different kinds of models.</td>
+            </tr>
+            <tr>
+                <td>output_layer_names</td>
+                <td>The names of the layer which will be visualized in TensorSpace, separated by comma ",".</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div>The TensorSpace-Converter <a href="usage.html">Example Usage</a> Page introduce how to set Positional Arguments and Optional Arguments for different kinds of models.</div>
+
     </main>
 </div>
 
