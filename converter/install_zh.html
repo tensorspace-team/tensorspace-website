@@ -261,7 +261,7 @@
                 TensorSpace Converter<img src="../assets/img/docs/document_arrow.png">
             </div>
             <ul id="converter">
-                <li><a href="index.html">简介</a></li>
+                <li><a href="index_zh.html">简介</a></li>
                 <li class="nowLabel">安装</li>
                 <li><a href="docker_zh.html">在 Docker 中使用</a></li>
                 <li><a href="api_zh.html">Converter API</a></li>
@@ -346,7 +346,25 @@
 
     <main>
         <header>安装 TensorSpace Converter</header>
-
+        <div>通过 pip 下载 <span class="highlight-text">tensorspacejs</span> 包:</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ pip install tensorspacejs</code></pre>
+        </div>
+        <div>如果成功下载了 <span class="highlight-text">tensorspacejs</span> 包，可以查看下载的 TensorSpace-Converter 版本：</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter -v</code></pre>
+        </div>
+        <div>然后初始化 TensorSpace Converter (这步很重要):</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter -init</code></pre>
+        </div>
+        <div class="panel-heading"><i class="material-icons material-icons--outline">wb_sunny</i><b>注意</b></div>
+        <div>TensorSpace-Converter 必须运行在 Python 3.6, Node 11.3+, NPM 6.5+ 的环境中。如果在本地环境中已经下载了其他的 Python 版本，我们建议使用 conda 来创建一个纯净的 Python 3.6 环境：</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ conda create -n envname python=3.6
+$ source activate envname
+$ pip install tensorspacejs</code></pre>
+        </div>
     </main>
 </div>
 

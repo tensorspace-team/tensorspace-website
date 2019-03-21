@@ -258,6 +258,11 @@ main > div > ul > li > div {
     margin-bottom: 5px;
 }
 
+.doc-logo {
+    width: 150px;
+    margin-left: calc(50% - 75px);
+}
+
 table {
     table-layout: auto;
 }
