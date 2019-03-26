@@ -341,7 +341,42 @@
     </aside>
 
     <main>
+        <img class="doc-logo" src="../assets/img/converter/docker.png">
         <header>在 Docker 中使用</header>
+        <div>配置一个适合 tensorspacejs 运行的环境有点复杂？不妨试试在 Docker 中运行吧！</div>
+        <div>TensorSpace-Converter 提供了一个 <a href="https://github.com/tensorspace-team/tensorspace-converter/blob/master/docker/Dockerfile">Dockerfile</a>，你可以通过它快速创建一个开箱即用的 TensorSpace-Converter 镜像。为了让这个 tensorspacejs 镜像更易用，我们提供了脚本来 创建 (<a href="https://github.com/tensorspace-team/tensorspace-converter/blob/master/docker/init_docker_converter.sh">init_docker_converter.sh</a>) 与 运行 (<a href="https://github.com/tensorspace-team/tensorspace-converter/blob/master/docker/run_docker_converter.sh">run_docker_converter.sh</a>) 它。</div>
+
+        <div class="sub-title">第一步：创建</div>
+        <div>创建一个 tensorspacejs Docker 镜像 (确保在初始化镜像前已经启动了 Docker):</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">bash init_docker_converter.sh</code></pre>
+        </div>
+
+        <div class="sub-title">第二步：运行</div>
+        <div>将 TensorSpace-Converter 脚本和模型文件都放在一个工作目录 (WORK_DIR) 下，然后执行 run_docker_converter.sh 脚本来运行 tensorspacejs 镜像：</div>
+        <div class="code-snippet">
+            <pre><code class="Bash">bash run_docker_converter.sh --work_dir ./PATH/TO/WORK/DIRECTORY</code></pre>
+        </div>
+
+        <div class="sub-title">参数配置</div>
+
+        <div class="panel-heading"><i class="material-icons">flare</i>
+            <span class="span_bold">work_dir</span>
+        </div>
+
+        <div><span class="highlight-text">work_dir</span> 是 TensorSpace-Converter 的工作目录，converter.sh 脚本和模型文件都放置在这个目录下，在执行 tensorspacejs Docker 镜像后，也会将经过转化的文件生成在该目录下。在通过 <span class="highlight-text">run_docker_converter.sh</span> 脚本运行 tensorspacejs Docker 镜像时，需要配置 work_dir。在 <a href="https://github.com/tensorspace-team/tensorspace-converter/tree/master/examples">这个例子</a> 中，将 work_dir 配置成 <span class="highlight-text">./example</span>。</div>
+
+        <div class="panel-heading"><i class="material-icons">flare</i>
+            <span class="span_bold">converter.sh</span>
+        </div>
+
+        <div>将 TensorSpace-Converter 转化代码放在 <span class="highlight-text">converter.sh</span> 文件中，tensorspacejs 镜像将会执行这个文件来对模型进行转换。将 converter.sh 放置于 <span class="highlight-text">work_dir 的根目录中</span>，并且保持 converter.sh 这个文件的文件名不变。</div>
+
+        <div class="panel-heading"><i class="material-icons">flare</i>
+            <span class="span_bold">input 和 output</span>
+        </div>
+
+        <div>将需要转换的模型放在 work_dir 文件夹中，在 converter.sh 中设置 input_path 和 output_path 时，都设置成相对于 <span class="highlight-text">work_dir 的相对路径</span>。在 <a href="https://github.com/tensorspace-team/tensorspace-converter/tree/master/examples">这个例子</a> 中，<span class="highlight-text">input_path</span> 是 <span class="highlight-text">./input/keras_model.h5</span>，<span class="highlight-text">output_path</span> 是 <span class="highlight-text">./output</span>。</div>
 
     </main>
 </div>

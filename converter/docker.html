@@ -138,7 +138,7 @@
         <ul id="converterS">
             <li><a href="index.html">Introduction</a></li>
             <li><a href="install.html">Installation</a></li>
-            <li class="nowLabel">Docker Usage</li>
+            <li class="nowLabel">Running with Docker</li>
             <li><a href="api.html">Converter API</a></li>
             <li><a href="usage.html">Usage Examples</a></li>
         </ul>
@@ -263,7 +263,7 @@
             <ul id="converter">
                 <li><a href="index.html">Introduction</a></li>
                 <li><a href="install.html">Installation</a></li>
-                <li class="nowLabel">Docker Usage</li>
+                <li class="nowLabel">Running with Docker</li>
                 <li><a href="api.html">Converter API</a></li>
                 <li><a href="usage.html">Usage Examples</a></li>
             </ul>
@@ -343,7 +343,47 @@
     </aside>
 
     <main>
-        <header>Use Converter In Docker</header>
+        <img class="doc-logo" src="../assets/img/converter/docker.png">
+        <header>Running with Docker</header>
+        <div>Establishing tensorflowjs development environment is a tedious topic? Dockerize it!</div>
+        <div><a href="https://github.com/tensorspace-team/tensorspace-converter/blob/master/docker/Dockerfile">Here</a> is a TensorSpace-Converter Dockerfile, you can use it to build tensorspacejs image, which is an out-of-box TensorSpace-Converter environment. We also provide some easy to use scripts to init (<a href="https://github.com/tensorspace-team/tensorspace-converter/blob/master/docker/init_docker_converter.sh">init_docker_converter.sh</a>) and run (<a href="https://github.com/tensorspace-team/tensorspace-converter/blob/master/docker/run_docker_converter.sh">run_docker_converter.sh</a>) tensorspacejs docker image. This <a href="https://github.com/tensorspace-team/tensorspace-converter/tree/master/docker">demo</a> provide a practical usage of TensorSpace-Converter in Docker.</div>
+
+        <div class="sub-title">Step 1: Init</div>
+
+        <div>To init tensorspacejs Docker image (make sure start Docker daemon before init the image):</div>
+
+        <div class="code-snippet">
+            <pre><code class="Bash">bash init_docker_converter.sh</code></pre>
+        </div>
+
+        <div class="sub-title">Step 2: Run</div>
+
+        <div>To run docker image. Put TensorSpace-Converter script and model assets in a <span class="highlight-text">work_dir</span>, and execute run_docker_converter.sh to run tensorspacejs image:</div>
+
+        <div class="code-snippet">
+            <pre><code class="Bash">bash run_docker_converter.sh --work_dir ./PATH/TO/WORK/DIRECTORY</code></pre>
+        </div>
+
+        <div class="sub-title">Parameters Setting</div>
+
+        <div class="panel-heading"><i class="material-icons">flare</i>
+            <span class="span_bold">work_dir</span>
+        </div>
+
+        <div><span class="highlight-text">work_dir</span> is where to place converter.sh and input model assets, meanwhile, tensorspacejs Docker image will save generated model files into this directory. Configure work_dir when run the tensorspacejs Docker image through <span class="highlight-text">run_docker_converter.sh</span>. In <a href="https://github.com/tensorspace-team/tensorspace-converter/tree/master/docker">this</a> example, configure work_dir to be <span class="highlight-text">./example</span></div>
+
+        <div class="panel-heading"><i class="material-icons">flare</i>
+            <span class="span_bold">converter.sh</span>
+        </div>
+
+        <div><span class="highlight-text">converter.sh</span> contains TensorSpace-Converter conversion code, tensorspacejs image will execute this script. Place converter.sh at the <span class="highlight-text">root of work_dir</span>, make sure the file name is converter.sh (should not be renamed).</div>
+
+        <div class="panel-heading"><i class="material-icons">flare</i>
+            <span class="span_bold">input and output</span>
+        </div>
+
+        <div>Place input model under work_dir, the path of input model and output folder are <span class="highlight-text">relative to work_dir</span>. In <a href="https://github.com/tensorspace-team/tensorspace-converter/tree/master/docker">this</a> example, set <span class="highlight-text">input_path</span> to be <span class="highlight-text">./input/keras_model.h5</span> and <span class="highlight-text">output_path</span> to be <span class="highlight-text">./output</span> in converter.sh.</div>
+
     </main>
 </div>
 
