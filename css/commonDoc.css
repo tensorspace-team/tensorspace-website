@@ -67,6 +67,7 @@ aside {
 
 aside > div {
     width: 100%;
+    position: relative;
 }
 
 aside > div > div {
@@ -340,6 +341,13 @@ td, th {
     height: 40px;
     line-height: 40px;
 
+}
+
+.new-tag {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 35px;
 }
 
 .code {
