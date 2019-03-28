@@ -360,6 +360,12 @@ td, th {
     padding: 10px 30px 10px 30px;
 }
 
+.bash-demo {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 20px;
+}
+
 .explanation-title {
     width: 100%;
     text-align: center;
@@ -812,6 +818,11 @@ footer {
 
     .logo-img {
         width: 100%;
+    }
+
+    .bash-demo {
+        width: 100%;
+        margin-left: 0;
     }
 }
 
