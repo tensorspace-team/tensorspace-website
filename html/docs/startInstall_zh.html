@@ -321,52 +321,56 @@
     <main>
         <header>安装</header>
         <div class="sub-title">
-            第一步: 下载 TensorSpace.js
+            基本使用场景
         </div>
 
-        <div>我们提供了三种下载 TensorSpace.js 的方法，它们分别是 npm、yarn 以及 来自 TensorSpace的 官方网站。</div>
-
-        <div>途径 1: NPM</div>
+        <div><span class="span_bold">途径一</span>: 通过 CDN</div>
 
         <div class="code-snippet">
-            <pre><code class="Bash">npm install tensorspace</code></pre>
+            <pre><code class="html">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/1.0.0/tf.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://tensorspace.org/assets/jslib/TrackballControls.js"&gt;&lt;/script&gt;
+&lt;!-- 将”VERSION”替换成需要的版本 --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/tensorspace@VERSION/dist/tensorspace.min.js"&gt;&lt;/script&gt;</code></pre>
         </div>
 
-        <div>途径 2: Yarn</div>
-        <div class="code-snippet">
-            <pre><code class="Bash">yarn add tensorspace</code></pre>
-        </div>
-
-        <div>途径 3: <a href="../../index.html#download">官方网站下载</a></div>
-
-        <div class="sub-title">
-            第二步: 安装依赖库
-        </div>
-
-        <div>
-            请在使用 TensorSapce.js 之前，引入
-            <a href="https://github.com/tensorflow/tfjs">TensorFlow.js</a>、
-            <a href="https://github.com/mrdoob/three.js">Three.js</a>、
-            <a href="https://github.com/tweenjs/tween.js">Tween.js</a> 以及
-            <a href="https://github.com/mrdoob/three.js/blob/master/examples/js/controls/TrackballControls.js">TrackballControl.js</a>
-            至所需要的 html 文件中，并置于 TensorSpace.js 的引用之前。
-        </div>
-
+        <div><span class="span_bold">途径二</span>: 下载 <span class="highlight-text">tensorspace.min.js</span> 并在页面中引入</div>
+        <div>可以通过 <a href="https://github.com/tensorspace-team/tensorspace/tree/master/dist">Github</a>, <a href="https://www.npmjs.com/package/tensorspace">NPM</a> 或者 <a href="https://tensorspace.org/#download">TensorSpace 网站</a> 这些途径下载 tensorspace.min.js。</div>
         <div class="code-snippet">
             <pre><code class="html">&lt;script src="tf.min.js"&gt;&lt;/script&gt;
 &lt;script src="three.min.js"&gt;&lt;/script&gt;
-&lt;script src="tween.min.js"&gt;&lt;/script&gt;
-&lt;script src="TrackballControls.js"&gt;&lt;/script&gt;</code></pre>
+&lt;script src="Tween.min.js"&gt;&lt;/script&gt;
+&lt;script src="TrackballControls.js"&gt;&lt;/script&gt;
+&lt;!-- Replace "VERSION"  with the version you want to use. --&gt;
+&lt;script src="tensorspace.min.js"&gt;&lt;/script&gt;</code></pre>
         </div>
 
         <div class="sub-title">
-            第三步: 安装 TensorSpace.js
+            在渐进式框架中使用 TensorSpace
         </div>
 
-        <div>将 TensorSpace.js 引入 html 文件中：</div>
+        <div><span class="span_bold">第一步</span>: 安装 TensorSpace</div>
+
+        <div>通过 NPM 安装</div>
+
         <div class="code-snippet">
-            <pre><code class="html">&lt;script src="tensorspace.min.js"&gt;&lt;/script&gt;</code></pre>
+            <pre><code class="bash">npm install tensorspace</code></pre>
         </div>
+
+        <div>通过 YARN 安装</div>
+
+        <div class="code-snippet">
+            <pre><code class="bash">yarn add tensorspace</code></pre>
+        </div>
+
+        <div><span class="span_bold">第二步</span>: 引入 TensorSpace</div>
+
+        <div class="code-snippet">
+            <pre><code class="javascript">import * as TSP from 'tensorspace';</code></pre>
+        </div>
+
+        <div>这个 <a href="https://github.com/tensorspace-team/tensorspace/tree/master/examples/helloworld-angular">Angular 样例</a> 具体展示了如何使用。</div>
 
     </main>
 </div>
