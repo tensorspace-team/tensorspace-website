@@ -44,13 +44,14 @@
         </div>
 
         <ul class="hidden-xs">
-             <li class="now"><a href="startIntro.html">Documentation</a></li>
+            <li class="now"><a href="startIntro.html">Documentation</a></li>
             <li><a href="../playground/index.html">Playground</a></li>
             <!--<li><a href="../gallery.html">Gallery</a></li>-->
             <li><a href="../../index.html#download">Download</a></li>
             <!--<li><a href="../developer.html">Developer</a></li>-->
 
-            <a href="https://github.com/tensorspace-team/tensorspace" class="github-corner" aria-label="View source on Github">
+            <a href="https://github.com/tensorspace-team/tensorspace" class="github-corner"
+               aria-label="View source on Github">
                 <svg viewBox="0 0 250 250" aria-hidden="true">
                     <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
                     <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
@@ -321,8 +322,13 @@
 
     <main>
         <header>Load Model</header>
-        <div>The "Load" of TensorSpace is the process to read and store the pre-trained ML model in the TensorSpace model, which makes it possible to use the inference results from the pre-trained network by providing the input.</div>
-        <div>The functionality of "Load" is realized by calling the <span class="highlight-text">.load()</span> method of the constructed model object.</div>
+        <div>The "Load" of TensorSpace is the process to read and store the pre-trained ML model in the TensorSpace
+            model, which makes it possible to use the inference results from the pre-trained network by providing the
+            input.
+        </div>
+        <div>The functionality of "Load" is realized by calling the <span class="highlight-text">.load()</span> method
+            of the constructed model object.
+        </div>
 
         <img class="tag-img" src="../../assets/img/docs/Load_concept.png">
 
@@ -335,7 +341,8 @@
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    We must <a href="basicPreprocessing.html">preprocess</a> the deep learning models before really loading to the TensorSpace model.
+                    We must <a href="basicPreprocessing.html">preprocess</a> the deep learning models before really
+                    loading to the TensorSpace model.
                 </li>
             </ul>
         </div>
@@ -365,7 +372,9 @@
 } );</code></pre>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L147" target="_blank">.type</a> : <span class="highlight-text">String</span></div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L147"
+                target="_blank">.type</a> : <span class="highlight-text">String</span></div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -378,12 +387,16 @@
                     Configure to "<span class="highlight-text">keras</span>". To load as a Keras model format.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    After specifying the type of network format, TensorSpace uses corresponded <span class="highlight-text">loader</span> object to handle the actual loading and prediction process.
+                    After specifying the type of network format, TensorSpace uses corresponded <span
+                            class="highlight-text">loader</span> object to handle the actual loading and prediction
+                    process.
                 </li>
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/KerasLoader.js#L29" target="_blank">.url</a> : <span class="highlight-text">String</span></div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/KerasLoader.js#L29"
+                target="_blank">.url</a> : <span class="highlight-text">String</span></div>
 
         <div>
             <ul class="list-content">
@@ -399,7 +412,10 @@
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48" target="_blank">.onProgress</a> : void</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48"
+                target="_blank">.onProgress</a> : void
+        </div>
 
         <div>
             <ul class="list-content">
@@ -410,12 +426,16 @@
                     Progress Callback, fired periodically before loading process completed.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    This callback can be used to monitor the model-loading process, for example, get "fraction" (in range [0, 1]) of model loaded at the moment as parameter.
+                    This callback can be used to monitor the model-loading process, for example, get "fraction" (in
+                    range [0, 1]) of model loaded at the moment as parameter.
                 </li>
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40" target="_blank">.onComplete</a> : void</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40"
+                target="_blank">.onComplete</a> : void
+        </div>
 
         <div>
             <ul class="list-content">
@@ -426,7 +446,8 @@
                     Callback function used to notify the complete on loading ML model.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    It is designed for handling the event related to the loading complete, such as remove loading screen, console log time duration etc.
+                    It is designed for handling the event related to the loading complete, such as remove loading
+                    screen, console log time duration etc.
                 </li>
             </ul>
         </div>
@@ -454,7 +475,9 @@
 } );</code></pre>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L143" target="_blank">.type</a> : <span class="highlight-text">String</span></div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L143"
+                target="_blank">.type</a> : <span class="highlight-text">String</span></div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -467,12 +490,16 @@
                     Configure to "<span class="highlight-text">tfjs</span>". To load as a TensorFlow.js model format.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    After specifying the type of network format, TensorSpace uses corresponded <span class="highlight-text">loader</span> object to handle the actual loading and prediction process.
+                    After specifying the type of network format, TensorSpace uses corresponded <span
+                            class="highlight-text">loader</span> object to handle the actual loading and prediction
+                    process.
                 </li>
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/TfjsLoader.js#L29" target="_blank">.url</a> : <span class="highlight-text">String</span></div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/TfjsLoader.js#L29"
+                target="_blank">.url</a> : <span class="highlight-text">String</span></div>
 
         <div>
             <ul class="list-content">
@@ -488,7 +515,10 @@
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48" target="_blank">.onProgress</a> : void</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48"
+                target="_blank">.onProgress</a> : void
+        </div>
 
         <div>
             <ul class="list-content">
@@ -499,12 +529,16 @@
                     Progress Callback, fired periodically before loading process completed.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    This callback can be used to monitor the model-loading process, for example, get "fraction" (in range [0, 1]) of model loaded at the moment as parameter.
+                    This callback can be used to monitor the model-loading process, for example, get "fraction" (in
+                    range [0, 1]) of model loaded at the moment as parameter.
                 </li>
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40" target="_blank">.onComplete</a> : void</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40"
+                target="_blank">.onComplete</a> : void
+        </div>
 
         <div>
             <ul class="list-content">
@@ -515,7 +549,8 @@
                     Callback function used to notify the complete on loading ML model.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    It is designed for handling the event related to the loading complete, such as remove loading screen, console log time duration etc.
+                    It is designed for handling the event related to the loading complete, such as remove loading
+                    screen, console log time duration etc.
                 </li>
             </ul>
         </div>
@@ -546,7 +581,9 @@
 } );</code></pre>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L151" target="_blank">.type</a> : <span class="highlight-text">String</span></div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L151"
+                target="_blank">.type</a> : <span class="highlight-text">String</span></div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -559,12 +596,16 @@
                     Configure to "<span class="highlight-text">tensorflow</span>". To load as a TensorFlow model format.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    After specifying the type of network format, TensorSpace uses corresponded <span class="highlight-text">loader</span> object to handle the actual loading and prediction process.
+                    After specifying the type of network format, TensorSpace uses corresponded <span
+                            class="highlight-text">loader</span> object to handle the actual loading and prediction
+                    process.
                 </li>
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/TfLoader.js#L29" target="_blank">.url</a> : <span class="highlight-text">String</span></div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/TfLoader.js#L29"
+                target="_blank">.url</a> : <span class="highlight-text">String</span></div>
 
         <div>
             <ul class="list-content">
@@ -575,12 +616,16 @@
                     Represents the URL to the target ML model file.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    It is usually a ".pb" file which is converted after <a href="https://github.com/tensorflow/tfjs-converter">tfjs-converter</a>.
+                    It is usually a ".pb" file which is converted after <a
+                            href="https://github.com/tensorflow/tfjs-converter">tfjs-converter</a>.
                 </li>
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/TfLoader.js#L47" target="_blank">.outputsName</a> : String[]</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/TfLoader.js#L47"
+                target="_blank">.outputsName</a> : String[]
+        </div>
 
         <div>
             <ul class="list-content">
@@ -588,10 +633,12 @@
                     Optional.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    <span class="span_bold">Required</span> if the TensorFlow model is not preprocessed for multiple outputs.
+                    <span class="span_bold">Required</span> if the TensorFlow model is not preprocessed for multiple
+                    outputs.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    The names listed should be valid tensor names which are used for collecting the data from corresponded intermediate tensors.
+                    The names listed should be valid tensor names which are used for collecting the data from
+                    corresponded intermediate tensors.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     Make sure the name order is the same as the one implemented in TensorSpace.
@@ -599,7 +646,10 @@
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48" target="_blank">.onProgress</a> : void</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48"
+                target="_blank">.onProgress</a> : void
+        </div>
 
         <div>
             <ul class="list-content">
@@ -610,12 +660,16 @@
                     Progress Callback, fired periodically before loading process completed.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    This callback can be used to monitor the model-loading process, for example, get "fraction" (in range [0, 1]) of model loaded at the moment as parameter.
+                    This callback can be used to monitor the model-loading process, for example, get "fraction" (in
+                    range [0, 1]) of model loaded at the moment as parameter.
                 </li>
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40" target="_blank">.onComplete</a> : void</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40"
+                target="_blank">.onComplete</a> : void
+        </div>
 
         <div>
             <ul class="list-content">
@@ -626,7 +680,8 @@
                     Callback function used to notify the complete on loading ML model.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    It is designed for handling the event related to the loading complete, such as remove loading screen, console log time duration etc.
+                    It is designed for handling the event related to the loading complete, such as remove loading
+                    screen, console log time duration etc.
                 </li>
             </ul>
         </div>
@@ -634,7 +689,8 @@
     </main>
 </div>
 
-<button id="topButton" title="Go to top" class="ripple"><i class="material-icons material-icons--outline">keyboard_arrow_up</i></button>
+<button id="topButton" title="Go to top" class="ripple"><i class="material-icons material-icons--outline">keyboard_arrow_up</i>
+</button>
 
 </body>
 
