@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Layer - Activation3d</title>
+    <title>Basic Concept - Layer Status</title>
 
     <meta name="description" content="Documentation page of TensorSpace.js">
     <meta name="author" content="syt123450 / https://github.com/syt123450">
+    <meta name="author" content="zchholmes / https://github.com/zchholmes">
+    <meta name="author" content="lq3297401 / https://github.com/lq3297401">
     <link rel='icon' href='../../assets/img/common/logo.ico' type=‘image/x-ico’>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -83,7 +85,7 @@
             <div>EN</div>
         </div>
         <div>
-            <div><a href="layerActivation3d_zh.html">中</a></div>
+            <div><a href="basicLayerStatus_zh.html">中</a></div>
         </div>
     </div>
 
@@ -111,7 +113,7 @@
             <li><a href="startOther.html">More Resources</a></li>
         </ul>
     </div>
-    <div>
+    <div class="open initLabel">
         <div id="basicLabelS">
             Basic Concepts<img src="../../assets/img/docs/document_arrow.png">
         </div>
@@ -124,7 +126,7 @@
             <li><a href="basicPredict.html">Predict</a></li>
             <li><a href="basicClose.html">Close Button</a></li>
             <li><a href="basicPaging.html">Paging</a></li>
-            <li><a href="basicLayerStatus.html">Layer Status</a></li>
+            <li class="nowLabel">Layer Status</li>
             <li><a href="basicMetrics.html">Layer Metrics</a></li>
             <li><a href="basicDimension.html">Layer Dimension</a></li>
             <li><a href="basicColor.html">Layer Color</a></li>
@@ -166,7 +168,7 @@
             <li><a href="modelSequential.html">Sequential Model</a></li>
         </ul>
     </div>
-    <div class="open initLabel">
+    <div>
         <div id="layerLabelS">
             Layers<img src="../../assets/img/docs/document_arrow.png">
         </div>
@@ -191,7 +193,7 @@
             <li><a href="layerUpSampling2d.html">UpSampling2d</a></li>
             <li><a href="layerActivation1d.html">Activation1d</a></li>
             <li><a href="layerActivation2d.html">Activation2d</a></li>
-            <li class="nowLabel">Activation3d</li>
+            <li><a href="layerActivation3d.html">Activation3d</a></li>
             <li><a href="layerLayer1d.html">Layer1d</a></li>
             <li><a href="layerLayer2d.html">Layer2d</a></li>
             <li><a href="layerLayer3d.html">Layer3d</a></li>
@@ -239,7 +241,7 @@
                 <li><a href="startOther.html">More Resources</a></li>
             </ul>
         </div>
-        <div>
+        <div class="open initLabel">
             <div id="basicLabel">
                 Basic Concepts<img src="../../assets/img/docs/document_arrow.png">
             </div>
@@ -252,7 +254,7 @@
                 <li><a href="basicPredict.html">Predict</a></li>
                 <li><a href="basicClose.html">Close Button</a></li>
                 <li><a href="basicPaging.html">Paging</a></li>
-                <li><a href="basicLayerStatus.html">Layer Status</a></li>
+                <li class="nowLabel">Layer Status</li>
                 <li><a href="basicMetrics.html">Layer Metrics</a></li>
                 <li><a href="basicDimension.html">Layer Dimension</a></li>
                 <li><a href="basicColor.html">Layer Color</a></li>
@@ -294,7 +296,7 @@
                 <li><a href="modelSequential.html">Sequential Model</a></li>
             </ul>
         </div>
-        <div class="open initLabel">
+        <div>
             <div id="layerLabel">
                 Layers<img src="../../assets/img/docs/document_arrow.png">
             </div>
@@ -319,7 +321,7 @@
                 <li><a href="layerUpSampling2d.html">UpSampling2d</a></li>
                 <li><a href="layerActivation1d.html">Activation1d</a></li>
                 <li><a href="layerActivation2d.html">Activation2d</a></li>
-                <li class="nowLabel">Activation3d</li>
+                <li><a href="layerActivation3d.html">Activation3d</a></li>
                 <li><a href="layerLayer1d.html">Layer1d</a></li>
                 <li><a href="layerLayer2d.html">Layer2d</a></li>
                 <li><a href="layerLayer3d.html">Layer3d</a></li>
@@ -348,322 +350,129 @@
     </aside>
 
     <main>
-        <header>Activation3d</header>
-        <div>3d Active function layer. The shape is not change through Activation2d layer, but values will change.</div>
-        <div class="sub-title">Constructor</div>
-        <div>〔Method 1〕Use <span class="span_bold">activation</span></div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">TSP.layers.Activation3d( { activation : String } );</code></pre>
+        <header>Layer Status</header>
+
+        <div>TensorSpace Layer has two status <span class="highlight-text">open</span> and <span class="highlight-text">close</span>,
+            default to "close". We can <a href="#initStatus">set layer's initial status</a> before model is initialized
+            and <a href="#changeStatus">change layer's status</a> after model is initialized.
         </div>
-        <div>〔Method 2〕Use <span class="span_bold">shape</span></div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">TSP.layers.Activation3d( { shape : [ Int, Int, Int ] } );</code></pre>
+
+        <div id="initStatus" class="sub-title">Set Initial Status</div>
+
+        <div>There are two ways to set initial status for TensorSpace Layer, set status in TensorSpace model or in a
+            specific layer.
         </div>
-        <img class="tag-img" src="../../assets/img/docs/Activation3d.jpg">
+
+        <div class="model-type-title"><span class="span_bold">Set in Model</span></div>
+
+        <div>Configure TensorSpace model's <span class="highlight-text">layerInitStatus</span> attribute, <span
+                class="highlight-text">open</span> or <span class="highlight-text">close</span>, default to "close".
+            "close" to show all layers as an aggregation, "open" to show all layers as expanded feature maps.
+        </div>
+
+        <div class="code-snippet">
+            <pre><code class="Javascript">let model = new TSP.models.Sequential( container, {
+  // or "close"
+  layerInitStatus: "open"
+} );</code></pre>
+        </div>
+
+        <img class="tag-img" src="../../assets/img/docs/Model_collapsed_layer.png">
         <div class="img-label">
-            <span class="img-label-number">Fig. 1</span> - Activation3d layer close and open
-        </div>
-        <div class="sub-title">Arguments</div>
-        <table class="table table-striped table-bordered table-hover">
-            <thead>
-            <tr>
-                <th scope="col"><p>Name</p>
-                    <p>Tag</p></th>
-                <th scope="col"><p>Type</p></th>
-                <th scope="col"><p>Instruction</p></th>
-                <th scope="col"><p>Usage Notes and Examples</p></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">
-                    <p>activation</p>
-                    <p><a href="#iconRequired">⭐</a><a href="#iconModel">📦</a>️</p>
-                </th>
-                <td><span class="highlight-text">String</span></td>
-                <td>Name of active function</td>
-                <td>Options: <span class="span_bold">softmax</span> <span class="span_bold">sigmoid</span> <span
-                        class="span_bold">tanh</span> <span class="span_bold">ReLU</span> <span
-                        class="span_bold">LReLU</span> <span class="span_bold">ELU</span></td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    <p>name</p>
-                    <p><a href="#iconSuggest">🔧</a></p>
-                </th>
-                <td><span class="highlight-text">String</span></td>
-                <td>Name of this layer. <span class="span_bold">Highly recommend</span> to arrange to make code more
-                    readable.
-                </td>
-                <td>name: "layerName"</td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    <p>color</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconStyle">🎨</a>️</p>
-                </th>
-                <td>color format</td>
-                <td>Color of layer</td>
-                <td>Activation3d default is #fc5c9c <span class="color-block" style="background-color: #fc5c9c"></span>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    <p>closeButton</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconStyle">🎨</a>️</p>
-                </th>
-                <td><span class="highlight-text">Dict</span></td>
-                <td>Close button appearance control dict, <a href="basicClose.html">more about close button</a></td>
-                <td><p><span class="span_bold">display</span> : <span class="highlight-text">Boolean</span>. true[default] Show button, false Hide button
-                </p>
-                    <p><span class="span_bold">ratio</span> : Int. Times to normal size, default is 1</p>
-                    <p>For example, 2 means twice the normal size</p>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    <p>initStatus</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconAnimation">️🎦</a></p>
-                </th>
-                <td><span class="highlight-text">String</span></td>
-                <td>Layer status at beginning. <span class="span_bold">Open</span> or <span
-                        class="span_bold">Close</span></td>
-                <td>close[default] : Closed at beginning</td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    <p>animeTime</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconAnimation">🎦</a>️</p>
-                </th>
-                <td><span class="highlight-text">Int</span></td>
-                <td>The speed of open and close animation</td>
-                <td>For example, 2000 means 2 seconds. Note: Configure animeTime in a specific layer will override
-                    model's animeTime configuration.
-                </td>
-            </tr>
-            </tbody>
-        </table>
-
-        <div class="sub-title">Properties</div>
-
-        <div class="property-title"><a
-                href="https://github.com/tensorspace-team/tensorspace/blob/10a1738e02dddcd1dc2c919611709dbab27c1c54/src/layer/abstract/Layer.js#L68"
-                target="_blank">.inputShape</a> : <span class="highlight-text">Int[]</span></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The shape of input tensor. For
-            example inputShape = [ 32, 32, 3 ] represents 3 Feature maps with shape of 32 by 32.
-        </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After model.init() data is
-            available, otherwise is undefined.
+            <span class="img-label-number">Fig. 1</span> - Initialize all layers with "close" status
         </div>
 
-        <div class="property-title"><a
-                href="https://github.com/tensorspace-team/tensorspace/blob/10a1738e02dddcd1dc2c919611709dbab27c1c54/src/layer/abstract/Layer.js#L69"
-                target="_blank">.outputShape</a> : <span class="highlight-text">Int[]</span></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The shape of output tensor is
-            3-dimensional. <a href="basicDimension.html">3️⃣</a></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The shape of output tensor. For
-            example outputShape = [ 32, 32, 3 ] represents 3 Feature maps with shape of 32 by 32.
-        </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After model.init() data is
-            available, otherwise is undefined.
+        <img class="tag-img" src="../../assets/img/docs/Model_expanded_layer.png">
+        <div class="img-label">
+            <span class="img-label-number">Fig. 2</span> - Initialize all layers with "open" status
         </div>
 
-        <div class="property-title"><a
-                href="https://github.com/tensorspace-team/tensorspace/blob/10a1738e02dddcd1dc2c919611709dbab27c1c54/src/layer/abstract/Layer.js#L52"
-                target="_blank">.neuralValue</a> : <span class="highlight-text">Float[]</span></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The intermediate raw data after this
-            layer.
-        </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After load and model.predict() data
-            is available, otherwise is undefined.
+        <div class="model-type-title"><span class="span_bold">Set in Specific Layer</span></div>
+
+        <div>Configure TensorSpace Layer's <span class="highlight-text">initStatus</span> attribute, <span
+                class="highlight-text">open</span> or <span class="highlight-text">close</span>, default to "close", if
+            set, this attribute will override model's <span class="highlight-text">layerInitStatus</span>, which means
+            that model's layerInitStatus will not take effect to this specific Layer.
         </div>
 
-        <div class="property-title"><a
-                href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/Layer.js#L242"
-                target="_blank">.name</a> : <span class="highlight-text">String</span></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The custom name for this layer.
-        </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Once created, you can get it.</div>
-
-        <div class="property-title"><a
-                href="https://github.com/tensorspace-team/tensorspace/blob/b51397827a38243c33ad38f993a56c6412c54c0e/src/layer/abstract/Layer.js#L251"
-                target="_blank">.layerType</a> : <span class="highlight-text">String</span></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Type of this layer, return a
-            constant: string <span class="span_bold">Activation3d</span>.
-        </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Once created, you can get it.</div>
-
-        <div class="sub-title">Method</div>
-
-        <div class="property-title"><a
-                href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer.js#L74"
-                target="_blank">.apply( layer )</a> : <span class="highlight-text">void</span>
-        </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>This method only used in <a
-                href="modelFunctional.html">Functional Model</a> (Non-sequential, Graph structure).
-        </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Link this layer to layer which is
-            the <span class="span_bold">previous layer</span>.
-        </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>To crete a link between this layer
-            and the previous layer. You don't need to use this method specifically to create links in <a
-                    href="modelSequential.html">Sequential Model</a>; Instead, you can simply add layers along the lines
-            of <span class="span_bold">Keras</span> or <span class="span_bold">TensorFlow.js</span> build the model
-            syntax.
-        </div>
         <div class="code-snippet">
-            <pre><code class="Javascript">let inputLayer = new TSP.layers.RGBInput( {
-
-    shape: [28, 28, 3]
-
-} );
-
-let activationLayer = new TSP.layers.Activation3d( {
-
-    activation: "softmax"
-
-} );
-
-activationLayer.apply( inputLayer );</code></pre>
+            <pre><code class="Javascript">let conv2dLayer = new TSP.layers.Conv2d({
+  // or "close"
+  initStatus: "open"
+});</code></pre>
         </div>
 
-        <div class="property-title"><a
-                href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer3d.js#L459"
-                target="_blank">.openLayer()</a> : <span class="highlight-text">void</span>
-        </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Open Layer, if layer is already in
-            "open" status, the layer will keep open.
-        </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> See <a
-                href="basicLayerStatus.html">Layer Status</a> for more details.
+        <img class="tag-img" src="../../assets/img/docs/layer_expand.png">
+        <div class="img-label">
+            <span class="img-label-number">Fig. 3</span> - Set a specific Layer's initStatus to be open
         </div>
 
-        <div class="property-title"><a
-                href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer3d.js#L475"
-                target="_blank">.closeLayer()</a> : <span class="highlight-text">void</span>
-        </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Close Layer, if layer is already in
-            "close" status, the layer will keep close.
-        </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> See <a
-                href="basicLayerStatus.html">Layer Status</a> for more details.
+        <div id="changeStatus" class="sub-title">Change Status</div>
+
+        <div>There are two ways to change layer's status after TensorSpace model is initialized, click layer elements in
+            3D scene or use APIs (.openLayer() & .closeLayer()) to control status.
         </div>
 
-        <div class="sub-title">Example</div>
+        <div class="model-type-title"><span class="span_bold">Click Layer elements</span></div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Declare an instance of Activation3d
-            to facilitate reuse
+        <div>Click the layer aggregation to open Layer in the 3D scene.</div>
+
+        <img class="tag-img" src="../../assets/img/docs/Conv2d_open.gif">
+        <div class="img-label">
+            <span class="img-label-number">Fig. 4</span> - Click Conv2d Layer aggregation to open layer
         </div>
+
+        <img class="tag-img" src="../../assets/img/docs/RGBInput_open.gif">
+        <div class="img-label">
+            <span class="img-label-number">Fig. 5</span> - Click RGBInput Layer aggregation to open layer
+        </div>
+
+        <div>Click the close button to close Layer in the 3D scene.</div>
+
+        <img class="tag-img" src="../../assets/img/docs/Conv2d_close.gif">
+        <div class="img-label">
+            <span class="img-label-number">Fig. 6</span> - Click close button to close Conv2d Layer
+        </div>
+
+        <img class="tag-img" src="../../assets/img/docs/RGBInput_close.gif">
+        <div class="img-label">
+            <span class="img-label-number">Fig. 7</span> - Click close button to close RGBInput Layer
+        </div>
+
+        <div class="model-type-title"><span class="span_bold">Control APIs</span></div>
+
+        <div>Use <span class="highlight-text">.openLayer()</span> API to open Layer, if layer is already in "open"
+            status, the layer will keep open.
+        </div>
+
         <div class="code-snippet">
-            <pre><code class="Javascript">let activationLayer = new TSP.layers.Activation3d( {
+            <pre><code class="Javascript">let conv2dLayer = new TSP.layers.Conv2d( config );
+model.add( conv2dLayer );
 
-    activation: "softmax",
-    name: "Activation3d1",
-    initStatus: "open"
+// ... add more layers for model.
 
-} );
+model.init();
 
-model.add( activationLayer );</code></pre>
+// Call openLayer API to open layer.
+conv2dLayer.openLayer();</code></pre>
         </div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Add Activation3d directly</div>
+        <div>Use <span class="highlight-text">.closeLayer()</span> API to close Layer, if layer is already in "close"
+            status, the layer will keep close.
+        </div>
+
         <div class="code-snippet">
-            <pre><code class="Javascript">model.add(new TSP.layers.Activation3d( {
+            <pre><code class="Javascript">let conv2dLayer = new TSP.layers.Conv2d( config );
+model.add( conv2dLayer );
 
-    activation: "softmax",
-    name: "Activation3d2"
+// ... add more layers for model.
 
-} ));</code></pre>
+model.init();
+
+// Call closeLayer API to close layer.
+conv2dLayer.closeLayer();</code></pre>
         </div>
 
-        <div class="sub-title">Use Case</div>
-        <div>When you add activation layer with Keras | TensorFlow | tfjs in your model the corresponding API is
-            Activation3d in TensorSpace.
-        </div>
-        <table class="table table-striped table-bordered table-hover table-responsive">
-            <thead>
-            <tr>
-                <th scope="col">Framework</th>
-                <th scope="col">Documentation</th>
-
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row"><a href="https://keras.io/activations/" target="_blank">Keras</a>️</th>
-                <td>keras.activations.softmax(x, axis=-1)</td>
-
-            </tr>
-            <tr>
-                <th scope="row"><a href="https://www.tensorflow.org/api_docs/python/tf/nn/log_softmax" target="_blank">TensorFlow</a>
-                </th>
-                <td>tf.nn.log_softmax( logits, axis=None, name=None, dim=None )</td>
-
-            </tr>
-            <tr>
-                <th scope="row"><a href="https://js.tensorflow.org/api/0.13.0/#layers.activation" target="_blank">TensorFlow.js</a>️
-                </th>
-                <td>tf.layers.activation({activation: 'relu6'})</td>
-
-            </tr>
-            </tbody>
-        </table>
-
-        <div id="tagExplain" class="sub-title">Tag Lookup</div>
-
-        <table class="table table-striped table-bordered table-hover">
-            <thead>
-            <tr>
-                <th scope="col">Tag Icon</th>
-                <th scope="col">Meaning</th>
-                <th scope="col">Instruction</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr id="iconRequired">
-                <th scope="row">⭐️</th>
-                <td>Required</td>
-                <td>Must be provided, cannot be empty. Meanwhile constructor works properly if this arguments provided.
-                    Control arguments use default value.
-                </td>
-            </tr>
-            <tr id="iconSuggest">
-                <th scope="row">🔧</th>
-                <td>Suggest</td>
-                <td>Recommended for giving. The API can work without them.</td>
-            </tr>
-            <tr id="iconOptional">
-                <th scope="row">⚙️</th>
-                <td>Optional</td>
-                <td>As an auxiliary adjustment parameter when used, selectively added according to the specific
-                    situation
-                    The parameters here have no effect on the structure of the layer (3D visualized form).
-                </td>
-            </tr>
-            <tr id="iconModel">
-                <th scope="row">📦</th>
-                <td>Model</td>
-                <td>Configure the properties of the Layer. It changes the output shape.</td>
-            </tr>
-            <tr id="iconStyle">
-                <th scope="row">🎨</th>
-                <td>Style</td>
-                <td>Override the properties in TSP.model (<a href="modelIntro.html#modelConfig">model configuration</a>)
-                </td>
-            </tr>
-            <tr id="iconAnimation">
-                <th scope="row">🎦</th>
-                <td>Animation</td>
-                <td>Override the properties in TSP.model (<a href="modelIntro.html#modelConfig">model configuration</a>)
-                </td>
-            </tr>
-            </tbody>
-        </table>
-
-        <div class="sub-title">Source Code</div>
-        <div>
-            <a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/layer/intermediate/Activation3d.js"
-               target="_blank">tensorspace/src/layer/intermediate/Activation3d.js</a></div>
 
     </main>
 </div>

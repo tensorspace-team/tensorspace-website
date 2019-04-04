@@ -124,6 +124,7 @@
             <li><a href="basicPredict.html">Predict</a></li>
             <li><a href="basicClose.html">Close Button</a></li>
             <li><a href="basicPaging.html">Paging</a></li>
+            <li><a href="basicLayerStatus.html">Layer Status</a></li>
             <li><a href="basicMetrics.html">Layer Metrics</a></li>
             <li><a href="basicDimension.html">Layer Dimension</a></li>
             <li><a href="basicColor.html">Layer Color</a></li>
@@ -251,6 +252,7 @@
                 <li><a href="basicPredict.html">Predict</a></li>
                 <li><a href="basicClose.html">Close Button</a></li>
                 <li><a href="basicPaging.html">Paging</a></li>
+                <li><a href="basicLayerStatus.html">Layer Status</a></li>
                 <li><a href="basicMetrics.html">Layer Metrics</a></li>
                 <li><a href="basicDimension.html">Layer Dimension</a></li>
                 <li><a href="basicColor.html">Layer Color</a></li>
@@ -362,7 +364,7 @@
         </div>
         <img class="tag-img" src="../../assets/img/docs/Pooling1d.jpg">
         <div class="img-label">
-            <span class="img-label-number">Fig. 1</span> - Pooling1d layer collapse and expand
+            <span class="img-label-number">Fig. 1</span> - Pooling1d layer close and open
         </div>
         <div class="sub-title">Arguments</div>
         <table class="table table-striped table-bordered table-hover">
@@ -444,7 +446,7 @@
                 </th>
                 <td><span class="highlight-text">Dict</span></td>
                 <td>Close button appearance control dict, <a href="basicClose.html">more about close button</a></td>
-                <td><p><span class="span_bold">display</span> : Boolean. true[default] Show button, false Hide button
+                <td><p><span class="span_bold">display</span> : <span class="highlight-text">Boolean</span>. true[default] Show button, false Hide button
                 </p>
                     <p><span class="span_bold">ratio</span> : Int. Times to normal size, default is 1</p>
                     <p>For example, 2 means twice the normal size</p>
@@ -529,7 +531,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer.js#L74"
-                target="_blank">.apply( layer )</a> : void
+                target="_blank">.apply( layer )</a> : <span class="highlight-text">void</span>
         </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>This method only used in <a
                 href="modelFunctional.html">Functional Model</a> (Non-sequential, Graph structure).
@@ -564,60 +566,24 @@ poolingLayer.apply( convLayer );</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer2d.js#L412"
-                target="_blank">.openLayer()</a> : void
+                target="_blank">.openLayer()</a> : <span class="highlight-text">void</span>
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Click on the layer directly to open
-            it by interacting directly with the object in the 3D scene.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Open Layer, if layer is already in
+            "open" status, the layer will keep open.
         </div>
-        <!--<img class="tag-img" src="../../assets/img/docs/Conv2d-open.gif">-->
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>In code, calling the method to open
-            it.
-        </div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let poolingLayer = new TSP.layers.Pooling1d( {
-
-    // configure some parameters for Pooling1d.
-
-} );
-
-model.add( poolingLayer );
-
-// ... add more layers for model.
-
-model.init();
-
-// Call openLayer API to open layer.
-
-poolingLayer.openLayer();</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> See <a
+                href="basicLayerStatus.html">Layer Status</a> for more details.
         </div>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer2d.js#L432"
-                target="_blank">.closeLayer()</a> : void
+                target="_blank">.closeLayer()</a> : <span class="highlight-text">void</span>
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>To close by interacting directly
-            with objects in a 3D scene by clicking the close button.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Close Layer, if layer is already in
+            "close" status, the layer will keep close.
         </div>
-        <!--<img class="tag-img" src="../../assets/img/docs/Conv2d-close.gif">-->
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> In code, calling the method to
-            close it.
-        </div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let poolingLayer = new TSP.layers.Pooling1d( {
-
-    // configure some parameters for Pooling1d.
-
-} );
-
-model.add( poolingLayer );
-
-// ... add more layers for model.
-
-model.init();
-
-// If this layer already opened, call closeLayer API to close layer.
-
-poolingLayer.closeLayer();</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> See <a
+                href="basicLayerStatus.html">Layer Status</a> for more details.
         </div>
 
         <div class="sub-title">Example</div>

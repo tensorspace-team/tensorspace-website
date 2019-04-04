@@ -124,6 +124,7 @@
             <li><a href="basicPredict.html">Predict</a></li>
             <li><a href="basicClose.html">Close Button</a></li>
             <li><a href="basicPaging.html">Paging</a></li>
+            <li><a href="basicLayerStatus.html">Layer Status</a></li>
             <li><a href="basicMetrics.html">Layer Metrics</a></li>
             <li><a href="basicDimension.html">Layer Dimension</a></li>
             <li><a href="basicColor.html">Layer Color</a></li>
@@ -251,6 +252,7 @@
                 <li><a href="basicPredict.html">Predict</a></li>
                 <li><a href="basicClose.html">Close Button</a></li>
                 <li><a href="basicPaging.html">Paging</a></li>
+                <li><a href="basicLayerStatus.html">Layer Status</a></li>
                 <li><a href="basicMetrics.html">Layer Metrics</a></li>
                 <li><a href="basicDimension.html">Layer Dimension</a></li>
                 <li><a href="basicColor.html">Layer Color</a></li>
@@ -372,7 +374,7 @@
 
         <img class="tag-img" src="../../assets/img/docs/Multiply.jpg">
         <div class="img-label">
-            <span class="img-label-number">Fig. 1</span> - Multiply layer collapse and expand
+            <span class="img-label-number">Fig. 1</span> - Multiply layer close and open
         </div>
 
         <div class="sub-title">Configuration</div>
@@ -416,7 +418,7 @@
                 </th>
                 <td><span class="highlight-text">Dict</span></td>
                 <td>Close button appearance control dict, <a href="basicClose.html">more about close button</a></td>
-                <td><p><span class="span_bold">display</span> : Boolean. true[default] Show button, false Hide button
+                <td><p><span class="span_bold">display</span> : <span class="highlight-text">Boolean</span>. true[default] Show button, false Hide button
                 </p>
                     <p><span class="span_bold">ratio</span> : Int. Times to normal size, default is 1</p>
                     <p>For example, 2 means twice the normal size</p>
@@ -492,105 +494,24 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer3d.js#L459"
-                target="_blank">.openLayer()</a> : void
+                target="_blank">.openLayer()</a> : <span class="highlight-text">void</span>
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Click on the layer directly to open
-            it by interacting directly with the object in the 3D scene.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Open Layer, if layer is already in
+            "open" status, the layer will keep open.
         </div>
-        <!--<img class="tag-img" src="../../assets/img/docs/Conv2d-open.gif">-->
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>In code, calling the method to open
-            it.
-        </div>
-
-        <div class="code-snippet">
-            <pre><code class="Javascript">let conv2d1 = new TSP.layers.Conv2d( {
-
-    // configure some parameters for Conv2d1.
-
-} );
-
-model.add( conv2d1 );
-
-let conv2d2 = new TSP.layers.Conv2d( {
-
-    /*
-     *  configure some parameters for Conv2d2.
-     *  Note the shape of Conv2d2 should be the same as Conv2d1.
-     */
-
-} );
-
-model.add( conv2d2 );
-
-// perform merge
-
-let mergedLayer = TSP.layers.Multiply( [ conv2d1, conv2d2 ], {
-
-        /* Configurations */
-
-    }
-
-);
-
-// add merged layer
-
-model.add( mergedLayer );
-model.init();
-
-// call .openLayer() to expand the layer
-
-mergedLayer.openLayer();</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> See <a
+                href="basicLayerStatus.html">Layer Status</a> for more details.
         </div>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer3d.js#L475"
-                target="_blank">.closeLayer()</a> : void
+                target="_blank">.closeLayer()</a> : <span class="highlight-text">void</span>
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>To close by interacting directly
-            with objects in a 3D scene by clicking the close button.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Close Layer, if layer is already in
+            "close" status, the layer will keep close.
         </div>
-        <!--<img class="tag-img" src="../../assets/img/docs/Conv2d-close.gif">-->
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> In code, calling the method to
-            close it.
-        </div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let conv2d1 = new TSP.layers.Conv2d( {
-
-    // configure some parameters for Conv2d1.
-
-} );
-
-model.add( conv2d1 );
-
-let conv2d2 = new TSP.layers.Conv2d( {
-
-    /*
-     *  configure some parameters for Conv2d2.
-     *  Note the shape of Conv2d2 should be the same as Conv2d1.
-     */
-
-} );
-
-model.add( conv2d2 );
-
-// perform merge
-
-let mergedLayer = TSP.layers.Multiply( [ conv2d1, conv2d2 ], {
-
-        /* Configurations */
-
-    }
-
-);
-
-// add merged layer
-
-model.add( mergedLayer );
-model.init();
-
-// if layer is expanded, then call .closeLayer() to collapse the layer.
-
-mergedLayer.closeLayer();</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> See <a
+                href="basicLayerStatus.html">Layer Status</a> for more details.
         </div>
 
         <div class="sub-title">Example</div>

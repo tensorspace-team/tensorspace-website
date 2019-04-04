@@ -124,6 +124,7 @@
             <li><a href="basicPredict_zh.html">预测</a></li>
             <li><a href="basicClose_zh.html">网络层关闭按钮</a></li>
             <li><a href="basicPaging_zh.html">网络层分页</a></li>
+            <li><a href="basicLayerStatus_zh.html">网络层状态</a></li>
             <li><a href="basicMetrics_zh.html">网络层系数</a></li>
             <li><a href="basicDimension_zh.html">网络层维度</a></li>
             <li><a href="basicColor_zh.html">网络层颜色</a></li>
@@ -251,6 +252,7 @@
                 <li><a href="basicPredict_zh.html">预测</a></li>
                 <li><a href="basicClose_zh.html">网络层关闭按钮</a></li>
                 <li><a href="basicPaging_zh.html">网络层分页</a></li>
+                <li><a href="basicLayerStatus_zh.html">网络层状态</a></li>
                 <li><a href="basicMetrics_zh.html">网络层系数</a></li>
                 <li><a href="basicDimension_zh.html">网络层维度</a></li>
                 <li><a href="basicColor_zh.html">网络层颜色</a></li>
@@ -407,7 +409,7 @@
                 </th>
                 <td><span class="highlight-text">Dict</span></td>
                 <td>层关闭按钮外观控制列表， <a href="basicClose.html">查看详情</a></td>
-                <td><p><span class="span_bold">display</span> : Boolean. true [default] 显示按钮, false 隐藏按钮</p>
+                <td><p><span class="span_bold">display</span> : <span class="highlight-text">Boolean</span>. true [default] 显示按钮, false 隐藏按钮</p>
                     <p><span class="span_bold">ratio</span> : Int 为正常大小的几倍，默认为1倍</p>
                     <p>例如，设为2为正常大小的2倍大</p></td>
             </tr>
@@ -481,7 +483,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer.js#L74"
-                target="_blank">.apply( layer )</a> : void
+                target="_blank">.apply( layer )</a> : <span class="highlight-text">void</span>
         </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>此方法只在 <a
                 href="modelFunctional_zh.html">Functional Model</a> 中使用（非序列型，图结构）。
@@ -513,52 +515,24 @@ upSamplingLayer.apply( convLayer );</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer2d.js#L412"
-                target="_blank">.openLayer()</a> : void
+                target="_blank">.openLayer()</a> : <span class="highlight-text">void</span>
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>通过直接和3d场景中物体交互直接点击层打开。</div>
-        <!--<img class="tag-img" src="../../assets/img/docs/Conv2d-open.gif">-->
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>代码中通过调用方法打开。</div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let upSamplingLayer = new TSP.layers.UpSampling1d( {
-
-    // 配置UpSampling1d。
-
-} );
-
-model.add( upSamplingLayer );
-
-// ... 给模型添加更多的layer。
-
-model.init();
-
-// 调用openLayer API来打开layer。
-
-upSamplingLayer.openLayer();</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>展开 Layer，如果 Layer 已经处于 “open”
+            状态，Layer 将会保持 “open” 状态。
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>详情参见 <a
+                href="basicLayerStatus_zh.html">网络层状态</a>。
         </div>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer2d.js#L432"
-                target="_blank">.closeLayer()</a> : void
+                target="_blank">.closeLayer()</a> : <span class="highlight-text">void</span>
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>通过直接和3d场景中物体交互点击按钮关闭。</div>
-        <!--<img class="tag-img" src="../../assets/img/docs/Conv2d-close.gif">-->
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>代码中通过调用方法打开。</div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let upSamplingLayer = new TSP.layers.UpSampling1d( {
-
-    // 配置UpSampling1d。
-
-} );
-
-model.add( upSamplingLayer );
-
-// ... 给模型添加更多的layer。
-
-model.init();
-
-// 如果layer已经是打开状态，调用closeLayer API来关闭layer。
-
-upSamplingLayer.closeLayer();</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>闭合 Layer，如果 Layer 已经处于 “close”
+            状态，Layer 将会保持 “close” 状态。
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>详情参见 <a
+                href="basicLayerStatus_zh.html">网络层状态</a>。
         </div>
 
         <div class="sub-title">使用样例</div>
