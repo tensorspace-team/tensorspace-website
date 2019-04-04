@@ -1,6 +1,6 @@
-/*.panel-heading {*/
-    /*padding: 0 15px;*/
-/*}*/
+.panel-heading {
+    padding: 5px 15px!important;
+}
 
 .panel-heading > i {
 
@@ -67,6 +67,7 @@ aside {
 
 aside > div {
     width: 100%;
+    position: relative;
 }
 
 aside > div > div {
@@ -225,7 +226,6 @@ main > div > ul > li {
     width: auto;
     padding-left: 20px;
     min-height: 30px;
-    line-height: 30px;
     box-sizing: border-box;
 }
 
@@ -257,6 +257,11 @@ main > div > ul > li > div {
     color: #4d4d4d;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.doc-logo {
+    width: 150px;
+    margin-left: calc(50% - 75px);
 }
 
 table {
@@ -338,6 +343,13 @@ td, th {
 
 }
 
+.new-tag {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 35px;
+}
+
 .code {
     background-color: #f6f6f6;
     color: #0071bc;
@@ -346,6 +358,19 @@ td, th {
     width: 90%;
     border-radius: 10px;
     padding: 10px 30px 10px 30px;
+}
+
+.bash-demo {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 20px;
+}
+
+.explanation-title {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    line-height: 25px;
 }
 
 .sub-title {
@@ -384,6 +409,12 @@ td, th {
 
 .codepen-wrapper {
     width: 100%;
+}
+
+.model-type-title {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 footer {
@@ -456,8 +487,8 @@ footer {
 }
 
 #hideNav > div {
-
     width: 100%;
+    position: relative;
 }
 
 #hideNav > div.initLabel > ul {
@@ -696,6 +727,19 @@ footer {
         width: 250px;
     }
 
+    aside > div > div {
+        padding-left: 12px;
+    }
+
+    aside > div > ul > li {
+        padding-left: 25px;
+    }
+
+    .new-tag {
+        width: 22px;
+        height: 22px;
+    }
+
 }
 
 @media (max-width: 700px) {
@@ -720,6 +764,10 @@ footer {
 
         font-size: 18px;
 
+    }
+
+    .model-type-title {
+        font-size: 16px;
     }
 
     .property-title {
@@ -766,6 +814,15 @@ footer {
 
     .codepen-wrapper {
         display: none;
+    }
+
+    .logo-img {
+        width: 100%;
+    }
+
+    .bash-demo {
+        width: 100%;
+        margin-left: 0;
     }
 }
 
