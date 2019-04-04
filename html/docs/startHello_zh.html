@@ -354,16 +354,15 @@ let model = new TSP.models.Sequential( container );</code></pre>
             然后，基于 LeNet 网络的结构：输入层 + 2 X (Conv2D层 & Maxpooling层) + 3 X (Dense层)，我们可以搭建其模型结构：
         </div>
         <div class="code-snippet">
-            <pre><code class="Javascript">model.add( new TSP.layers.GreyscaleInput({ shape: [28, 28, 1] }) );
-model.add( new TSP.layers.Padding2d({ padding: [2, 2] }) );
-model.add( new TSP.layers.Conv2d({ kernelSize: 5, filters: 6, strides: 1 }) );
-model.add( new TSP.layers.Pooling2d({ poolSize: [2, 2], strides: [2, 2] }) );
-model.add( new TSP.layers.Conv2d({ kernelSize: 5, filters: 16, strides: 1 }) );
-model.add( new TSP.layers.Pooling2d({ poolSize: [2, 2], strides: [2, 2] }) );
-model.add( new TSP.layers.Dense({ units: 120 }) );
-model.add( new TSP.layers.Dense({ units: 84 }) );
+            <pre><code class="Javascript">model.add( new TSP.layers.GreyscaleInput() );
+model.add( new TSP.layers.Padding2d() );
+model.add( new TSP.layers.Conv2d() );
+model.add( new TSP.layers.Pooling2d() );
+model.add( new TSP.layers.Conv2d() );
+model.add( new TSP.layers.Pooling2d() );
+model.add( new TSP.layers.Dense() );
+model.add( new TSP.layers.Dense() );
 model.add( new TSP.layers.Output1d({
-    units: 10,
     outputs: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 }) );</code></pre>
         </div>
@@ -375,12 +374,11 @@ model.add( new TSP.layers.Output1d({
         <div class="code-snippet">
             <pre><code class="Javascript">model.load({
     type: "tfjs",
-    url: './lenetModel/mnist.json',
-    onComplete: function() {
-        console.log( "\"Hello World!\" from TensorSpace Loader." );
-    }
+    url: './lenetModel/mnist.json'
 });
-model.init();</code></pre>
+model.init(function() {
+    console.log("Hello World from TensorSpace"!);
+});</code></pre>
         </div>
 
         <div>我们可以在浏览器中看到以下模型：</div>
