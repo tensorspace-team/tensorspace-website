@@ -45,13 +45,14 @@
         </div>
 
         <ul class="hidden-xs">
-             <li class="now"><a href="startIntro.html">Documentation</a></li>
+            <li class="now"><a href="startIntro.html">Documentation</a></li>
             <li><a href="../playground/index.html">Playground</a></li>
             <!--<li><a href="../gallery.html">Gallery</a></li>-->
             <li><a href="../../index.html#download">Download</a></li>
             <!--<li><a href="../developer.html">Developer</a></li>-->
 
-            <a href="https://github.com/tensorspace-team/tensorspace" class="github-corner" aria-label="View source on Github">
+            <a href="https://github.com/tensorspace-team/tensorspace" class="github-corner"
+               aria-label="View source on Github">
                 <svg viewBox="0 0 250 250" aria-hidden="true">
                     <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
                     <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6
@@ -132,6 +133,7 @@
             <li><a href="basicPredict.html">Predict</a></li>
             <li><a href="basicClose.html">Close Button</a></li>
             <li><a href="basicPaging.html">Paging</a></li>
+            <li><a href="basicLayerStatus.html">Layer Status</a></li>
             <li><a href="basicMetrics.html">Layer Metrics</a></li>
             <li><a href="basicDimension.html">Layer Dimension</a></li>
             <li><a href="basicColor.html">Layer Color</a></li>
@@ -259,6 +261,7 @@
                 <li><a href="basicPredict.html">Predict</a></li>
                 <li><a href="basicClose.html">Close Button</a></li>
                 <li><a href="basicPaging.html">Paging</a></li>
+                <li><a href="basicLayerStatus.html">Layer Status</a></li>
                 <li><a href="basicMetrics.html">Layer Metrics</a></li>
                 <li><a href="basicDimension.html">Layer Dimension</a></li>
                 <li><a href="basicColor.html">Layer Color</a></li>
@@ -356,16 +359,28 @@
     <main>
 
         <img class="logo-img" src="../../assets/img/docs/Logos/logo_keras.png">
-        <div class="explanation-title"><span class="span_bold">Visualize pre-trained Keras model using TensorSpace and TensorSpace-Converter</span></div>
+        <div class="explanation-title"><span class="span_bold">Visualize pre-trained Keras model using TensorSpace and TensorSpace-Converter</span>
+        </div>
         <div class="sub-title">Introduction</div>
-        <div>In the following chapter, we will introduce the usage and workflow of visualizing Keras model using TensorSpace and TensorSpace-Converter. In this tutorial, we will convert Keras models with TensorSpace-Converter and visualize the converted models with TensorSpace.</div>
-        <div>This example uses LeNet trained with MNIST dataset. If you do not have any existed model in hands, you can use this <a href="https://github.com/tensorspace-team/tensorspace-converter/blob/master/examples/keras/train/mnist.py">script</a> to train a LeNet TensorFlow.js model. We also provide <a href="https://github.com/tensorspace-team/tensorspace-converter/tree/master/examples/keras/rawModel">pre-trained Keras LeNet models</a> for this example.</div>
+        <div>In the following chapter, we will introduce the usage and workflow of visualizing Keras model using
+            TensorSpace and TensorSpace-Converter. In this tutorial, we will convert Keras models with
+            TensorSpace-Converter and visualize the converted models with TensorSpace.
+        </div>
+        <div>This example uses LeNet trained with MNIST dataset. If you do not have any existed model in hands, you can
+            use this <a
+                    href="https://github.com/tensorspace-team/tensorspace-converter/blob/master/examples/keras/train/mnist.py">script</a>
+            to train a LeNet TensorFlow.js model. We also provide <a
+                    href="https://github.com/tensorspace-team/tensorspace-converter/tree/master/examples/keras/rawModel">pre-trained
+                Keras LeNet models</a> for this example.
+        </div>
 
         <div class="sub-title">Sample Files</div>
         <div>The sample files that are used in this tutorial are listed below:</div>
         <div class="panel-heading">
             <i class="material-icons material-icons--outline">filter_center_focus</i>
-            pre-trained <a href="https://github.com/tensorspace-team/tensorspace-converter/tree/master/examples/keras/rawModel">Keras models</a>
+            pre-trained <a
+                href="https://github.com/tensorspace-team/tensorspace-converter/tree/master/examples/keras/rawModel">Keras
+            models</a>
         </div>
         <div class="panel-heading">
             <i class="material-icons material-icons--outline">filter_center_focus</i>
@@ -386,7 +401,9 @@
 
         <div class="model-type-title"><span class="span_bold">Combined .h5</span></div>
 
-        <div>For a Keras model, topology and weights may be saved in a single HDF5 file, i.e. <span class="highlight-text">xxx.h5</span>. Use the following convert script:</div>
+        <div>For a Keras model, topology and weights may be saved in a single HDF5 file, i.e. <span
+                class="highlight-text">xxx.h5</span>. Use the following convert script:
+        </div>
 
         <div class="code-snippet">
             <pre><code class="Bash">$ tensorspacejs_converter \
@@ -402,26 +419,35 @@
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Set <span class="highlight-text">input_model_from</span> to be <span class="highlight-text">keras</span>.
+                    Set <span class="highlight-text">input_model_from</span> to be <span
+                            class="highlight-text">keras</span>.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     Set <span class="highlight-text">input_model_format</span> to be <span class="highlight-text">topology_weights_combined</span>.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Set <span class="highlight-text">.h5</span> file's path to positional argument <span class="highlight-text">input_path</span>.
+                    Set <span class="highlight-text">.h5</span> file's path to positional argument <span
+                            class="highlight-text">input_path</span>.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Get out the <span class="highlight-text">Keras layer names</span> of model, and set to <span class="highlight-text">output_layer_names</span> like <span class="highlight-text">Fig. 1</span>.
+                    Get out the <span class="highlight-text">Keras layer names</span> of model, and set to <span
+                            class="highlight-text">output_layer_names</span> like <span
+                            class="highlight-text">Fig. 1</span>.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    TensorSpace-Converter will generate preprocessed model into <span class="highlight-text">convertedModel</span> folder, for tutorial propose, we have already generated a model which can be found in this <a href="https://github.com/tensorspace-team/tensorspace-converter/tree/master/examples/keras/convertedModel">folder</a>.
+                    TensorSpace-Converter will generate preprocessed model into <span class="highlight-text">convertedModel</span>
+                    folder, for tutorial propose, we have already generated a model which can be found in this <a
+                            href="https://github.com/tensorspace-team/tensorspace-converter/tree/master/examples/keras/convertedModel">folder</a>.
                 </li>
             </ul>
         </div>
 
         <div class="model-type-title"><span class="span_bold">Separated .json & .h5</span></div>
 
-        <div>For a Keras model, topology and weights may be saved in separated files, i.e. a topology file <span class="highlight-text">xxx.json</span> and a weights file <span class="highlight-text">eee.h5</span>. Use the following convert script:</div>
+        <div>For a Keras model, topology and weights may be saved in separated files, i.e. a topology file <span
+                class="highlight-text">xxx.json</span> and a weights file <span class="highlight-text">eee.h5</span>.
+            Use the following convert script:
+        </div>
 
         <div class="code-snippet">
             <pre><code class="Bash">$ tensorspacejs_converter \
@@ -437,19 +463,26 @@
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Set <span class="highlight-text">input_model_from</span> to be <span class="highlight-text">keras</span>.
+                    Set <span class="highlight-text">input_model_from</span> to be <span
+                            class="highlight-text">keras</span>.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     Set <span class="highlight-text">input_model_format</span> to be <span class="highlight-text">topology_weights_separated</span>.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    In this case, the model have two input files, merge two file's paths and separate them with comma (<span class="highlight-text">.json</span> first, <span class="highlight-text">.h5</span> last), and then set the combined path to positional argument <span class="highlight-text">input_path</span>.
+                    In this case, the model have two input files, merge two file's paths and separate them with comma
+                    (<span class="highlight-text">.json</span> first, <span class="highlight-text">.h5</span> last), and
+                    then set the combined path to positional argument <span class="highlight-text">input_path</span>.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    Get out the <span class="highlight-text">Keras layer names</span> of model, and set to <span class="highlight-text">output_layer_names</span> like <span class="highlight-text">Fig. 1</span>.
+                    Get out the <span class="highlight-text">Keras layer names</span> of model, and set to <span
+                            class="highlight-text">output_layer_names</span> like <span
+                            class="highlight-text">Fig. 1</span>.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    TensorSpace-Converter will generate preprocessed model into <span class="highlight-text">convertedModel</span> folder, for tutorial propose, we have already generated a model which can be found in this <a href="https://github.com/tensorspace-team/tensorspace-converter/tree/master/examples/keras/convertedModel">folder</a>.
+                    TensorSpace-Converter will generate preprocessed model into <span class="highlight-text">convertedModel</span>
+                    folder, for tutorial propose, we have already generated a model which can be found in this <a
+                            href="https://github.com/tensorspace-team/tensorspace-converter/tree/master/examples/keras/convertedModel">folder</a>.
                 </li>
             </ul>
         </div>
@@ -474,10 +507,12 @@
                     There are two types of files created:
                     <ul class="list-indent">
                         <li class="panel-heading"><i class="material-icons">flare</i>
-                            One <span class="highlight-text">model.json</span> file, describe the structure of our model (defined multiple outputs).
+                            One <span class="highlight-text">model.json</span> file, describe the structure of our model
+                            (defined multiple outputs).
                         </li>
                         <li class="panel-heading"><i class="material-icons">flare</i>
-                            Some weight files which contains trained weights. The number of weight files is dependent on the size and structure of the given model.
+                            Some weight files which contains trained weights. The number of weight files is dependent on
+                            the size and structure of the given model.
                         </li>
                     </ul>
                 </li>
@@ -503,7 +538,9 @@ model.add( new TSP.layers.Output1d( {
 } ) );</code></pre>
         </div>
 
-        <div>Load the model generated by TensorSpace-Converter and then initialize the TensorSpace visualization model:</div>
+        <div>Load the model generated by TensorSpace-Converter and then initialize the TensorSpace visualization
+            model:
+        </div>
 
         <div class="code-snippet">
             <pre><code class="javascript">model.load( {
@@ -516,7 +553,10 @@ model.init();</code></pre>
 
         <div class="sub-title">Result</div>
 
-        <div>If everything goes well, open the <a href="https://github.com/tensorspace-team/tensorspace-converter/blob/master/examples/keras/index.html">index.html</a> file in browser, the model will display in the browser:</div>
+        <div>If everything goes well, open the <a
+                href="https://github.com/tensorspace-team/tensorspace-converter/blob/master/examples/keras/index.html">index.html</a>
+            file in browser, the model will display in the browser:
+        </div>
 
         <img class="tag-img" src="../../assets/img/docs/Keras/data5.jpg">
 
@@ -528,7 +568,8 @@ model.init();</code></pre>
 
 </div>
 
-<button id="topButton" title="Go to top" class="ripple"><i class="material-icons material-icons--outline">keyboard_arrow_up</i></button>
+<button id="topButton" title="Go to top" class="ripple"><i class="material-icons material-icons--outline">keyboard_arrow_up</i>
+</button>
 </body>
 
 </html>

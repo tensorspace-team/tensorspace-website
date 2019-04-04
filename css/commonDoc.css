@@ -281,10 +281,12 @@ td, th {
 .highlight-text {
     font-family: "Consolas", serif !important;
     font-size: 15px;
-    color: #E03C8A;
-    background-color: #f5f5f5;
+    color: #C24749;
+    background-color: #FCF4F4;
     border-radius: 3px;
-    padding: 0.5px;
+    padding: 1px 8px;
+    box-sizing: border-box;
+    display: inline-block;
 }
 
 .logo-img {
