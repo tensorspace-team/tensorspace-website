@@ -43,13 +43,14 @@
         </div>
 
         <ul class="hidden-xs">
-             <li class="now"><a href="startIntro.html">Documentation</a></li>
+            <li class="now"><a href="startIntro.html">Documentation</a></li>
             <li><a href="../playground/index.html">Playground</a></li>
             <!--<li><a href="../gallery.html">Gallery</a></li>-->
             <li><a href="../../index.html#download">Download</a></li>
             <!--<li><a href="../developer.html">Developer</a></li>-->
 
-            <a href="https://github.com/tensorspace-team/tensorspace" class="github-corner" aria-label="View source on Github">
+            <a href="https://github.com/tensorspace-team/tensorspace" class="github-corner"
+               aria-label="View source on Github">
                 <svg viewBox="0 0 250 250" aria-hidden="true">
                     <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
                     <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
@@ -130,6 +131,20 @@
         </ul>
     </div>
     <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
+        <div id="converterLabelS">
+            TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="converterS">
+            <li><a href="../../converter/index.html">Introduction</a></li>
+            <li><a href="../../converter/install.html">Installation</a></li>
+            <li><a href="../../converter/docker.html">Running with Docker</a></li>
+            <li><a href="../../converter/api.html">Converter API</a></li>
+            <li><a href="../../converter/usage.html">Usage Examples</a></li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
         <div id="preprocessingLabelS">
             Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
         </div>
@@ -137,7 +152,6 @@
             <li><a href="preIntro.html">Introduction</a></li>
             <li><a href="preTf.html">TensorFlow</a></li>
             <li><a href="preKeras.html">Keras</a></li>
-            <li><a href="preTfKeras.html">tf.keras</a></li>
             <li><a href="preTfjs.html">TensorFlow.js</a></li>
         </ul>
     </div>
@@ -244,6 +258,20 @@
             </ul>
         </div>
         <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
+            <div id="converterLabel">
+                TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="converter">
+                <li><a href="../../converter/index.html">Introduction</a></li>
+                <li><a href="../../converter/install.html">Installation</a></li>
+                <li><a href="../../converter/docker.html">Running with Docker</a></li>
+                <li><a href="../../converter/api.html">Converter API</a></li>
+                <li><a href="../../converter/usage.html">Usage Examples</a></li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
             <div id="preprocessingLabel">
                 Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
             </div>
@@ -251,7 +279,6 @@
                 <li><a href="preIntro.html">Introduction</a></li>
                 <li><a href="preTf.html">TensorFlow</a></li>
                 <li><a href="preKeras.html">Keras</a></li>
-                <li><a href="preTfKeras.html">tf.keras</a></li>
                 <li><a href="preTfjs.html">TensorFlow.js</a></li>
             </ul>
         </div>
@@ -333,7 +360,8 @@
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
-                <th scope="col"><p>Name</p><p>Tag</p></th>
+                <th scope="col"><p>Name</p>
+                    <p>Tag</p></th>
                 <th scope="col"><p>Type</p></th>
                 <th scope="col"><p>Instruction</p></th>
                 <th scope="col"><p>Usage Notes and Examples</p></th>
@@ -347,7 +375,9 @@
                 </th>
                 <td><span class="highlight-text">Int[]</span></td>
                 <td>shape of output</td>
-                <td>dataFormat is channel last. For example, <span class="span_bold">shape = [ 224, 224, 3 ]</span> represents 3 feature maps and each one is 224 by 224.</td>
+                <td>dataFormat is channel last. For example, <span class="span_bold">shape = [ 224, 224, 3 ]</span>
+                    represents 3 feature maps and each one is 224 by 224.
+                </td>
             </tr>
             <tr>
                 <th scope="row">
@@ -355,7 +385,9 @@
                     <p><a href="#iconSuggest">🔧</a></p>
                 </th>
                 <td><span class="highlight-text">String</span></td>
-                <td>Name of this layer. <span class="span_bold">Highly recommend</span> to arrange to make code more readable.</td>
+                <td>Name of this layer. <span class="span_bold">Highly recommend</span> to arrange to make code more
+                    readable.
+                </td>
                 <td>name: "layerName"</td>
             </tr>
             <tr>
@@ -374,7 +406,8 @@
                 </th>
                 <td><span class="highlight-text">Dict</span></td>
                 <td>Close button appearance control dict, <a href="basicClose.html">more about close button</a></td>
-                <td><p><span class="span_bold">display</span> : Boolean. true[default] Show button, false Hide button</p>
+                <td><p><span class="span_bold">display</span> : Boolean. true[default] Show button, false Hide button
+                </p>
                     <p><span class="span_bold">ratio</span> : Int. Times to normal size, default is 1</p>
                     <p>For example, 2 means twice the normal size</p>
                 </td>
@@ -385,7 +418,8 @@
                     <p><a href="#iconOptional">⚙️</a><a href="#iconAnimation">️🎦</a></p>
                 </th>
                 <td><span class="highlight-text">String</span></td>
-                <td>Layer status at beginning. <span class="span_bold">Open</span> or <span class="span_bold">Close</span></td>
+                <td>Layer status at beginning. <span class="span_bold">Open</span> or <span
+                        class="span_bold">Close</span></td>
                 <td>close[default] : Closed at beginning</td>
             </tr>
             <tr>
@@ -395,39 +429,69 @@
                 </th>
                 <td><span class="highlight-text">Int</span></td>
                 <td>The speed of open and close animation</td>
-                <td>For example, 2000 means 2 seconds. Note: Configure animeTime in a specific layer will override model's animeTime configuration.</td>
+                <td>For example, 2000 means 2 seconds. Note: Configure animeTime in a specific layer will override
+                    model's animeTime configuration.
+                </td>
             </tr>
             </tbody>
         </table>
 
         <div class="sub-title">Properties</div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/10a1738e02dddcd1dc2c919611709dbab27c1c54/src/layer/abstract/Layer.js#L69" target="_blank">.outputShape</a> : <span class="highlight-text">Int[]</span></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The shape of output tensor is 3-dimensional. <a href="basicDimension.html">3️⃣</a></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The shape of output tensor is 3-dimensional. For example outputShape = [ 224, 224, 3 ] represents 3 feature maps and each one is 224 by 224.</div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After model.init() data is available, otherwise is undefined.</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/10a1738e02dddcd1dc2c919611709dbab27c1c54/src/layer/abstract/Layer.js#L69"
+                target="_blank">.outputShape</a> : <span class="highlight-text">Int[]</span></div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The shape of output tensor is
+            3-dimensional. <a href="basicDimension.html">3️⃣</a></div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The shape of output tensor is
+            3-dimensional. For example outputShape = [ 224, 224, 3 ] represents 3 feature maps and each one is 224 by
+            224.
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After model.init() data is
+            available, otherwise is undefined.
+        </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/10a1738e02dddcd1dc2c919611709dbab27c1c54/src/layer/abstract/Layer.js#L52" target="_blank">.neuralValue</a> : <span class="highlight-text">Float[]</span></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The intermediate raw data after this layer.</div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After load and model.predict() data is available, otherwise is undefined.</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/10a1738e02dddcd1dc2c919611709dbab27c1c54/src/layer/abstract/Layer.js#L52"
+                target="_blank">.neuralValue</a> : <span class="highlight-text">Float[]</span></div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The intermediate raw data after this
+            layer.
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After load and model.predict() data
+            is available, otherwise is undefined.
+        </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/Layer.js#L242" target="_blank">.name</a> : <span class="highlight-text">String</span></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The custom name for this layer.</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/Layer.js#L242"
+                target="_blank">.name</a> : <span class="highlight-text">String</span></div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The custom name for this layer.
+        </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Once created, you can get it.</div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/b51397827a38243c33ad38f993a56c6412c54c0e/src/layer/abstract/Layer.js#L251" target="_blank">.layerType</a> : <span class="highlight-text">String</span></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Type of this layer, return a constant: string <span class="span_bold">RGBInput</span>.</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/b51397827a38243c33ad38f993a56c6412c54c0e/src/layer/abstract/Layer.js#L251"
+                target="_blank">.layerType</a> : <span class="highlight-text">String</span></div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Type of this layer, return a
+            constant: string <span class="span_bold">RGBInput</span>.
+        </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Once created, you can get it.</div>
 
         <div class="sub-title">Method</div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer3d.js#L459" target="_blank">.openLayer()</a> : void</div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Click on the layer directly to open it by interacting directly with the object in the 3D scene.</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer3d.js#L459"
+                target="_blank">.openLayer()</a> : void
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Click on the layer directly to open
+            it by interacting directly with the object in the 3D scene.
+        </div>
         <img class="tag-img" src="../../assets/img/docs/RGBInput_open.gif">
         <div class="img-label">
             <span class="img-label-number">Fig. 2</span> - Click to open RGBInput layer
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>In code, calling the method to open it.</div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>In code, calling the method to open
+            it.
+        </div>
         <div class="code-snippet">
             <pre><code class="Javascript">let inputLayer = new TSP.layers.RGBInput( {
 
@@ -446,13 +510,20 @@ model.init();
 inputLayer.openLayer();</code></pre>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer3d.js#L475" target="_blank">.closeLayer()</a> : void</div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>To close by interacting directly with objects in a 3D scene by clicking the close button.</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer3d.js#L475"
+                target="_blank">.closeLayer()</a> : void
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>To close by interacting directly
+            with objects in a 3D scene by clicking the close button.
+        </div>
         <img class="tag-img" src="../../assets/img/docs/RGBInput_close.gif">
         <div class="img-label">
             <span class="img-label-number">Fig. 3</span> - Click to close RGBInput layer
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> In code, calling the method to close it.</div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> In code, calling the method to
+            close it.
+        </div>
         <div class="code-snippet">
             <pre><code class="Javascript">let inputLayer = new TSP.layers.RGBInput( {
 
@@ -473,7 +544,9 @@ inputLayer.closeLayer();</code></pre>
 
         <div class="sub-title">Example</div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Declare an instance of RGBInput to facilitate reuse</div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Declare an instance of RGBInput to
+            facilitate reuse
+        </div>
         <div class="code-snippet">
             <pre><code class="Javascript">let inputLayer = new TSP.layers.RGBInput( {
 
@@ -510,7 +583,8 @@ model.add( inputLayer );</code></pre>
                 <th scope="row">⭐️</th>
                 <td>Required</td>
                 <td>Must be provided, cannot be empty. Meanwhile constructor works properly if this arguments provided.
-                    Control arguments use default value.</td>
+                    Control arguments use default value.
+                </td>
             </tr>
             <tr id="iconSuggest">
                 <th scope="row">🔧</th>
@@ -520,8 +594,10 @@ model.add( inputLayer );</code></pre>
             <tr id="iconOptional">
                 <th scope="row">⚙️</th>
                 <td>Optional</td>
-                <td>As an auxiliary adjustment parameter when used, selectively added according to the specific situation
-                    The parameters here have no effect on the structure of the layer (3D visualized form).</td>
+                <td>As an auxiliary adjustment parameter when used, selectively added according to the specific
+                    situation
+                    The parameters here have no effect on the structure of the layer (3D visualized form).
+                </td>
             </tr>
             <tr id="iconModel">
                 <th scope="row">📦</th>
@@ -531,24 +607,28 @@ model.add( inputLayer );</code></pre>
             <tr id="iconStyle">
                 <th scope="row">🎨</th>
                 <td>Style</td>
-                <td>Override the properties in TSP.model (<a href="modelIntro.html#modelConfig">model configuration</a>)</td>
+                <td>Override the properties in TSP.model (<a href="modelIntro.html#modelConfig">model configuration</a>)
+                </td>
             </tr>
             <tr id="iconAnimation">
                 <th scope="row">🎦</th>
                 <td>Animation</td>
-                <td>Override the properties in TSP.model (<a href="modelIntro.html#modelConfig">model configuration</a>)</td>
+                <td>Override the properties in TSP.model (<a href="modelIntro.html#modelConfig">model configuration</a>)
+                </td>
             </tr>
             </tbody>
         </table>
 
         <div class="sub-title">Source Code</div>
-        <div><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/layer/input/RGBInput.js" target="_blank">tensorspace/src/layer/input/RGBInput.js</a></div>
+        <div><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/layer/input/RGBInput.js"
+                target="_blank">tensorspace/src/layer/input/RGBInput.js</a></div>
 
 
     </main>
 </div>
 
-<button id="topButton" title="Go to top" class="ripple"><i class="material-icons material-icons--outline">keyboard_arrow_up</i></button>
+<button id="topButton" title="Go to top" class="ripple"><i class="material-icons material-icons--outline">keyboard_arrow_up</i>
+</button>
 
 </body>
 

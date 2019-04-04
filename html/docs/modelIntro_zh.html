@@ -50,7 +50,8 @@
             <li><a href="../../index_zh.html#download">下载</a></li>
             <!-- <li><a href="../developer_zh.html">参与开发</a></li> -->
 
-            <a href="https://github.com/tensorspace-team/tensorspace" class="github-corner" aria-label="View source on Github">
+            <a href="https://github.com/tensorspace-team/tensorspace" class="github-corner"
+               aria-label="View source on Github">
                 <svg viewBox="0 0 250 250" aria-hidden="true">
                     <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
                     <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
@@ -131,6 +132,20 @@
         </ul>
     </div>
     <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
+        <div id="converterLabelS">
+            TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="converterS">
+            <li><a href="../../converter/index_zh.html">简介</a></li>
+            <li><a href="../../converter/install_zh.html">安装</a></li>
+            <li><a href="../../converter/docker_zh.html">在 Docker 中使用</a></li>
+            <li><a href="../../converter/api_zh.html">Converter API</a></li>
+            <li><a href="../../converter/usage_zh.html">使用样例</a></li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
         <div id="preprocessingLabelS">
             模型预处理<img src="../../assets/img/docs/document_arrow.png">
         </div>
@@ -138,7 +153,6 @@
             <li><a href="preIntro_zh.html">简介</a></li>
             <li><a href="preTf_zh.html">TensorFlow</a></li>
             <li><a href="preKeras_zh.html">Keras</a></li>
-            <li><a href="preTfKeras_zh.html">tf.keras</a></li>
             <li><a href="preTfjs_zh.html">TensorFlow.js</a></li>
         </ul>
     </div>
@@ -245,6 +259,20 @@
             </ul>
         </div>
         <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
+            <div id="converterLabel">
+                TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="converter">
+                <li><a href="../../converter/index_zh.html">简介</a></li>
+                <li><a href="../../converter/install_zh.html">安装</a></li>
+                <li><a href="../../converter/docker_zh.html">在 Docker 中使用</a></li>
+                <li><a href="../../converter/api_zh.html">Converter API</a></li>
+                <li><a href="../../converter/usage_zh.html">使用样例</a></li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
             <div id="preprocessingLabel">
                 模型预处理<img src="../../assets/img/docs/document_arrow.png">
             </div>
@@ -252,7 +280,6 @@
                 <li><a href="preIntro_zh.html">简介</a></li>
                 <li><a href="preTf_zh.html">TensorFlow</a></li>
                 <li><a href="preKeras_zh.html">Keras</a></li>
-                <li><a href="preTfKeras_zh.html">tf.keras</a></li>
                 <li><a href="preTfjs_zh.html">TensorFlow.js</a></li>
             </ul>
         </div>
@@ -346,7 +373,7 @@
             <span class="highlight-text">config</span>表示的是模型配置，包含不同的属性和方法。
         </div>
 
-        <div class="sub-title" id="modelConfig"> 属性 </div>
+        <div class="sub-title" id="modelConfig"> 属性</div>
 
         <div>
             每个模型都有许多不同的配置。这些配置将作为该模型的默认配置为所有的层以及其他控件提供参数支持。
@@ -389,7 +416,9 @@
 
         <div>以下展示了模型配置的具体信息：</div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L66">.aggregationStrategy</a> : <span class="highlight-text">String</span></div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L66">.aggregationStrategy</a>
+            : <span class="highlight-text">String</span></div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -412,7 +441,9 @@
             <span class="img-label-number">图1</span> - 收拢状态下的网络层对象（聚合体）
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L60">.layerShape</a> : <span class="highlight-text">String</span></div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L60">.layerShape</a>
+            : <span class="highlight-text">String</span></div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -429,7 +460,8 @@
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     关于“最佳视觉矩形”，请参阅
-                    <a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/utils/CenterLocator.js#L35"><span class="span_bold">.createRectangleCenters</span></a>。
+                    <a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/utils/CenterLocator.js#L35"><span
+                            class="span_bold">.createRectangleCenters</span></a>。
                 </li>
             </ul>
         </div>
@@ -444,7 +476,9 @@
             <span class="img-label-number">图3</span> - 线性方式排列的特征图
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L116">.layerInitStatus</a> : <span class="highlight-text">String</span></div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L116">.layerInitStatus</a>
+            : <span class="highlight-text">String</span></div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -472,7 +506,9 @@
             <span class="img-label-number">图5</span> - 初始状态为展开的层
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L98">.textSystem</a> : <span class="highlight-text">String</span></div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L98">.textSystem</a>
+            : <span class="highlight-text">String</span></div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -500,7 +536,9 @@
             <span class="img-label-number">图7</span> - 禁用文本显示
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L80">.relationSystem</a> : <span class="highlight-text">String</span></div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L80">.relationSystem</a>
+            : <span class="highlight-text">String</span></div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -528,7 +566,10 @@
             <span class="img-label-number">图9</span> - 禁用关系连线显示
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L134">.animeTime</a> : Double</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L134">.animeTime</a>
+            : Double
+        </div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -555,7 +596,10 @@
         </div>
 
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L160">.color</a> : color format</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L160">.color</a>
+            : color format
+        </div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -577,7 +621,10 @@
         </div>
 
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L154">.stats</a> : Boolean</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L154">.stats</a>
+            : Boolean
+        </div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -595,14 +642,18 @@
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L15">.predictDataShapes</a> : Array</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L15">.predictDataShapes</a>
+            : Array
+        </div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     如果 TensorSpace 载入的与训练的模型的输入形状不确定，使用该属性来配置一个确定的形状。
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    举个栗子，在 Keras application 中的 InceptionV3 模型的输入是 [ null, null, null, 3 ]，这样的模型可以接受输入不同形状的 Input，在 TensorSpace 中可视化此类模型时需要配置一个特定的形状，在之后 predict 是输入的数据均为这个形状：
+                    举个栗子，在 Keras application 中的 InceptionV3 模型的输入是 [ null, null, null, 3 ]，这样的模型可以接受输入不同形状的 Input，在
+                    TensorSpace 中可视化此类模型时需要配置一个特定的形状，在之后 predict 是输入的数据均为这个形状：
                     <pre><code class="Javascript">let model = new TSP.models.Model( modelContainer, {
 
     predictDataShapes: [ [ 299, 299, 3 ] ]
@@ -612,7 +663,10 @@
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L16">.feedInputs</a> : Array</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L16">.feedInputs</a>
+            : Array
+        </div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -623,14 +677,18 @@
                     <pre><code class="Javascript">let model = TSP.models.Sequential({
     feedInputs: [ 0 ]
 });</code></pre>
-                    <span class="highlight-text">0</span> 代表着预处理模型的第一个输入的值会被用于渲染 TensorSpace 模型的输入（假设 TensorSpace 模型只展示两个输入中的一个）。
+                    <span class="highlight-text">0</span> 代表着预处理模型的第一个输入的值会被用于渲染 TensorSpace 模型的输入（假设 TensorSpace
+                    模型只展示两个输入中的一个）。
                 </li>
             </ul>
         </div>
 
-        <div class="sub-title" id="modelMethod"> 方法 </div>
+        <div class="sub-title" id="modelMethod"> 方法</div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L255">.init( callbackFunction )</a> : void</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L255">.init(
+            callbackFunction )</a> : void
+        </div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -642,7 +700,10 @@
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L141">.load( model_config )</a> : void</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L141">.load(
+            model_config )</a> : void
+        </div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -657,7 +718,10 @@
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L314">.predict( input_data )</a> : void</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L314">.predict(
+            input_data )</a> : void
+        </div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -672,7 +736,10 @@
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L355">.reset()</a> : void</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L355">.reset()</a>
+            : void
+        </div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -687,7 +754,10 @@
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L241">.getAllLayers()</a> : Layer[]</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L241">.getAllLayers()</a>
+            : Layer[]
+        </div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -699,7 +769,10 @@
             </ul>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L221">.getLayerByName( name )</a> : Layer</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L221">.getLayerByName(
+            name )</a> : Layer
+        </div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -712,7 +785,7 @@
         </div>
 
 
-        <div class="sub-title"> 延伸 </div>
+        <div class="sub-title"> 延伸</div>
 
         <div>更多关于在 TensorSpace 中不同的模型的实现方式，参见：</div>
         <div>
@@ -729,7 +802,8 @@
     </main>
 </div>
 
-<button id="topButton" title="Go to top" class="ripple"><i class="material-icons material-icons--outline">keyboard_arrow_up</i></button>
+<button id="topButton" title="Go to top" class="ripple"><i class="material-icons material-icons--outline">keyboard_arrow_up</i>
+</button>
 
 </body>
 

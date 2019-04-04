@@ -49,7 +49,8 @@
             <li><a href="../../index_zh.html#download">下载</a></li>
             <!-- <li><a href="../developer_zh.html">参与开发</a></li> -->
 
-            <a href="https://github.com/tensorspace-team/tensorspace" class="github-corner" aria-label="View source on Github">
+            <a href="https://github.com/tensorspace-team/tensorspace" class="github-corner"
+               aria-label="View source on Github">
                 <svg viewBox="0 0 250 250" aria-hidden="true">
                     <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
                     <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
@@ -130,6 +131,20 @@
         </ul>
     </div>
     <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
+        <div id="converterLabelS">
+            TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="converterS">
+            <li><a href="../../converter/index_zh.html">简介</a></li>
+            <li><a href="../../converter/install_zh.html">安装</a></li>
+            <li><a href="../../converter/docker_zh.html">在 Docker 中使用</a></li>
+            <li><a href="../../converter/api_zh.html">Converter API</a></li>
+            <li><a href="../../converter/usage_zh.html">使用样例</a></li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
         <div id="preprocessingLabelS">
             模型预处理<img src="../../assets/img/docs/document_arrow.png">
         </div>
@@ -137,7 +152,6 @@
             <li><a href="preIntro_zh.html">简介</a></li>
             <li><a href="preTf_zh.html">TensorFlow</a></li>
             <li><a href="preKeras_zh.html">Keras</a></li>
-            <li><a href="preTfKeras_zh.html">tf.keras</a></li>
             <li><a href="preTfjs_zh.html">TensorFlow.js</a></li>
         </ul>
     </div>
@@ -244,6 +258,20 @@
             </ul>
         </div>
         <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
+            <div id="converterLabel">
+                TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="converter">
+                <li><a href="../../converter/index_zh.html">简介</a></li>
+                <li><a href="../../converter/install_zh.html">安装</a></li>
+                <li><a href="../../converter/docker_zh.html">在 Docker 中使用</a></li>
+                <li><a href="../../converter/api_zh.html">Converter API</a></li>
+                <li><a href="../../converter/usage_zh.html">使用样例</a></li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
             <div id="preprocessingLabel">
                 模型预处理<img src="../../assets/img/docs/document_arrow.png">
             </div>
@@ -251,7 +279,6 @@
                 <li><a href="preIntro_zh.html">简介</a></li>
                 <li><a href="preTf_zh.html">TensorFlow</a></li>
                 <li><a href="preKeras_zh.html">Keras</a></li>
-                <li><a href="preTfKeras_zh.html">tf.keras</a></li>
                 <li><a href="preTfjs_zh.html">TensorFlow.js</a></li>
             </ul>
         </div>
@@ -338,7 +365,8 @@
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
-                <th scope="col"><p>参数名</p><p>标签</p></th>
+                <th scope="col"><p>参数名</p>
+                    <p>标签</p></th>
                 <th scope="col"><p>类型</p></th>
                 <th scope="col"><p>简介</p></th>
                 <th scope="col"><p>具体用法细节和例子</p></th>
@@ -370,7 +398,9 @@
                 </th>
                 <td><span class="highlight-text">Bool</span></td>
                 <td>是否使用分页，<a href="basicPaging_zh.html">paging详细解释</a></td>
-                <td>当全链接层太长时，使用分页方式来显示Dense层，<span class="span_bold">true</span> 使用分页；<span class="span_bold">false</span>[默认值] 不使用分页</td>
+                <td>当全链接层太长时，使用分页方式来显示Dense层，<span class="span_bold">true</span> 使用分页；<span
+                        class="span_bold">false</span>[默认值] 不使用分页
+                </td>
             </tr>
             <tr>
                 <th scope="row">
@@ -451,33 +481,65 @@
 
         <div class="sub-title">属性</div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/10a1738e02dddcd1dc2c919611709dbab27c1c54/src/layer/abstract/Layer.js#L68" target="_blank">.inputShape</a> : <span class="highlight-text">Int[]</span></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>本层输入Tensor的形状，dataFormat默认通道值在最后，例如<span class="highlight-text">inputShape = [ 28, 28, 3 ]</span> 表示输入为3个特征图，每个图大小为28*28</div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>在 model.init() 后才可拿到数据，否则为undefined。</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/10a1738e02dddcd1dc2c919611709dbab27c1c54/src/layer/abstract/Layer.js#L68"
+                target="_blank">.inputShape</a> : <span class="highlight-text">Int[]</span></div>
+        <div class="panel-heading"><i
+                class="material-icons">filter_center_focus</i>本层输入Tensor的形状，dataFormat默认通道值在最后，例如<span
+                class="highlight-text">inputShape = [ 28, 28, 3 ]</span> 表示输入为3个特征图，每个图大小为28*28
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>在 model.init() 后才可拿到数据，否则为undefined。
+        </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/10a1738e02dddcd1dc2c919611709dbab27c1c54/src/layer/abstract/Layer.js#L69" target="_blank">.outputShape</a> : <span class="highlight-text">Int[]</span></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>本层输出Tensor的形状为1维 <a href="basicDimension_zh.html">1️⃣</a></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>本层输出Tensor的形状，例如<span class="highlight-text">outputShape = [ 1000 ]</span> 表示经过此层处理后，有1000个1维输出</div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>在 model.init() 后才可拿到数据，否则为undefined。</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/10a1738e02dddcd1dc2c919611709dbab27c1c54/src/layer/abstract/Layer.js#L69"
+                target="_blank">.outputShape</a> : <span class="highlight-text">Int[]</span></div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>本层输出Tensor的形状为1维 <a
+                href="basicDimension_zh.html">1️⃣</a></div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>本层输出Tensor的形状，例如<span
+                class="highlight-text">outputShape = [ 1000 ]</span> 表示经过此层处理后，有1000个1维输出
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>在 model.init() 后才可拿到数据，否则为undefined。
+        </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/10a1738e02dddcd1dc2c919611709dbab27c1c54/src/layer/abstract/Layer.js#L52" target="_blank">.neuralValue</a> : <span class="highlight-text">Float[]</span></div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/10a1738e02dddcd1dc2c919611709dbab27c1c54/src/layer/abstract/Layer.js#L52"
+                target="_blank">.neuralValue</a> : <span class="highlight-text">Float[]</span></div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>本层层间输出值数组。</div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>载入模型，在 model.predict() 后才可以拿到数据，否则为undefined。</div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>载入模型，在 model.predict()
+            后才可以拿到数据，否则为undefined。
+        </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/Layer.js#L242" target="_blank">.name</a> : <span class="highlight-text">String</span></div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/Layer.js#L242"
+                target="_blank">.name</a> : <span class="highlight-text">String</span></div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>本层的自定义名称。</div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>创建后即可取到。</div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/b51397827a38243c33ad38f993a56c6412c54c0e/src/layer/abstract/Layer.js#L251" target="_blank">.layerType</a> : <span class="highlight-text">String</span></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>本层的类型，返回一个定值，字符串<span class="span_bold">Output1d</span>。</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/b51397827a38243c33ad38f993a56c6412c54c0e/src/layer/abstract/Layer.js#L251"
+                target="_blank">.layerType</a> : <span class="highlight-text">String</span></div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>本层的类型，返回一个定值，字符串<span
+                class="span_bold">Output1d</span>。
+        </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>创建后即可取到。</div>
 
         <div class="sub-title">方法</div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer.js#L74" target="_blank">.apply( layer )</a> : void</div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>此方法只在 <a href="modelFunctional_zh.html">Functional Model</a> 中使用（非序列型，图结构）。</div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>将此层连接到layer上，layer即此层的<span class="span_bold">上一层</span>。</div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>使用此方法来建立一个连接。在 <a href="modelSequential_zh.html">Sequential Model</a> 中不需要专门使用此方法来建立链接，参照 <span class="span_bold">Keras</span> or <span class="span_bold">TensorFlow.js</span> 构建模型语法，直接添加层即可。</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer.js#L74"
+                target="_blank">.apply( layer )</a> : void
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>此方法只在 <a
+                href="modelFunctional_zh.html">Functional Model</a> 中使用（非序列型，图结构）。
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>将此层连接到layer上，layer即此层的<span
+                class="span_bold">上一层</span>。
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>使用此方法来建立一个连接。在 <a
+                href="modelSequential_zh.html">Sequential Model</a> 中不需要专门使用此方法来建立链接，参照 <span
+                class="span_bold">Keras</span> or <span class="span_bold">TensorFlow.js</span> 构建模型语法，直接添加层即可。
+        </div>
         <div class="code-snippet">
             <pre><code class="Javascript">let inputLayer = new TSP.layers.Input1d( {
 
@@ -495,7 +557,10 @@ let outputLayer = new TSP.layers.Output1d( {
 outputLayer.apply( inputLayer );</code></pre>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer1d.js#L486" target="_blank">.openLayer()</a> : void</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer1d.js#L486"
+                target="_blank">.openLayer()</a> : void
+        </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>通过直接和3d场景中物体交互直接点击层打开。</div>
         <!--<img class="tag-img" src="../../assets/img/docs/Conv2d-open.gif">-->
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>代码中通过调用方法打开。</div>
@@ -517,7 +582,10 @@ model.init();
 outputLayer.openLayer();</code></pre>
         </div>
 
-        <div class="property-title"><a href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer1d.js#L504" target="_blank">.closeLayer()</a> : void</div>
+        <div class="property-title"><a
+                href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer1d.js#L504"
+                target="_blank">.closeLayer()</a> : void
+        </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>通过直接和3d场景中物体交互点击按钮关闭。</div>
         <!--<img class="tag-img" src="../../assets/img/docs/Conv2d-close.gif">-->
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>代码中通过调用方法打开。</div>
@@ -610,12 +678,14 @@ model.add( outputLayer );</code></pre>
         </table>
 
         <div class="sub-title">源码</div>
-        <div><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/layer/output/Output1d.js" target="_blank">tensorspace/src/layer/output/Output1d.js</a></div>
+        <div><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/layer/output/Output1d.js"
+                target="_blank">tensorspace/src/layer/output/Output1d.js</a></div>
 
     </main>
 </div>
 
-<button id="topButton" title="Go to top" class="ripple"><i class="material-icons material-icons--outline">keyboard_arrow_up</i></button>
+<button id="topButton" title="Go to top" class="ripple"><i class="material-icons material-icons--outline">keyboard_arrow_up</i>
+</button>
 
 </body>
 
