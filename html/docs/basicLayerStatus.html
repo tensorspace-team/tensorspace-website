@@ -352,15 +352,23 @@
     <main>
         <header>Layer Status</header>
 
-        <div>TensorSpace Layer has two status <span class="highlight-text">open</span> and <span class="highlight-text">close</span>, default to "close". We can <a href="#initStatus">set layer's initial status</a> before model is initialized and <a href="#changeStatus">change layer's status</a> after model is initialized.</div>
+        <div>TensorSpace Layer has two status <span class="highlight-text">open</span> and <span class="highlight-text">close</span>,
+            default to "close". We can <a href="#initStatus">set layer's initial status</a> before model is initialized
+            and <a href="#changeStatus">change layer's status</a> after model is initialized.
+        </div>
 
         <div id="initStatus" class="sub-title">Set Initial Status</div>
 
-        <div>There are two ways to set initial status for TensorSpace Layer, set status in TensorSpace model or in a specific layer.</div>
+        <div>There are two ways to set initial status for TensorSpace Layer, set status in TensorSpace model or in a
+            specific layer.
+        </div>
 
         <div class="model-type-title"><span class="span_bold">Set in Model</span></div>
 
-        <div>Configure TensorSpace model's <span class="highlight-text">layerInitStatus</span> attribute, <span class="highlight-text">open</span> or <span class="highlight-text">close</span>, default to "close". "close" to show all layers as an aggregation, "open" to show all layers as expanded feature maps.</div>
+        <div>Configure TensorSpace model's <span class="highlight-text">layerInitStatus</span> attribute, <span
+                class="highlight-text">open</span> or <span class="highlight-text">close</span>, default to "close".
+            "close" to show all layers as an aggregation, "open" to show all layers as expanded feature maps.
+        </div>
 
         <div class="code-snippet">
             <pre><code class="Javascript">let model = new TSP.models.Sequential( container, {
@@ -381,7 +389,11 @@
 
         <div class="model-type-title"><span class="span_bold">Set in Specific Layer</span></div>
 
-        <div>Configure TensorSpace Layer's <span class="highlight-text">initStatus</span> attribute, <span class="highlight-text">open</span> or <span class="highlight-text">close</span>, default to "close", if set, this attribute will override model's <span class="highlight-text">layerInitStatus</span>, which means that model's layerInitStatus will not take effect to this specific Layer.</div>
+        <div>Configure TensorSpace Layer's <span class="highlight-text">initStatus</span> attribute, <span
+                class="highlight-text">open</span> or <span class="highlight-text">close</span>, default to "close", if
+            set, this attribute will override model's <span class="highlight-text">layerInitStatus</span>, which means
+            that model's layerInitStatus will not take effect to this specific Layer.
+        </div>
 
         <div class="code-snippet">
             <pre><code class="Javascript">let conv2dLayer = new TSP.layers.Conv2d({
@@ -397,7 +409,9 @@
 
         <div id="changeStatus" class="sub-title">Change Status</div>
 
-        <div>There are two ways to change layer's status after TensorSpace model is initialized, click layer elements in 3D scene or use APIs (.openLayer() & .closeLayer()) to control status.</div>
+        <div>There are two ways to change layer's status after TensorSpace model is initialized, click layer elements in
+            3D scene or use APIs (.openLayer() & .closeLayer()) to control status.
+        </div>
 
         <div class="model-type-title"><span class="span_bold">Click Layer elements</span></div>
 
@@ -405,19 +419,31 @@
 
         <img class="tag-img" src="../../assets/img/docs/Conv2d_open.gif">
         <div class="img-label">
-            <span class="img-label-number">Fig. 4</span> - Click layer aggregation to open layer
+            <span class="img-label-number">Fig. 4</span> - Click Conv2d Layer aggregation to open layer
+        </div>
+
+        <img class="tag-img" src="../../assets/img/docs/RGBInput_open.gif">
+        <div class="img-label">
+            <span class="img-label-number">Fig. 5</span> - Click RGBInput Layer aggregation to open layer
         </div>
 
         <div>Click the close button to close Layer in the 3D scene.</div>
 
         <img class="tag-img" src="../../assets/img/docs/Conv2d_close.gif">
         <div class="img-label">
-            <span class="img-label-number">Fig. 5</span> - Click close button to close layer
+            <span class="img-label-number">Fig. 6</span> - Click close button to close Conv2d Layer
+        </div>
+
+        <img class="tag-img" src="../../assets/img/docs/RGBInput_close.gif">
+        <div class="img-label">
+            <span class="img-label-number">Fig. 7</span> - Click close button to close RGBInput Layer
         </div>
 
         <div class="model-type-title"><span class="span_bold">Control APIs</span></div>
 
-        <div>Use <span class="highlight-text">.openLayer()</span> API to open Layer, if layer is already in "open" status, the layer will keep open.</div>
+        <div>Use <span class="highlight-text">.openLayer()</span> API to open Layer, if layer is already in "open"
+            status, the layer will keep open.
+        </div>
 
         <div class="code-snippet">
             <pre><code class="Javascript">let conv2dLayer = new TSP.layers.Conv2d( config );
@@ -431,7 +457,9 @@ model.init();
 conv2dLayer.openLayer();</code></pre>
         </div>
 
-        <div>Use <span class="highlight-text">.closeLayer()</span> API to close Layer, if layer is already in "close" status, the layer will keep close.</div>
+        <div>Use <span class="highlight-text">.closeLayer()</span> API to close Layer, if layer is already in "close"
+            status, the layer will keep close.
+        </div>
 
         <div class="code-snippet">
             <pre><code class="Javascript">let conv2dLayer = new TSP.layers.Conv2d( config );

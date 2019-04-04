@@ -513,94 +513,22 @@
         <div class="sub-title">方法</div>
 
         <div class="property-title"><a href="" target="_blank">.openLayer()</a> : void</div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>通过直接和3d场景中物体交互直接点击层打开。</div>
-        <!--<img class="tag-img" src="../../assets/img/docs/Conv2d-open.gif">-->
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>代码中通过调用方法打开。</div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let conv2d1 = new TSP.layers.Conv2d( {
-
-    // 配置Conv2d1。
-
-} );
-
-model.add( conv2d1 );
-
-let conv2d2 = new TSP.layers.Conv2d( {
-
-    /*
-     *  配置Conv2d2。
-     *  注意shape应与Conv2d1相同。
-     */
-
-} );
-
-model.add( conv2d2 );
-
-// 进行融合
-
-let mergedLayer = TSP.layers.Subtract( [ conv2d1, conv2d2 ], {
-
-        /* Configurations */
-
-    }
-
-);
-
-// 添加融合层
-
-model.add( mergedLayer );
-model.init();
-
-// 调用 openLayer 来打开layer。
-
-mergedLayer.openLayer();</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>展开 Layer，如果 Layer 已经处于 “open”
+            状态，Layer 将会保持 “open” 状态。
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>详情参见 <a
+                href="basicLayerStatus_zh.html">网络层状态</a>。
         </div>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer3d.js#L475"
                 target="_blank">.closeLayer()</a> : void
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>通过直接和3d场景中物体交互点击按钮关闭。</div>
-        <!--<img class="tag-img" src="../../assets/img/docs/Conv2d-close.gif">-->
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>代码中通过调用方法打开。</div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let conv2d1 = new TSP.layers.Conv2d( {
-
-    // 配置Conv2d1。
-
-} );
-
-model.add( conv2d1 );
-
-let conv2d2 = new TSP.layers.Conv2d( {
-
-    /*
-     *  配置Conv2d2。
-     *  注意shape应与Conv2d1相同。
-     */
-
-} );
-
-model.add( conv2d2 );
-
-// 进行融合
-
-let mergedLayer = TSP.layers.Subtract( [ conv2d1, conv2d2 ], {
-
-        /* Configurations */
-
-    }
-
-);
-
-// 添加融合层
-
-model.add( mergedLayer );
-model.init();
-
-// 如果 layer 已经是打开状态，调用 closeLayer 来关闭 layer。
-
-mergedLayer.closeLayer();</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>闭合 Layer，如果 Layer 已经处于 “close”
+            状态，Layer 将会保持 “close” 状态。
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>详情参见 <a
+                href="basicLayerStatus_zh.html">网络层状态</a>。
         </div>
 
         <div class="sub-title">使用样例</div>

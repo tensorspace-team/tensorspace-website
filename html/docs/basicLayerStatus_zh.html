@@ -352,7 +352,10 @@
     <main>
         <header>网络层状态</header>
 
-        <div>TensorSpace Layer 具有两种状态：<span class="highlight-text">open</span>（展开） 和 <span class="highlight-text">close</span>（闭合），默认为 “close”。我们可以在模型初始化之前 <a href="#initStatus">设置 Layer 的初始状态</a>，也可以在模型初始化后 <a href="#changeStatus">改变 Layer 的状态</a>。</div>
+        <div>TensorSpace Layer 具有两种状态：<span class="highlight-text">open</span>（展开） 和 <span
+                class="highlight-text">close</span>（闭合），默认为 “close”。我们可以在模型初始化之前 <a href="#initStatus">设置 Layer
+            的初始状态</a>，也可以在模型初始化后 <a href="#changeStatus">改变 Layer 的状态</a>。
+        </div>
 
         <div id="initStatus" class="sub-title">设置初始状态</div>
 
@@ -360,7 +363,10 @@
 
         <div class="model-type-title"><span class="span_bold">在 Model 中设置</span></div>
 
-        <div>设置 TensorSpace 模型的 <span class="highlight-text">layerInitStatus</span> 属性，<span class="highlight-text">open</span> 或 <span class="highlight-text">close</span>，默认为 “close”。“close”表示模型中所有的 Layer 都呈现为闭合状态，“open” 表示模型中所有的 Layer 都呈现为展开状态。</div>
+        <div>设置 TensorSpace 模型的 <span class="highlight-text">layerInitStatus</span> 属性，<span
+                class="highlight-text">open</span> 或 <span class="highlight-text">close</span>，默认为
+            “close”。“close”表示模型中所有的 Layer 都呈现为闭合状态，“open” 表示模型中所有的 Layer 都呈现为展开状态。
+        </div>
 
         <div class="code-snippet">
             <pre><code class="Javascript">let model = new TSP.models.Sequential( container, {
@@ -381,7 +387,11 @@
 
         <div class="model-type-title"><span class="span_bold">在特定的 Layer 中设置</span></div>
 
-        <div>设置 TensorSpace Layer 的 <span class="highlight-text">initStatus</span> 属性，<span class="highlight-text">open</span> 或 <span class="highlight-text">close</span>，默认为 “close”，如果在 Layer 中设置了 initStatus 属性，将会覆盖模型中的 <span class="highlight-text">layerInitStatus</span> 属性，即模型中的 layerInitStatus 属性对这个 Layer 不生效。</div>
+        <div>设置 TensorSpace Layer 的 <span class="highlight-text">initStatus</span> 属性，<span
+                class="highlight-text">open</span> 或 <span class="highlight-text">close</span>，默认为 “close”，如果在 Layer
+            中设置了 initStatus 属性，将会覆盖模型中的 <span class="highlight-text">layerInitStatus</span> 属性，即模型中的 layerInitStatus
+            属性对这个 Layer 不生效。
+        </div>
 
         <div class="code-snippet">
             <pre><code class="Javascript">let conv2dLayer = new TSP.layers.Conv2d({
@@ -405,19 +415,31 @@
 
         <img class="tag-img" src="../../assets/img/docs/Conv2d_open.gif">
         <div class="img-label">
-            <span class="img-label-number">图4</span> - 点击展开 Layer
+            <span class="img-label-number">图4</span> - 点击展开 Conv2d Layer
+        </div>
+
+        <img class="tag-img" src="../../assets/img/docs/RGBInput_open.gif">
+        <div class="img-label">
+            <span class="img-label-number">图5</span> - 点击展开 RGBInput Layer
         </div>
 
         <div>在 3D 场景中点击关闭按钮将会使 Layer 闭合。</div>
 
         <img class="tag-img" src="../../assets/img/docs/Conv2d_close.gif">
         <div class="img-label">
-            <span class="img-label-number">图5</span> - 点击关闭按钮闭合 Layer
+            <span class="img-label-number">图6</span> - 点击关闭按钮闭合 Conv2d Layer
+        </div>
+
+        <img class="tag-img" src="../../assets/img/docs/RGBInput_close.gif">
+        <div class="img-label">
+            <span class="img-label-number">图7</span> - 点击关闭按钮闭合 RGBInput Layer
         </div>
 
         <div class="model-type-title"><span class="span_bold">使用 API 控制</span></div>
 
-        <div>调用 <span class="highlight-text">.openLayer()</span> API 展开 Layer，如果 Layer 已经处于 “open” 状态，Layer 将会保持 “open” 状态。</div>
+        <div>调用 <span class="highlight-text">.openLayer()</span> API 展开 Layer，如果 Layer 已经处于 “open” 状态，Layer 将会保持 “open”
+            状态。
+        </div>
 
         <div class="code-snippet">
             <pre><code class="Javascript">let conv2dLayer = new TSP.layers.Conv2d( config );
@@ -431,7 +453,9 @@ model.init();
 conv2dLayer.openLayer();</code></pre>
         </div>
 
-        <div>调用 <span class="highlight-text">.closeLayer()</span> API 闭合 Layer，如果 Layer 已经处于 “close” 状态，Layer 将会保持 “close” 状态。</div>
+        <div>调用 <span class="highlight-text">.closeLayer()</span> API 闭合 Layer，如果 Layer 已经处于 “close” 状态，Layer 将会保持
+            “close” 状态。
+        </div>
 
         <div class="code-snippet">
             <pre><code class="Javascript">let conv2dLayer = new TSP.layers.Conv2d( config );

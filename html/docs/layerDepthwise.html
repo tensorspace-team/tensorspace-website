@@ -578,56 +578,22 @@ dwConv2d.apply( conv2d );</code></pre>
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer3d.js#L459"
                 target="_blank">.openLayer()</a> : void
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Click on the layer directly to open
-            it by interacting directly with the object in the 3D scene.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Open Layer, if layer is already in
+            "open" status, the layer will keep open.
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>In code, calling the method to open
-            it.
-        </div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let dwConv2d = new TSP.layers.DepthwiseConv2d( {
-
-    // configure some parameters for DepthwiseConv2d.
-
-} );
-
-model.add( dwConv2d );
-
-// ... add more layers for model.
-
-model.init();
-
-// Call openLayer API to open layer.
-
-dwConv2d.openLayer();</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> See <a
+                href="basicLayerStatus.html">Layer Status</a> for more details.
         </div>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer3d.js#L475"
                 target="_blank">.closeLayer()</a> : void
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>To close by interacting directly
-            with objects in a 3D scene by clicking the close button.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Close Layer, if layer is already in
+            "close" status, the layer will keep close.
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> In code, calling the method to
-            close it.
-        </div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let dwConv2d = new TSP.layers.DepthwiseConv2d( {
-
-    // configure some parameters for DepthwiseConv2d.
-
-} );
-
-model.add( dwConv2d );
-
-// ... add more layers for model.
-
-model.init();
-
-// If this layer already opened, call closeLayer API to close layer.
-
-dwConv2d.closeLayer();</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> See <a
+                href="basicLayerStatus.html">Layer Status</a> for more details.
         </div>
 
         <div class="sub-title">Example</div>

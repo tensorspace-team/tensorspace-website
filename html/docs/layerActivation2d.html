@@ -533,58 +533,22 @@ activationLayer.apply( inputLayer );</code></pre>
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer2d.js#L412"
                 target="_blank">.openLayer()</a> : void
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Click on the layer directly to open
-            it by interacting directly with the object in the 3D scene.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Open Layer, if layer is already in
+            "open" status, the layer will keep open.
         </div>
-        <!--<img class="tag-img" src="../../assets/img/docs/Conv2d-open.gif">-->
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>In code, calling the method to open
-            it.
-        </div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let activationLayer = new TSP.layers.Activation2d( {
-
-    // configure some parameters for Activation2d.
-
-} );
-
-model.add( activationLayer );
-
-// ... add more layers for model.
-
-model.init();
-
-// Call openLayer API to open layer.
-
-activationLayer.openLayer();</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> See <a
+                href="basicLayerStatus.html">Layer Status</a> for more details.
         </div>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer2d.js#L432"
                 target="_blank">.closeLayer()</a> : void
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>To close by interacting directly
-            with objects in a 3D scene by clicking the close button.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Close Layer, if layer is already in
+            "close" status, the layer will keep close.
         </div>
-        <!--<img class="tag-img" src="../../assets/img/docs/Conv2d-close.gif">-->
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> In code, calling the method to
-            close it.
-        </div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let activationLayer = new TSP.layers.Activation2d( {
-
-    // configure some parameters for Activation2d.
-
-} );
-
-model.add( activationLayer );
-
-// ... add more layers for model.
-
-model.init();
-
-// If this layer already opened, call closeLayer API to close layer.
-
-activationLayer.closeLayer();</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> See <a
+                href="basicLayerStatus.html">Layer Status</a> for more details.
         </div>
 
         <div class="sub-title">Example</div>
