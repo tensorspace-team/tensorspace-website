@@ -501,34 +501,16 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer.js#L74"
-                target="_blank">.apply( layer )</a> : <span class="highlight-text">void</span>
+                target="_blank">.apply( previous_layer )</a> : <span class="highlight-text">void</span>
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>This method only used in <a
-                href="modelFunctional.html">Functional Model</a> (Non-sequential, Graph structure).
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Link this layer to <span
+                class="span_bold">previous layer</span>
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Link this layer to layer which is
-            the <span class="span_bold">previous layer</span>.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>This method can be use to construct
+            topology in <a href="modelFunctional.html">Functional Model</a>
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>To crete a link between this layer
-            and the previous layer. You don't need to use this method specifically to create links in <a
-                    href="modelSequential.html">Sequential Model</a>; Instead, you can simply add layers along the lines
-            of <span class="span_bold">Keras</span> or <span class="span_bold">TensorFlow.js</span> build the model
-            syntax.
-        </div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let inputLayer = new TSP.layers.Input1d( {
-
-    shape: [28]
-
-} );
-
-let paddingLayer = new TSP.layers.Padding1d( {
-
-    padding: 2
-
-} );
-
-paddingLayer.apply( inputLayer );</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> See <a
+                href="basicTopo.html">Construct Topology</a> for more details.
         </div>
 
         <div class="property-title"><a
