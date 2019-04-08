@@ -389,7 +389,7 @@
             <tr>
                 <th scope="row">
                     <p>filters</p>
-                    <p><a href="#iconRequired">⭐</a><a href="#iconModel">📦</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Int</span></td>
                 <td>特征提取过滤器的数量</td>
@@ -398,28 +398,31 @@
             <tr>
                 <th scope="row">
                     <p>name</p>
-                    <p><a href="#iconSuggest">🔧</a></p>
+
                 </th>
                 <td><span class="highlight-text">String</span></td>
-                <td>层的命名<br><span class="span_bold">建议添加</span></td>
+                <td>层的命名<br>在<span class="highlight-text">顺序模型</span>中，<span
+                        class="span_bold">建议添加</span>，以便从模型中获取层对象<br>在<span class="highlight-text">函数式模型</span>中，必须给每个层添加
+                    name 属性，且添加的名称 name 的值需要和预训练网络中对应层的名称相同
+                </td>
                 <td>name: “layerName”</td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>padding</p>
-                    <p><a href="#iconSuggest">🔧</a><a href="#iconModel">📦</a></p>
+
                 </th>
                 <td><span class="highlight-text">String</span></td>
                 <td>是否使用padding</td>
                 <td>
-                    <p><span class="span_bold">valid</span> [default] 不使用padding，丢弃无法提取特征的部分，会改变输出的形状</p>
-                    <p><span class="span_bold">same</span> 使用padding，在不够的位置补零 ，输出的形状不变</p>
+                    <p><span class="span_bold">valid</span> [默认值] 不使用padding，丢弃无法提取特征的部分，会改变输出的形状</p>
+                    <p><span class="span_bold">same</span>: 使用padding，在不够的位置补零 ，输出的形状不变</p>
                 </td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>shape</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconModel">📦</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Int[]</span></td>
                 <td>当前层的输出形状</td>
@@ -428,27 +431,27 @@
             <tr>
                 <th scope="row">
                     <p>kernelSize</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconModel">📦</a>️</p>
+
                 </th>
-                <td><span class="highlight-text">Int</span></td>
+                <td><span class="highlight-text">Int | Int[]</span></td>
                 <td>卷积核的尺寸</td>
-                <td>2d卷积核为正方形，kernelSize: 3</td>
+                <td>2d卷积核，举个例子，kernelSize: 3 或者 kernelSize: [1, 7]</td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>strides</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconModel">📦</a>️</p>
+
                 </th>
-                <td><span class="highlight-text">Int[]</span></td>
+                <td><span class="highlight-text">Int | Int[]</span></td>
                 <td>卷积移动框的移动步长</td>
-                <td>在不同方向的步长相等，默认情况自动推断 strides = [1, 1]</td>
+                <td>在不同方向的步长，默认情况自动推断 strides = [1, 1]，举个例子，strides: 2 或者 strides: [1, 2]</td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>color</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconStyle">🎨</a>️</p>
+
                 </th>
-                <td>color format</td>
+                <td><span class="highlight-text">Color Format</span></td>
                 <td>层的颜色</td>
                 <td>Conv2dTranspose默认颜色是 #ff5722 <span class="color-block" style="background-color: #ff5722"></span>
                 </td>
@@ -456,28 +459,28 @@
             <tr>
                 <th scope="row">
                     <p>closeButton</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconStyle">🎨</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Dict</span></td>
                 <td>层关闭按钮外观控制列表， <a href="basicClose.html">查看详情</a></td>
-                <td><p><span class="span_bold">display</span> : <span class="highlight-text">Boolean</span>. true
-                    [default] 显示按钮, false 隐藏按钮</p>
-                    <p><span class="span_bold">ratio</span> : Int 为正常大小的几倍，默认为1倍</p>
-                    <p>例如，设为2为正常大小的2倍大</p></td>
+                <td><p><span class="span_bold">display</span>: <span class="highlight-text">Boolean</span>. true
+                    [默认值] 显示按钮, false 隐藏按钮</p>
+                    <p><span class="span_bold">ratio</span>: <span class="highlight-text">Int</span>
+                        为正常大小的几倍，默认为1倍，例如，当ratio设为2时，关闭按钮为正常大小的2倍大</p></td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>initStatus</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconAnimation">️🎦</a></p>
+
                 </th>
                 <td><span class="highlight-text">String</span></td>
-                <td>初始化时，本层是否收缩</td>
-                <td>close[default] : 收缩</td>
+                <td>本层初始化状态，<a href="basicLayerStatus_zh.html#initStatus">查看详情</a></td>
+                <td><span class="span_bold">close</span>[默认值] : 收缩，<br><span class="span_bold">open</span>：展开</td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>animeTime</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconAnimation">🎦</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Int</span></td>
                 <td>张开和伸缩的速度</td>
@@ -493,7 +496,7 @@
                 target="_blank">.inputShape</a> : <span class="highlight-text">Int[]</span></div>
         <div class="panel-heading"><i
                 class="material-icons">filter_center_focus</i>本层输入Tensor的形状，dataFormat默认通道值在最后，例如<span
-                class="highlight-text">inputShape = [ 28, 28, 3 ]</span> 表示输入为3个特征图，每个图大小为28*28
+                class="highlight-text">inputShape = [ 28, 28, 3 ]</span> 表示输入为3个特征图，每个图大小为28*28。
         </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>在 model.init() 后才可拿到数据，否则为undefined。
         </div>
@@ -572,7 +575,7 @@
 
         <div class="sub-title">使用样例</div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>声明一个Conv2dTranspose的实例，方便复用</div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>声明一个Conv2dTranspose的实例</div>
         <div class="code-snippet">
             <pre><code class="Javascript">let convLayer = new TSP.layers.Conv2dTranspose( {
 
@@ -584,21 +587,7 @@
     opacityRatio: 2
     initStatus: "open"
 
-} );
-
-model.add( convLayer );</code></pre>
-        </div>
-
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>直接添加Conv2dTranspose</div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">model.add(new TSP.layers.Conv2dTranspose( {
-
-    kernelSize: 5,
-    filters: 16,
-    strides: 1,
-    name: "conv2dTranspose2"
-
-} ));</code></pre>
+} );</code></pre>
         </div>
 
         <div class="sub-title">什么时候用</div>
@@ -631,50 +620,6 @@ model.add( convLayer );</code></pre>
                 </th>
                 <td>tf.layers.conv2dTranspose (config)</td>
 
-            </tr>
-            </tbody>
-        </table>
-
-        <div id="tagExplain" class="sub-title">标签详情</div>
-
-        <table class="table table-striped table-bordered table-hover">
-            <thead>
-            <tr>
-                <th scope="col">符号</th>
-                <th scope="col">参数性质</th>
-                <th scope="col">说明</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr id="iconRequired">
-                <th scope="row">⭐️</th>
-                <td>必要</td>
-                <td>使用时必须提供，不能为空，只要提供了这些参数，就能正常创建实例，控制参数使用默认值。</td>
-            </tr>
-            <tr id="iconSuggest">
-                <th scope="row">🔧</th>
-                <td>推荐</td>
-                <td>使用时推荐给定，未给定也可以运行，但在体验和易用性上有隐患。</td>
-            </tr>
-            <tr id="iconOptional">
-                <th scope="row">⚙️</th>
-                <td>可选</td>
-                <td>根据模型配置参数选择性添加，这里的参数对于层的结构（3D可视化外观）没有影响。</td>
-            </tr>
-            <tr id="iconModel">
-                <th scope="row">📦</th>
-                <td>模型</td>
-                <td>配置卷积层的相关属性，并对输出特征图形状有影响。</td>
-            </tr>
-            <tr id="iconStyle">
-                <th scope="row">🎨</th>
-                <td>外观</td>
-                <td>可覆盖TSP.model下的属性进行细调（<a href="modelIntro_zh.html#modelConfig">查看详情</a>）</td>
-            </tr>
-            <tr id="iconAnimation">
-                <th scope="row">🎦</th>
-                <td>动画控制</td>
-                <td>可覆盖TSP.model下的属性进行细调（<a href="modelIntro_zh.html#modelConfig">查看详情</a>）</td>
             </tr>
             </tbody>
         </table>

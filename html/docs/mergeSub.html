@@ -370,7 +370,7 @@
 
         <div>
             The first parameter is a <span class="span_bold">list</span> of layer objects.
-            (TensorSpace currently only supports "Subtract" operations for 3D vectors. We will introduce others soon.)
+
         </div>
 
         <div>
@@ -398,20 +398,24 @@
             <tr>
                 <th scope="row">
                     <p>name</p>
-                    <p><a href="#iconSuggest">🔧</a></p>
+
                 </th>
                 <td><span class="highlight-text">String</span></td>
-                <td>Name of this layer. <span class="span_bold">Highly recommend</span> to arrange to make code more
-                    readable.
+                <td>Name of this layer.<br>In <span class="highlight-text">Sequential Model</span>: <span
+                        class="span_bold">Highly recommend</span> to add a name attribute to make it easier to get Layer
+                    object from model.<br>In <span class="highlight-text">Functional Model</span>: It is required to
+                    configure name attribute for TensorSpace Layer, and the name should be <span class="span_bold">the same</span>
+                    as the name of corresponding Layer in pre-trained model.
+
                 </td>
                 <td>name: "layerName"</td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>color</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconStyle">🎨</a>️</p>
+
                 </th>
-                <td>color format</td>
+                <td><span class="highlight-text">Color Format</span></td>
                 <td>Color of layer</td>
                 <td>Subtract default is red #E23E57 <span class="color-block" style="background-color: #E23E57"></span>
                 </td>
@@ -419,35 +423,41 @@
             <tr>
                 <th scope="row">
                     <p>closeButton</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconStyle">🎨</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Dict</span></td>
-                <td>Close button appearance control dict, <a href="basicClose.html">more about close button</a></td>
-                <td><p><span class="span_bold">display</span> : <span class="highlight-text">Boolean</span>.
+                <td>Close button appearance control dict. <a href="basicClose.html">More about close button</a></td>
+                <td><p><span class="span_bold">display</span>: <span class="highlight-text">Boolean</span>.
                     true[default] Show button, false Hide button
                 </p>
-                    <p><span class="span_bold">ratio</span> : Int. Times to normal size, default is 1</p>
-                    <p>For example, 2 means twice the normal size</p>
+                    <p><span class="span_bold">ratio</span>: <span class="highlight-text">Int</span>. Times to close
+                        button's normal size, default is 1, for example, set ratio to be 2, close button will become
+                        twice the normal size</p>
+
                 </td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>initStatus</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconAnimation">️🎦</a></p>
+
                 </th>
                 <td><span class="highlight-text">String</span></td>
-                <td>Layer status at beginning. <span class="span_bold">Open</span> or <span
-                        class="span_bold">Close</span></td>
-                <td>close[default] : Closed at beginning</td>
+                <td>Layer initial status. <span class="span_bold">Open</span> or <span
+                        class="span_bold">Close</span>. <a href="basicLayerStatus.html#initStatus">More about Layer
+                    initial Status</a></td>
+                <td><span class="span_bold">close</span>[default]: Closed at beginning,<br><span
+                        class="span_bold">open</span>: Open at beginning
+                </td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>animeTime</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconAnimation">🎦</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Int</span></td>
                 <td>The speed of open and close animation</td>
-                <td>For example, 2000 means 2 seconds. Note: Configure animeTime in a specific layer will override
+                <td>For example, 2000 means 2 seconds.<br><span class="span_bold">Note</span>: Configure animeTime in a
+                    specific layer will override
                     model's animeTime configuration.
                 </td>
             </tr>
@@ -483,7 +493,7 @@
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/Layer.js#L242"
                 target="_blank">.name</a> : <span class="highlight-text">String</span></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The custom name for this layer.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The customized name of this layer.
         </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Once created, you can get it.</div>
 
@@ -521,7 +531,7 @@
         <div class="sub-title">Example</div>
 
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Declare an instance of
-            "MergedLayer3d" to facilitate reuse
+            "MergedLayer3d"
         </div>
         <div class="code-snippet">
             <pre><code class="Javascript">let mergedLayer = TSP.layers.Subtract(
@@ -535,25 +545,7 @@
         initStatus: "open"
     }
 
-);
-
-model.add( mergedLayer );</code></pre>
-        </div>
-
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Add directly</div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">model.add(TSP.layers.Subtract(
-
-    [ layer1, layer2 ],
-
-    {
-        animeTime: 4000,
-        name: "conv2d1",
-        opacityRatio: 2,
-        initStatus: "open"
-    }
-
-));</code></pre>
+);</code></pre>
         </div>
 
         <div class="sub-title">Use Case</div>
@@ -586,57 +578,6 @@ model.add( mergedLayer );</code></pre>
                 </th>
                 <td>tf.layers.add (-config)</td>
 
-            </tr>
-            </tbody>
-        </table>
-
-        <div id="tagExplain" class="sub-title">Tag Lookup</div>
-
-        <table class="table table-striped table-bordered table-hover">
-            <thead>
-            <tr>
-                <th scope="col">Tag Icon</th>
-                <th scope="col">Meaning</th>
-                <th scope="col">Instruction</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr id="iconRequired">
-                <th scope="row">⭐️</th>
-                <td>Required</td>
-                <td>Must be provided, cannot be empty. Meanwhile constructor works properly if this arguments provided.
-                    Control arguments use default value.
-                </td>
-            </tr>
-            <tr id="iconSuggest">
-                <th scope="row">🔧</th>
-                <td>Suggest</td>
-                <td>Recommended for giving. The API can work without them.</td>
-            </tr>
-            <tr id="iconOptional">
-                <th scope="row">⚙️️</th>
-                <td>Optional</td>
-                <td>As an auxiliary adjustment parameter when used, selectively added according to the specific
-                    situation
-                    The parameters here have no effect on the structure of the layer (3D visualized form).
-                </td>
-            </tr>
-            <tr id="iconModel">
-                <th scope="row">📦</th>
-                <td>Model</td>
-                <td>Configure the properties of the Layer. It changes the output shape.</td>
-            </tr>
-            <tr id="iconStyle">
-                <th scope="row">🎨</th>
-                <td>Style</td>
-                <td>Override the properties in TSP.model (<a href="modelIntro.html#modelConfig">model configuration</a>)
-                </td>
-            </tr>
-            <tr id="iconAnimation">
-                <th scope="row">🎦</th>
-                <td>Animation</td>
-                <td>Override the properties in TSP.model (<a href="modelIntro.html#modelConfig">model configuration</a>)
-                </td>
             </tr>
             </tbody>
         </table>
