@@ -122,6 +122,7 @@
             <li><a href="basicModel_zh.html">模型</a></li>
             <li><a href="basicLayer_zh.html">网络层</a></li>
             <li><a href="basicPreprocessing_zh.html">预处理</a></li>
+            <li><a href="basicTopo_zh.html">构建图结构</a></li>
             <li><a href="basicLoad_zh.html">载入模型</a></li>
             <li><a href="basicPredict_zh.html">预测</a></li>
             <li><a href="basicClose_zh.html">网络层关闭按钮</a></li>
@@ -250,6 +251,7 @@
                 <li><a href="basicModel_zh.html">模型</a></li>
                 <li><a href="basicLayer_zh.html">网络层</a></li>
                 <li><a href="basicPreprocessing_zh.html">预处理</a></li>
+                <li><a href="basicTopo_zh.html">构建图结构</a></li>
                 <li><a href="basicLoad_zh.html">载入模型</a></li>
                 <li><a href="basicPredict_zh.html">预测</a></li>
                 <li><a href="basicClose_zh.html">网络层关闭按钮</a></li>
@@ -357,11 +359,38 @@
             的初始状态</a>，也可以在模型初始化后 <a href="#changeStatus">改变 Layer 的状态</a>。
         </div>
 
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>
+            <a href="#initStatus">设置初始状态</a>
+            <div class="panel-heading"><i class="material-icons">flare</i>
+                <a href="#setInModel">
+                    在 Model 中设置
+                </a>
+            </div>
+            <div class="panel-heading"><i class="material-icons">flare</i>
+                <a href="#setInLayer">
+                    在特定的 Layer 中设置
+                </a>
+            </div>
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>
+            <a href="#changeStatus">Change Status</a>
+            <div class="panel-heading"><i class="material-icons">flare</i>
+                <a href="#clickLayer">
+                    3D场景中点击
+                </a>
+            </div>
+            <div class="panel-heading"><i class="material-icons">flare</i>
+                <a href="#controlAPI">
+                    使用 API 控制
+                </a>
+            </div>
+        </div>
+
         <div id="initStatus" class="sub-title">设置初始状态</div>
 
         <div>有两种设置 Layer 初始状态的方式：设置 TensorSpace Model 属性，或者设置特定 TensorSpace Layer 属性。</div>
 
-        <div class="model-type-title"><span class="span_bold">在 Model 中设置</span></div>
+        <div id="setInModel" class="model-type-title"><span class="span_bold">在 Model 中设置</span></div>
 
         <div>设置 TensorSpace 模型的 <span class="highlight-text">layerInitStatus</span> 属性，<span
                 class="highlight-text">open</span> 或 <span class="highlight-text">close</span>，默认为
@@ -385,7 +414,7 @@
             <span class="img-label-number">图2</span> - 所有 Layer 都初始化为展开状态
         </div>
 
-        <div class="model-type-title"><span class="span_bold">在特定的 Layer 中设置</span></div>
+        <div id="setInLayer" class="model-type-title"><span class="span_bold">在特定的 Layer 中设置</span></div>
 
         <div>设置 TensorSpace Layer 的 <span class="highlight-text">initStatus</span> 属性，<span
                 class="highlight-text">open</span> 或 <span class="highlight-text">close</span>，默认为 “close”，如果在 Layer
@@ -409,7 +438,7 @@
 
         <div>在 TensorSpace 模型初始化后，有两种改变 TensorSpace Layer 状态的方式：在3D场景中点击 Layer，或者调用 API 控制。</div>
 
-        <div class="model-type-title"><span class="span_bold">3D场景中点击</span></div>
+        <div id="clickLayer" class="model-type-title"><span class="span_bold">3D场景中点击</span></div>
 
         <div>在 3D 场景中点击闭合的 Layer 将会使 Layer 展开。</div>
 
@@ -435,7 +464,7 @@
             <span class="img-label-number">图7</span> - 点击关闭按钮闭合 RGBInput Layer
         </div>
 
-        <div class="model-type-title"><span class="span_bold">使用 API 控制</span></div>
+        <div id="controlAPI" class="model-type-title"><span class="span_bold">使用 API 控制</span></div>
 
         <div>调用 <span class="highlight-text">.openLayer()</span> API 展开 Layer，如果 Layer 已经处于 “open” 状态，Layer 将会保持 “open”
             状态。

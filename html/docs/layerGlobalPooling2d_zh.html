@@ -120,6 +120,7 @@
             <li><a href="basicModel_zh.html">模型</a></li>
             <li><a href="basicLayer_zh.html">网络层</a></li>
             <li><a href="basicPreprocessing_zh.html">预处理</a></li>
+            <li><a href="basicTopo_zh.html">构建图结构</a></li>
             <li><a href="basicLoad_zh.html">载入模型</a></li>
             <li><a href="basicPredict_zh.html">预测</a></li>
             <li><a href="basicClose_zh.html">网络层关闭按钮</a></li>
@@ -248,6 +249,7 @@
                 <li><a href="basicModel_zh.html">模型</a></li>
                 <li><a href="basicLayer_zh.html">网络层</a></li>
                 <li><a href="basicPreprocessing_zh.html">预处理</a></li>
+                <li><a href="basicTopo_zh.html">构建图结构</a></li>
                 <li><a href="basicLoad_zh.html">载入模型</a></li>
                 <li><a href="basicPredict_zh.html">预测</a></li>
                 <li><a href="basicClose_zh.html">网络层关闭按钮</a></li>
@@ -402,7 +404,8 @@
                 </th>
                 <td><span class="highlight-text">Dict</span></td>
                 <td>层关闭按钮外观控制列表， <a href="basicClose.html">查看详情</a></td>
-                <td><p><span class="span_bold">display</span> : <span class="highlight-text">Boolean</span>. true [default] 显示按钮, false 隐藏按钮</p>
+                <td><p><span class="span_bold">display</span> : <span class="highlight-text">Boolean</span>. true
+                    [default] 显示按钮, false 隐藏按钮</p>
                     <p><span class="span_bold">ratio</span> : Int 为正常大小的几倍，默认为1倍</p>
                     <p>例如，设为2为正常大小的2倍大</p></td>
             </tr>
@@ -476,30 +479,16 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer.js#L74"
-                target="_blank">.apply( layer )</a> : <span class="highlight-text">void</span>
+                target="_blank">.apply( previous_layer )</a> : <span class="highlight-text">void</span>
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>此方法只在 <a
-                href="modelFunctional_zh.html">Functional Model</a> 中使用（非序列型，图结构）。
-        </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>将此层连接到layer上，layer即此层的<span
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>将此层连接到 previous_layer 上，previous_layer 即此层的<span
                 class="span_bold">上一层</span>。
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>使用此方法来建立一个连接。在 <a
-                href="modelSequential_zh.html">Sequential Model</a> 中不需要专门使用此方法来建立链接，参照 <span
-                class="span_bold">Keras</span> or <span class="span_bold">TensorFlow.js</span> 构建模型语法，直接添加层即可。
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>此方法可用于构建 <a
+                href="modelFunctional_zh.html">函数模型</a> 图结构。
         </div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let conv2dLayer = new TSP.layers.Conv2d( {
-
-    kernelSize: 2,
-    filters: 16,
-    strides: 1
-
-} );
-
-let globalPooling2dLayer = new TSP.layers.GlobalPooling2d();
-
-globalPooling2dLayer.apply( conv2dLayer );</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>详情参见 <a
+                href="basicTopo_zh.html">构建图结构</a>。
         </div>
 
         <div class="property-title"><a

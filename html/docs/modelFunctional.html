@@ -120,6 +120,7 @@
             <li><a href="basicModel.html">Model</a></li>
             <li><a href="basicLayer.html">Layer</a></li>
             <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+            <li><a href="basicTopo.html">Construct Topology</a></li>
             <li><a href="basicLoad.html">Load Model</a></li>
             <li><a href="basicPredict.html">Predict</a></li>
             <li><a href="basicClose.html">Close Button</a></li>
@@ -248,6 +249,7 @@
                 <li><a href="basicModel.html">Model</a></li>
                 <li><a href="basicLayer.html">Layer</a></li>
                 <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+                <li><a href="basicTopo.html">Construct Topology</a></li>
                 <li><a href="basicLoad.html">Load Model</a></li>
                 <li><a href="basicPredict.html">Predict</a></li>
                 <li><a href="basicClose.html">Close Button</a></li>
@@ -629,12 +631,12 @@ model.init();</code></pre>
 
         <div id="init" class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L255">.init(
-            callback )</a> : <span class="highlight-text">void</span>
+            complete_callback )</a> : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    The <span class="highlight-text">init( callback )</span> method use the provided
+                    The <span class="highlight-text">init( complete_callback )</span> method use the provided
                     configurations to create the actual objects of the model.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -645,7 +647,7 @@ model.init();</code></pre>
 
         <div id="load" class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L141">.load(
-            model_config, callback )</a> : <span class="highlight-text">void</span>
+            load_config )</a> : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
@@ -664,7 +666,7 @@ model.init();</code></pre>
 
         <div id="predict" class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/Model.js#L65">.predict(
-            input_data, callback )</a> : <span class="highlight-text">void</span>
+            input_data, complete_callback )</a> : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">

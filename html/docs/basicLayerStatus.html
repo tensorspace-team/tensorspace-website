@@ -122,6 +122,7 @@
             <li><a href="basicModel.html">Model</a></li>
             <li><a href="basicLayer.html">Layer</a></li>
             <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+            <li><a href="basicTopo.html">Construct Topology</a></li>
             <li><a href="basicLoad.html">Load Model</a></li>
             <li><a href="basicPredict.html">Predict</a></li>
             <li><a href="basicClose.html">Close Button</a></li>
@@ -250,6 +251,7 @@
                 <li><a href="basicModel.html">Model</a></li>
                 <li><a href="basicLayer.html">Layer</a></li>
                 <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+                <li><a href="basicTopo.html">Construct Topology</a></li>
                 <li><a href="basicLoad.html">Load Model</a></li>
                 <li><a href="basicPredict.html">Predict</a></li>
                 <li><a href="basicClose.html">Close Button</a></li>
@@ -357,13 +359,40 @@
             and <a href="#changeStatus">change layer's status</a> after model is initialized.
         </div>
 
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>
+            <a href="#initStatus">Set Initial Status</a>
+            <div class="panel-heading"><i class="material-icons">flare</i>
+                <a href="#setInModel">
+                    Set in Model
+                </a>
+            </div>
+            <div class="panel-heading"><i class="material-icons">flare</i>
+                <a href="#setInLayer">
+                    Set in Specific Layer
+                </a>
+            </div>
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>
+            <a href="#changeStatus">Change Status</a>
+            <div class="panel-heading"><i class="material-icons">flare</i>
+                <a href="#clickLayer">
+                    Click Layer elements
+                </a>
+            </div>
+            <div class="panel-heading"><i class="material-icons">flare</i>
+                <a href="#controlAPI">
+                    Control APIs
+                </a>
+            </div>
+        </div>
+
         <div id="initStatus" class="sub-title">Set Initial Status</div>
 
         <div>There are two ways to set initial status for TensorSpace Layer, set status in TensorSpace model or in a
             specific layer.
         </div>
 
-        <div class="model-type-title"><span class="span_bold">Set in Model</span></div>
+        <div id="setInModel" class="model-type-title"><span class="span_bold">Set in Model</span></div>
 
         <div>Configure TensorSpace model's <span class="highlight-text">layerInitStatus</span> attribute, <span
                 class="highlight-text">open</span> or <span class="highlight-text">close</span>, default to "close".
@@ -387,7 +416,7 @@
             <span class="img-label-number">Fig. 2</span> - Initialize all layers with "open" status
         </div>
 
-        <div class="model-type-title"><span class="span_bold">Set in Specific Layer</span></div>
+        <div id="setInLayer" class="model-type-title"><span class="span_bold">Set in Specific Layer</span></div>
 
         <div>Configure TensorSpace Layer's <span class="highlight-text">initStatus</span> attribute, <span
                 class="highlight-text">open</span> or <span class="highlight-text">close</span>, default to "close", if
@@ -413,7 +442,7 @@
             3D scene or use APIs (.openLayer() & .closeLayer()) to control status.
         </div>
 
-        <div class="model-type-title"><span class="span_bold">Click Layer elements</span></div>
+        <div id="clickLayer" class="model-type-title"><span class="span_bold">Click Layer elements</span></div>
 
         <div>Click the layer aggregation to open Layer in the 3D scene.</div>
 
@@ -439,7 +468,7 @@
             <span class="img-label-number">Fig. 7</span> - Click close button to close RGBInput Layer
         </div>
 
-        <div class="model-type-title"><span class="span_bold">Control APIs</span></div>
+        <div id="controlAPI" class="model-type-title"><span class="span_bold">Control APIs</span></div>
 
         <div>Use <span class="highlight-text">.openLayer()</span> API to open Layer, if layer is already in "open"
             status, the layer will keep open.
