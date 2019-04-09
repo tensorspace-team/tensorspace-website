@@ -353,20 +353,59 @@
 
     <main>
         <header>TensorSpace.js Hello World</header>
+
+        <div class="sub-title">
+            第一步：模型预处理
+        </div>
+
+        <div>在应用 TensorSpace 可视化之前，需要完成一个重要的步骤————对预训练模型进行预处理（通过 <a href="preIntro_zh.html">预处理介绍</a> 可以了解更多有关
+            TensorSpace 预处理的概念与原理）。<a href="../../converter/index_zh.html">TensorSpace-Converter</a> 可以帮助开发者快速完成
+            TensorSpace 预处理过程的辅助工具。
+        </div>
+
+        <div>举个例子，如果现在有一个 <a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/examples/helloworld/rawModel">tf.keras
+            model</a> 的模型，我们可以使用以下 TensorSpace-Converter 转化脚本快速将 tf.keras 模型转化成 TensorSpace 兼容的格式：
+        </div>
+
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+  --input_model_from="tensorflow" \
+  --input_model_format="tf_keras" \
+  --output_layer_names="padding_1,conv_1,maxpool_1,conv_2,maxpool_2,dense_1,dense_2,softmax" \
+  ./PATH/TO/MODEL/tf_keras_model.h5 \
+  ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div class="panel-heading"><i class="material-icons material-icons--outline">wb_sunny</i><b>注意：</b></div>
+
+        <div>
+            <ul class="list-content">
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    在使用 TensorSpace-Converter 对预训练的模型进行预处理之前，需要下载 <span class="highlight-text">tensorspacejs</span> 的
+                    pip 包，并且配置 TensorSpace-Converter 的运行环境。
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    查看 <a href="../../converter/index_zh.html">TensorSpace-Converter</a> 了解更多有关 TensorSpace-Converter
+                    的使用细节。
+                </li>
+            </ul>
+        </div>
+
+        <div class="sub-title">
+            第二步：使用 TensorSpace 可视化模型
+        </div>
+
         <div>
             在 <a href="startSystem_zh.html">合适的环境</a> 中，成功 <a href="startInstall_zh.html">安装</a> 完成 TensorSpace
             之后，我们就可以开始创建我们的第一个3D TensorSpace模型了！
         </div>
 
         <div>
-            为了简化步骤，请随意使用我们在
+            我们将使用
             <a href="https://github.com/tensorspace-team/tensorspace/tree/master/examples/helloworld">HelloWorld</a>
-            路径下所提供的资源。
-        </div>
-
-        <div>
-            我们将会用到
-            <a href="https://github.com/tensorspace-team/tensorspace/blob/master/examples/helloworld/model">
+            路径下的资源。其中包括
+            <a href="https://github.com/tensorspace-team/tensorspace/blob/master/examples/helloworld/convertedModel">
                 适配 TensorSpace 的预处理模型
             </a>
             以及
@@ -385,7 +424,7 @@ let model = new TSP.models.Sequential( container );</code></pre>
         </div>
 
         <div>
-            然后，基于 LeNet 网络的结构：输入层 + 2 X (Conv2D层 & Maxpooling层) + 3 X (Dense层)，我们可以搭建其模型结构：
+            然后，基于 LeNet 网络的结构：输入层 + Padding2D层 + 2 X (Conv2D层 & Maxpooling层) + 3 X (Dense层)，我们可以搭建其模型结构：
         </div>
         <div class="code-snippet">
             <pre><code class="Javascript">model.add( new TSP.layers.GreyscaleInput() );
@@ -403,14 +442,14 @@ model.add( new TSP.layers.Output1d({
 
         <div>
             最后，我们需要载入<a
-                href="https://github.com/tensorspace-team/tensorspace/blob/master/examples/helloworld/model/mnist.json">经过预处理的
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/examples/helloworld/convertedModel">经过预处理的
             TensorSpace 适配模型</a>
             并使用<span class="highlight-text">init()</span>方法来创建模型对象：
         </div>
         <div class="code-snippet">
             <pre><code class="Javascript">model.load({
-    type: "tfjs",
-    url: './lenetModel/mnist.json'
+    type: "tensorflow",
+    url: './PATH/TO/MODEL/model.json'
 });
 model.init(function() {
     console.log("Hello World from TensorSpace"!);

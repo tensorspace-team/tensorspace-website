@@ -366,9 +366,10 @@
             <pre><code class="Javascript">let model = new TSP.model.Model( container, {
 
     ...
-    // optional configurations
+    // required configurations
     inputs: [ input ],
     outputs: [ addLayer ],
+    // optional configurations
     layerShape: "rect",
     layerInitStatus: "close",
     stats: true
@@ -383,18 +384,10 @@
         </div>
 
         <div class="code-snippet">
-            <pre><code class="Javascript">let input = new TSP.layers.GreyscaleInput( {
-
-        shape: [ 28, 28, 1 ]
-
-} );
+            <pre><code class="Javascript">let input = new TSP.layers.GreyscaleInput();
 
 let layer1 = new TSP.layers.Conv2d( {
 
-	kernelSize: 2,
-	filters: 36,
-	strides: 1,
-	padding: "same",
 	name: "conv1"
 
 } );
@@ -403,10 +396,6 @@ layer1.apply( input );
 
 let layer2 = new TSP.layers.Conv2d( {
 
-	kernelSize: 2,
-	filters: 36,
-	strides: 1,
-	padding: "same",
 	name: "conv2"
 
 } );
@@ -415,10 +404,6 @@ layer2.apply( input );
 
 let layer3 = new TSP.layers.Conv2d( {
 
-	kernelSize: 2,
-	filters: 4,
-	strides: 1,
-	padding: "same",
 	name: "conv3"
 
 } );
@@ -452,8 +437,14 @@ let model = new TSP.model.Model(container, {
         <div class="code-snippet">
             <pre><code class="Javascript">model.load( {
 
-    type: "tfjs",
-    url: './lenetModel/mnist.json',
+    type: "tensorflow",
+    url: 'model.json',
+
+    onProgress: function( fraction ) {
+
+        console.log( "Loading progress: " + fraction );
+
+    },
 
     onComplete: function() {
 
