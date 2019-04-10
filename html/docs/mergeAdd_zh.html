@@ -369,7 +369,6 @@
         <div>
             〔参数一〕<span class="span_bold">输入层数组</span>，
             支持<span class="span_bold">一个或以上的输入层</span>。
-            （TensorSpace 目前只支持3维向量相加，之后将会加入1维以及2维相加的支持。）
         </div>
 
         <div>
@@ -506,7 +505,7 @@
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    表示本层的类型，返回一个定值，字符串<span class="highlight-text">Add1d, Add2d, Add3d</span>。根据返回值字段可以判断构造模型的维度特征
+                    表示本层的类型，返回一个定值，字符串<span class="highlight-text">Add1d</span>, <span class="highlight-text">Add2d</span>, 或 <span class="highlight-text">Add3d</span>。根据返回值字段可以判断构造模型的维度特征。
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     创建后即可取到。
@@ -540,14 +539,14 @@
 
         <div class="sub-title">使用样例</div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>声明一个 “MergedLayer3d” 的实例</div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>将两个网络层相加，并获得一个加法层实例：</div>
         <div class="code-snippet">
             <pre><code class="Javascript">let addLayer = TSP.layers.Add(
 
     [ layer1, layer2 ],
 
     {
-        // 建议配置
+        // 建议配置，在函数式模型中为必要配置
         name: "AddLayer",
         // 可选配置
         animeTime: 4000,

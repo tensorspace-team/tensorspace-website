@@ -365,7 +365,7 @@
             <pre><code class="Javascript">TSP.layers.Pooling2d();</code></pre>
         </div>
 
-        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前为载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。</div>
+        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前未载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。</div>
 
         <div>两种方法构造一个新建一个层，输入参数都是必要的。</div>
         <div>[方法一] 使用<span class="span_bold"> poolSize </span>和<span class="span_bold"> strides </span>参数进行构造（支持两种不同的上采样长宽和步进长度）
@@ -579,14 +579,32 @@
 
         <div class="sub-title">使用样例</div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>声明一个Pooling2d的实例</div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> 如果 TensorSpace 模型在初始化之前已经载入了预训练的模型，那么不需要在 Layer 中配置网络模型相关系数。
+        </div>
         <div class="code-snippet">
             <pre><code class="Javascript">let poolingLayer = new TSP.layers.Pooling2d( {
 
+    // 建议配置，当使用 TensorSpace 函数模型时，为必要配置。
+    name: "pooling2d1",
+    // 可选配置。
+    animeTime: 4000,
+    initStatus: "open"
+
+} );</code></pre>
+        </div>
+
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> 如果 TensorSpace 模型在初始化之前未载入预训练的模型，那么需要配置必要的网络模型相关系数。
+        </div>
+        <div class="code-snippet">
+            <pre><code class="Javascript">let poolingLayer = new TSP.layers.Pooling2d( {
+
+    // 必要网络模型相关系数配置。
     poolingSize: [ 2, 3 ],
     strides: [ 2, 2 ],
+    // 建议配置，当使用 TensorSpace 函数模型时，为必要配置。
+    name: "pooling2d2",
+    // 可选配置。
     animeTime: 4000,
-    name: "pooling2d1",
     initStatus: "open"
 
 } );</code></pre>

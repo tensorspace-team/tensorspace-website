@@ -356,7 +356,7 @@
         <div>Conv1d layer is often used in pattern recognition model and extract the feature from the vectors.</div>
         <div class="sub-title">Constructor</div>
 
-        <div>Based on whether <a href="modelIntro.html">TensorSpace Model</a> load a pre-trained model before initialization, configure Layer in different ways. Checkout more about <a href="basicLayerConfig.html">Layer Configuration</a> documentation about the basic configuration rules.</div>
+        <div>Based on whether <a href="modelIntro.html">TensorSpace Model</a> load a pre-trained model before initialization, configure Layer in different ways. Checkout <a href="basicLayerConfig.html">Layer Configuration</a> documentation for more information about the basic configuration rules.</div>
 
         <div><span class="span_bold">〔Case 1〕</span>If TensorSpace Model load a pre-trained model before initialization, there is no need to configure <span class="span_bold">network model related</span> parameters.</div>
 
@@ -563,7 +563,7 @@
         </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Once created, you can get it.</div>
 
-        <div class="sub-title">Method</div>
+        <div class="sub-title">Methods</div>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer.js#L74"
@@ -601,18 +601,36 @@
                 href="basicLayerStatus.html">Layer Status</a> for more details.
         </div>
 
-        <div class="sub-title">Example</div>
+        <div class="sub-title">Examples</div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Declare an instance of Conv1D
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> If TensorSpace Model load a pre-trained model before initialization, there is no need to configure network model related parameters.
+        </div>
+
+        <div class="code-snippet">
+            <pre><code class="Javascript">let convLayer = new TSP.layers.Conv1d( {
+
+    // Recommend Configuration. Required for TensorSpace Functional Model.
+    name: "conv1d1",
+    // Optional Configuration.
+    animeTime: 4000,
+    initStatus: "open"
+
+} );</code></pre>
+        </div>
+
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> If there is no pre-trained model before initialization, it is required to configure network model related parameters.
         </div>
         <div class="code-snippet">
             <pre><code class="Javascript">let convLayer = new TSP.layers.Conv1d( {
 
+    // Required network model related Configuration.
     kernelSize: 5,
     filters: 6,
     strides: 1,
+    // Recommend Configuration. Required for TensorSpace Functional Model.
+    name: "conv1d2",
+    // Optional Configuration.
     animeTime: 4000,
-    name: "conv1d1",
     initStatus: "open"
 
 } );</code></pre>

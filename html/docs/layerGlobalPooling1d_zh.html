@@ -365,7 +365,7 @@
             <pre><code class="Javascript">TSP.layers.GlobalPooling1d();</code></pre>
         </div>
 
-        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前为载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。</div>
+        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前未载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。</div>
 
         <div>[方法一] 直接构造</div>
         <div class="code-snippet">
@@ -534,11 +534,13 @@
 
         <div class="sub-title">使用样例</div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>声明一个GlobalPooling1d的实例</div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> 声明一个GlobalPooling1d的实例</div>
         <div class="code-snippet">
             <pre><code class="Javascript">let globalPooling1dLayer = new TSP.layers.GlobalPooling1d( {
 
+    // 建议配置，当使用 TensorSpace 函数模型时，为必要配置。
     name: "GlobalPooling1d1",
+    // 可选配置。
     initStatus: "open"
 
 } );</code></pre>

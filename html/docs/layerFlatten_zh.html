@@ -364,7 +364,7 @@
             <pre><code class="Javascript">TSP.layers.Flatten();</code></pre>
         </div>
 
-        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前为载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。</div>
+        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前未载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。</div>
 
         <div>[方法一] 直接添加Flatten层</div>
         <div class="code-snippet">
@@ -570,11 +570,13 @@
 
         <div class="sub-title">使用样例</div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>声明一个Flatten的实例</div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> 声明一个Flatten的实例</div>
         <div class="code-snippet">
             <pre><code class="Javascript">let flattenLayer = new TSP.layers.Flatten( {
 
+    // 建议配置，当使用 TensorSpace 函数模型时，为必要配置。
     name: "Flatten1",
+    // 可选配置。
     initStatus: "open"
 
 } );</code></pre>

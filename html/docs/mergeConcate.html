@@ -368,13 +368,8 @@
             <pre><code class="JavaScript">layerConcatenateResult = TSP.layers.Concatenate( [layer1, layer2, ...], { configs } )</code></pre>
         </div>
 
-        <div>
-            The first parameter is a <span class="span_bold">list</span> of layer objects.
-        </div>
-
-        <div>
-            The second parameter is the configurations of the output merged layer object.
-        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> The first parameter is a <span class="span_bold">list</span> of layer objects.</div>
+<div class="panel-heading"><i class="material-icons">filter_center_focus</i> The second parameter is the configurations of the output merged layer object.</div>
 
         <img class="tag-img" src="../../assets/img/docs/Concatenate.jpg">
         <div class="img-label">
@@ -500,12 +495,12 @@
                 href="https://github.com/tensorspace-team/tensorspace/blob/b51397827a38243c33ad38f993a56c6412c54c0e/src/layer/abstract/Layer.js#L251"
                 target="_blank">.layerType</a> : <span class="highlight-text">String</span></div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Type of this layer, return a
-            constant: string <span class="span_bold">Concatenated1d, Concatenated2d, Concatenated3d</span>. This type
+            constant: string <span class="span_bold">Concatenated1d, Concatenated2d, or Concatenated3d</span>. This type
             can identify the dimension of input layers
         </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Once created, you can get it.</div>
 
-        <div class="sub-title">Method</div>
+        <div class="sub-title">Methods</div>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer3d.js#L459"
@@ -529,20 +524,19 @@
                 href="basicLayerStatus.html">Layer Status</a> for more details.
         </div>
 
-        <div class="sub-title">Example</div>
+        <div class="sub-title">Examples</div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Declare an instance of
-            "MergedLayer3d"
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Concatenate two TensorSpace Layers, get Concatenate Layer instance:
         </div>
         <div class="code-snippet">
-            <pre><code class="Javascript">let mergedLayer = TSP.layers.Concatenate(
+            <pre><code class="Javascript">let concatenateLayer = TSP.layers.Concatenate(
 
     [ layer1, layer2 ],
 
     {
-        // Recommend Configuration
+        // Recommend Configuration. Required for TensorSpace Functional Model.
         name: "ConcatenateLayer",
-        // Optional Configuration
+        // Optional Configuration.
         animeTime: 4000,
         initStatus: "open"
     }

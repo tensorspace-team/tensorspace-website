@@ -364,7 +364,7 @@
             <pre><code class="Javascript">TSP.layers.Conv2d();</code></pre>
         </div>
 
-        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前为载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。</div>
+        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前未载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。</div>
 
         <div>两种方法构造一个新建一个层，输入参数都是必要的。</div>
         <div>[方法一] 使用<span class="span_bold"> filters </span>,<span class="span_bold"> kernelSize </span>和<span
@@ -583,15 +583,34 @@
 
         <div class="sub-title">使用样例</div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>声明一个Conv2D的实例</div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> 如果 TensorSpace 模型在初始化之前已经载入了预训练的模型，那么不需要在 Layer 中配置网络模型相关系数。
+        </div>
+
         <div class="code-snippet">
             <pre><code class="Javascript">let convLayer = new TSP.layers.Conv2d( {
 
+    // 建议配置，当使用 TensorSpace 函数模型时，为必要配置。
+    name: "conv2d1",
+    // 可选配置。
+    animeTime: 4000,
+    initStatus: "open"
+
+} );</code></pre>
+        </div>
+
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> 如果 TensorSpace 模型在初始化之前未载入预训练的模型，那么需要配置必要的网络模型相关系数。
+        </div>
+        <div class="code-snippet">
+            <pre><code class="Javascript">let convLayer = new TSP.layers.Conv2d( {
+
+    // 必要网络模型相关系数配置。
     kernelSize: 5,
     filters: 6,
     strides: 1,
-    animeTime: 4000,
+    // 建议配置，当使用 TensorSpace 函数模型时，为必要配置。
     name: "conv2d1",
+    // 可选配置。
+    animeTime: 4000,
     initStatus: "open"
 
 } );</code></pre>

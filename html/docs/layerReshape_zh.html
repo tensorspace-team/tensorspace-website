@@ -376,7 +376,7 @@
             <pre><code class="Javascript">TSP.layers.Reshape()</code></pre>
         </div>
 
-        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前为载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。</div>
+        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前未载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。</div>
 
         <div>[方法一] 使用<span class="highlight-text"> targetShape </span>参数进行构造</div>
         <div class="code-snippet">
@@ -554,12 +554,30 @@
 
         <div class="sub-title">使用样例</div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>声明一个Reshape的实例</div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> 如果 TensorSpace 模型在初始化之前已经载入了预训练的模型，那么不需要在 Layer 中配置网络模型相关系数。
+        </div>
         <div class="code-snippet">
             <pre><code class="Javascript">let reshape = new TSP.layers.Reshape( {
 
-    targetShape: [ 24, 24 ],
+    // 建议配置，当使用 TensorSpace 函数模型时，为必要配置。
     name: "Reshape1",
+    // 可选配置。
+    initStatus: "open",
+    animeTime: 4000
+
+} );</code></pre>
+        </div>
+
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> 如果 TensorSpace 模型在初始化之前未载入预训练的模型，那么需要配置必要的网络模型相关系数。
+        </div>
+        <div class="code-snippet">
+            <pre><code class="Javascript">let reshape = new TSP.layers.Reshape( {
+
+    // 必要网络模型相关系数配置。
+    targetShape: [ 24, 24 ],
+    // 建议配置，当使用 TensorSpace 函数模型时，为必要配置。
+    name: "Reshape2",
+    // 可选配置。
     initStatus: "open",
     animeTime: 4000
 

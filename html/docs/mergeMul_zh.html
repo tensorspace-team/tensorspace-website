@@ -513,7 +513,7 @@
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    表示本层的类型，返回一个定值，字符串<span class="highlight-text">Multiply1d, Multiply2d, Multiply3d</span>。根据返回值字段可以判断构造模型的维度特征
+                    表示本层的类型，返回一个定值，字符串<span class="highlight-text">Multiply1d</span>, <span class="highlight-text">Multiply2d</span>, 或 <span class="highlight-text">Multiply3d</span>。根据返回值字段可以判断构造模型的维度特征。
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     创建后即可取到。
@@ -547,14 +547,14 @@
 
         <div class="sub-title">使用样例</div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>声明一个 “MergedLayer3d” 的实例</div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>将两个网络层求相乘，并获得一个乘法层实例：</div>
         <div class="code-snippet">
-            <pre><code class="Javascript">let mergedLayer = TSP.layers.Multiply(
+            <pre><code class="Javascript">let multiplyLayer = TSP.layers.Multiply(
 
     [ layer1, layer2 ],
 
     {
-        // 建议配置
+        // 建议配置，在函数式模型中为必要配置
         name: "MultipleLayer",
         // 可选配置
         animeTime: 4000,
