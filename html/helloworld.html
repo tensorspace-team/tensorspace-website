@@ -56,7 +56,7 @@
 
 		model.load({
 			type: 'tfjs',
-			url: 'https://tensorspace.org/assets/model/lenet/mnist.json'
+			url: 'https://tensorspace.org/assets/model/lenet/mnist.json',
 		});
 		model.init(function() {
 
@@ -68,7 +68,7 @@
 				success: function(data) {
 
 					model.predict(data);
-					console.log( "Hello World from TensorSpace!" );
+					console.log('Hello World from TensorSpace!');
 
 				},
 			});

@@ -356,15 +356,20 @@
         <div>增加一个激活函数层。</div>
         <div class="sub-title">构造器</div>
 
-        <div>基于 <a href="modelIntro_zh.html">TensorSpace 模型</a> 是否在初始化之前载入了预训练的模型，有不同的配置方法。查看 <a href="basicLayerConfig_zh.html">网络层配置</a> 文档了解网络层配置基本规则。</div>
+        <div>基于 <a href="modelIntro_zh.html">TensorSpace 模型</a> 是否在初始化之前载入了预训练的模型，有不同的配置方法。查看 <a
+                href="basicLayerConfig_zh.html">网络层配置</a> 文档了解网络层配置基本规则。
+        </div>
 
-        <div><span class="span_bold">〔情况一〕</span>如果 TensorSpace 模型在初始化之前已经载入了预训练的模型，那么不需要在 Layer 中配置 <span class="span_bold">网络模型相关系数</span>。</div>
+        <div><span class="span_bold">〔情况一〕</span>如果 TensorSpace 模型在初始化之前已经载入了预训练的模型，那么不需要在 Layer 中配置 <span
+                class="span_bold">网络模型相关系数</span>。
+        </div>
 
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Activation3d();</code></pre>
         </div>
 
-        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前未载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。</div>
+        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前未载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。
+        </div>
 
         <div>[方法一] 使用<span class="span_bold"> activation </span></div>
         <div class="code-snippet">
@@ -542,7 +547,8 @@
 
         <div class="sub-title">使用样例</div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> 如果 TensorSpace 模型在初始化之前已经载入了预训练的模型，那么不需要在 Layer 中配置网络模型相关系数。
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> 如果 TensorSpace
+            模型在初始化之前已经载入了预训练的模型，那么不需要在 Layer 中配置网络模型相关系数。
         </div>
         <div class="code-snippet">
             <pre><code class="Javascript">let activationLayer = new TSP.layers.Activation3d( {
@@ -555,7 +561,8 @@
 } );</code></pre>
         </div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> 如果 TensorSpace 模型在初始化之前未载入预训练的模型，那么需要配置必要的网络模型相关系数。
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> 如果 TensorSpace
+            模型在初始化之前未载入预训练的模型，那么需要配置必要的网络模型相关系数。
         </div>
         <div class="code-snippet">
             <pre><code class="Javascript">let activationLayer = new TSP.layers.Activation3d( {

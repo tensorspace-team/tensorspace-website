@@ -356,15 +356,22 @@
         <div>Conv1d layer is often used in pattern recognition model and extract the feature from the vectors.</div>
         <div class="sub-title">Constructor</div>
 
-        <div>Based on whether <a href="modelIntro.html">TensorSpace Model</a> load a pre-trained model before initialization, configure Layer in different ways. Checkout <a href="basicLayerConfig.html">Layer Configuration</a> documentation for more information about the basic configuration rules.</div>
+        <div>Based on whether <a href="modelIntro.html">TensorSpace Model</a> load a pre-trained model before
+            initialization, configure Layer in different ways. Checkout <a href="basicLayerConfig.html">Layer
+                Configuration</a> documentation for more information about the basic configuration rules.
+        </div>
 
-        <div><span class="span_bold">〔Case 1〕</span>If TensorSpace Model load a pre-trained model before initialization, there is no need to configure <span class="span_bold">network model related</span> parameters.</div>
+        <div><span class="span_bold">〔Case 1〕</span>If TensorSpace Model load a pre-trained model before initialization,
+            there is no need to configure <span class="span_bold">network model related</span> parameters.
+        </div>
 
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Conv1d();</code></pre>
         </div>
 
-        <div><span class="span_bold">〔Case 2〕</span>If there is no pre-trained model before initialization, it is required to configure <span class="span_bold">network model related</span> parameters.</div>
+        <div><span class="span_bold">〔Case 2〕</span>If there is no pre-trained model before initialization, it is
+            required to configure <span class="span_bold">network model related</span> parameters.
+        </div>
 
         <div>Two methods to create a new layer. Arguments are required.</div>
         <div>[Method 1] Use <span class="span_bold">filters</span>, <span class="span_bold">kernelSize</span>
@@ -446,7 +453,8 @@
 
                 </th>
                 <td><span class="highlight-text">Int</span></td>
-                <td>The dimension of the convolution window,<br><span class="span_bold">Network Model Related</span></td>
+                <td>The dimension of the convolution window,<br><span class="span_bold">Network Model Related</span>
+                </td>
                 <td>kernelSize: 3 The 1d convolutional window is a vector.</td>
             </tr>
             <tr>
@@ -603,7 +611,8 @@
 
         <div class="sub-title">Examples</div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> If TensorSpace Model load a pre-trained model before initialization, there is no need to configure network model related parameters.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> If TensorSpace Model load a
+            pre-trained model before initialization, there is no need to configure network model related parameters.
         </div>
 
         <div class="code-snippet">
@@ -618,7 +627,8 @@
 } );</code></pre>
         </div>
 
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> If there is no pre-trained model before initialization, it is required to configure network model related parameters.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> If there is no pre-trained model
+            before initialization, it is required to configure network model related parameters.
         </div>
         <div class="code-snippet">
             <pre><code class="Javascript">let convLayer = new TSP.layers.Conv1d( {
