@@ -378,23 +378,15 @@
         <div class="code-snippet">
             <pre><code class="Javascript">seqModel.add( new TSP.layers.GreyscaleInput( {
 
-    shape: [ 28, 28, 1 ],
     name: "initInput",
     color: 0xFFFFFF,
 
 } ) );
 
-seqModel.add( new TSP.layers.Padding2d( {
-
-    padding: [ 2, 2 ],
-
-} ) );
+seqModel.add( new TSP.layers.Padding2d() );
 
 let convLayer = new TSP.layers.Conv2d( {
 
-    kernelSize: 5,
-    filters: 6,
-    strides: 1,
     name: "conv2d1",
 
 } );
@@ -411,8 +403,14 @@ seqModel.add( convLayer );</code></pre>
         <div class="code-snippet">
             <pre><code class="Javascript">seqModel.load( {
 
-    type: "tfjs",
-    url: './lenetModel/mnist.json',
+    type: "tensorflow",
+    url: 'model.json',
+
+    onProgress: function( fraction ) {
+
+        console.log( "Loading progress: " + fraction );
+
+    },
 
     onComplete: function() {
 
@@ -422,7 +420,11 @@ seqModel.add( convLayer );</code></pre>
 
 } );
 
-seqModel.init();</code></pre>
+seqModel.init( function() {
+
+    console.log("TensorSpace's Model is initialized!");
+
+} );</code></pre>
         </div>
 
         <div>
@@ -503,7 +505,7 @@ seqModel.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L160">.color</a>
-            : color format
+            : Color Format
         </div>
         <div>
             <ul class="list-content">
