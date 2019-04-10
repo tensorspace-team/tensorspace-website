@@ -354,7 +354,6 @@
     <main>
         <header>Reshape</header>
 
-        <div class="sub-title">Constructor</div>
         <div>
             <span class="highlight-text">Reshape</span> is a factory function which generates the proper object
             based on the provided <span class="highlight-text">targetShape</span> argument.
@@ -365,11 +364,24 @@
             <p>if the input has shape 3d, then it returns a 3d <span class="highlight-text">TSP.layers.Reshape3d</span>.
             </p>
         </div>
-        <div>〔Method 1〕Use <span class="highlight-text">targetShape </span></div>
+
+        <div class="sub-title">Constructor</div>
+
+        <div>Based on whether <a href="modelIntro.html">TensorSpace Model</a> load a pre-trained model before initialization, configure Layer in different ways. Checkout more about <a href="basicLayerConfig.html">Layer Configuration</a> documentation about the basic configuration rules.</div>
+
+        <div><span class="span_bold">〔Case 1〕</span>If TensorSpace Model load a pre-trained model before initialization, there is no need to configure <span class="span_bold">network model related</span> parameters.</div>
+
+        <div class="code-snippet">
+            <pre><code class="Javascript">TSP.layers.Reshape();</code></pre>
+        </div>
+
+        <div><span class="span_bold">〔Case 2〕</span>If there is no pre-trained model before initialization, it is required to configure <span class="span_bold">network model related</span> parameters.</div>
+
+        <div>[Method 1] Use <span class="highlight-text">targetShape </span></div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Reshape( { targetShape : Int[] } );</code></pre>
         </div>
-        <div>〔Method 2〕Use <span class="span_bold">shape</span></div>
+        <div>[Method 2] Use <span class="span_bold">shape</span></div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Reshape( { shape : Int[] } );</code></pre>
         </div>
@@ -392,10 +404,10 @@
             <tr>
                 <th scope="row">
                     <p>targetShape</p>
-                    <p><a href="#iconOptional">⭐️</a><a href="#iconModel">📦</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Int[]</span></td>
-                <td>Output shape</td>
+                <td>Output shape,<br><span class="span_bold">Network Model Related</span></td>
                 <td>The product of both input and output shape dimension lengths should be the same.</td>
             </tr>
             <tr>

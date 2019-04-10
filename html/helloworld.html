@@ -26,6 +26,7 @@
             width: 100%;
             height: 100%;
         }
+
     </style>
 
 </head>
@@ -55,10 +56,7 @@
 
 		model.load({
 			type: 'tfjs',
-			url: 'https://tensorspace.org/assets/model/lenet/mnist.json',
-			onComplete: function() {
-				console.log('"Hello World!" from TensorSpace Loader.');
-			},
+			url: 'https://tensorspace.org/assets/model/lenet/mnist.json'
 		});
 		model.init(function() {
 
@@ -70,6 +68,7 @@
 				success: function(data) {
 
 					model.predict(data);
+					console.log( "Hello World from TensorSpace!" );
 
 				},
 			});

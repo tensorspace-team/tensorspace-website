@@ -355,11 +355,22 @@
         <header>Activation1d</header>
         <div>1d Active function layer. The shape is not change through Activation1d layer, but values will change.</div>
         <div class="sub-title">Constructor</div>
-        <div>〔Method 1〕Use <span class="span_bold">activation</span></div>
+
+        <div>Based on whether <a href="modelIntro.html">TensorSpace Model</a> load a pre-trained model before initialization, configure Layer in different ways. Checkout more about <a href="basicLayerConfig.html">Layer Configuration</a> documentation about the basic configuration rules.</div>
+
+        <div><span class="span_bold">〔Case 1〕</span>If TensorSpace Model load a pre-trained model before initialization, there is no need to configure <span class="span_bold">network model related</span> parameters.</div>
+
+        <div class="code-snippet">
+            <pre><code class="Javascript">TSP.layers.Activation1d();</code></pre>
+        </div>
+
+        <div><span class="span_bold">〔Case 2〕</span>If there is no pre-trained model before initialization, it is required to configure <span class="span_bold">network model related</span> parameters.</div>
+
+        <div>[Method 1] Use <span class="span_bold">activation</span></div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Activation1d( { activation : String } );</code></pre>
         </div>
-        <div>〔Method 2〕Use <span class="span_bold">shape</span></div>
+        <div>[Method 2] Use <span class="span_bold">shape</span></div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Activation1d( { shape : [ Int ] } );</code></pre>
         </div>
@@ -384,7 +395,7 @@
                     <p>activation</p>
                 </th>
                 <td><span class="highlight-text">String</span></td>
-                <td>Name of active function</td>
+                <td>Name of active function,<br><span class="span_bold">Network Model Related</span></td>
                 <td>Options: <span class="span_bold">softmax</span> <span class="span_bold">sigmoid</span> <span
                         class="span_bold">tanh</span> <span class="span_bold">ReLU</span> <span
                         class="span_bold">LReLU</span> <span class="span_bold">ELU</span></td>

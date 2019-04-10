@@ -354,14 +354,25 @@
     <main>
         <header>Cropping2d</header>
 
-        <div>Apply cropping to the two-dimentional input.</div>
+        <div>Apply cropping to the two-dimensional input.</div>
 
         <div class="sub-title">Constructor</div>
-        <div>〔Method 1〕Use cropping</div>
+
+        <div>Based on whether <a href="modelIntro.html">TensorSpace Model</a> load a pre-trained model before initialization, configure Layer in different ways. Checkout more about <a href="basicLayerConfig.html">Layer Configuration</a> documentation about the basic configuration rules.</div>
+
+        <div><span class="span_bold">〔Case 1〕</span>If TensorSpace Model load a pre-trained model before initialization, there is no need to configure <span class="span_bold">network model related</span> parameters.</div>
+
         <div class="code-snippet">
-            <pre><code class="Javascript">TSP.layers.Cropping2d( { cropping : [ [2, 2], [1, 1] ] } );</code></pre>
+            <pre><code class="Javascript">TSP.layers.Cropping2d();</code></pre>
         </div>
-        <div>〔Method 2〕Use <span class="span_bold">shape</span></div>
+
+        <div><span class="span_bold">〔Case 2〕</span>If there is no pre-trained model before initialization, it is required to configure <span class="span_bold">network model related</span> parameters.</div>
+
+        <div>[Method 1] Use <span class="span_bold">cropping</span></div>
+        <div class="code-snippet">
+            <pre><code class="Javascript">TSP.layers.Cropping2d( { cropping : [ [ Int,  Int ], [ Int, Int ] ] } );</code></pre>
+        </div>
+        <div>[Method 2] Use <span class="span_bold">shape</span></div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Cropping2d( { shape : [ Int, Int, Int ] } );</code></pre>
         </div>
@@ -387,7 +398,7 @@
 
                 </th>
                 <td><span class="highlight-text">[Int[]]</span></td>
-                <td>Cropping value</td>
+                <td>Cropping value,<br><span class="span_bold">Network Model Related</span></td>
                 <td>cropping : [ [2, 3], [1, 2] ] means to crop at left=2, right=3, top=1, bottom=2</td>
             </tr>
             <tr>
@@ -559,7 +570,6 @@
     cropping : [ [2, 2], [1, 1] ],
     animeTime: 4000,
     name: "cropping2d1",
-    opacityRatio: 2
     initStatus: "open"
 
 } );</code></pre>

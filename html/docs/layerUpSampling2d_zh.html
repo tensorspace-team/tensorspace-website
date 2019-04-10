@@ -355,11 +355,22 @@
         <header>UpSampling2d</header>
         <div>使用UpSampling2d构造一个<span class="span_bold">上采样层</span>，也称图像插值（interpolating）。</div>
         <div class="sub-title">构造器</div>
-        <div>〔方法一〕使用<span class="span_bold"> size </span>参数进行构造</div>
+
+        <div>基于 <a href="modelIntro_zh.html">TensorSpace 模型</a> 是否在初始化之前载入了预训练的模型，有不同的配置方法。查看 <a href="basicLayerConfig_zh.html">网络层配置</a> 文档了解网络层配置基本规则。</div>
+
+        <div><span class="span_bold">〔情况一〕</span>如果 TensorSpace 模型在初始化之前已经载入了预训练的模型，那么不需要在 Layer 中配置 <span class="span_bold">网络模型相关系数</span>。</div>
+
+        <div class="code-snippet">
+            <pre><code class="Javascript">TSP.layers.UpSampling2d();</code></pre>
+        </div>
+
+        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前为载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。</div>
+
+        <div>[方法一] 使用<span class="span_bold"> size </span>参数进行构造</div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.UpSampling2d( { size: [ Float, Float ] } );</code></pre>
         </div>
-        <div>〔方法二〕使用<span class="span_bold"> shape </span>参数进行构造</div>
+        <div>[方法二] 使用<span class="span_bold"> shape </span>参数进行构造</div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.UpSampling2d( { shape : [ Int, Int, Int ] } );</code></pre>
         </div>
@@ -385,7 +396,7 @@
 
                 </th>
                 <td><span class="highlight-text">Float[]</span></td>
-                <td>行和列的上采样因子</td>
+                <td>行和列的上采样因子，<br><span class="span_bold">网络模型相关系数</span></td>
                 <td>例如，<span class="span_bold">size = [ 1.5, 2 ]</span>表示行变成原来的1.5倍，列尺寸变为原来的2倍</td>
             </tr>
             <tr>
@@ -430,7 +441,7 @@
                 </th>
                 <td><span class="highlight-text">String</span></td>
                 <td>本层初始化状态，<a href="basicLayerStatus_zh.html#initStatus">查看详情</a></td>
-                <td><span class="span_bold">close</span>[默认值] : 收缩，<br><span class="span_bold">open</span>：展开</td>
+                <td><span class="span_bold">close</span>[默认值] : 收缩<br><span class="span_bold">open</span>：展开</td>
             </tr>
             <tr>
                 <th scope="row">
@@ -537,7 +548,6 @@
     size: [1.5, 2],
     animeTime: 4000,
     name: "upSampling2d1",
-    opacityRatio: 2
     initStatus: "open"
 
 } );</code></pre>

@@ -454,7 +454,11 @@ let model = new TSP.model.Model(container, {
 
 } );
 
-model.init();</code></pre>
+model.init( function() {
+
+    console.log("TensorSpace's Model is initialized!");
+
+} );</code></pre>
         </div>
 
         <div>

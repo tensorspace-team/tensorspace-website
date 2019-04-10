@@ -436,7 +436,7 @@
                 </th>
                 <td><span class="highlight-text">String</span></td>
                 <td>本层初始化状态，<a href="basicLayerStatus_zh.html#initStatus">查看详情</a></td>
-                <td><span class="span_bold">close</span>[默认值] : 收缩，<br><span class="span_bold">open</span>：展开</td>
+                <td><span class="span_bold">close</span>[默认值] : 收缩<br><span class="span_bold">open</span>：展开</td>
             </tr>
             <tr>
                 <th scope="row">
@@ -554,9 +554,10 @@
     [ layer1, layer2 ],
 
     {
+        // 建议配置
+        name: "MultipleLayer",
+        // 可选配置
         animeTime: 4000,
-        name: "conv2d1",
-        opacityRatio: 2,
         initStatus: "open"
     }
 

@@ -355,19 +355,25 @@
         <header>Conv2d</header>
         <div>Conv2d卷积层多用于图像识别，使用过滤器提取图像中的特征。</div>
         <div class="sub-title">构造器</div>
-        <div>两种方法构造一个新建一个层，输入参数都是必要的。</div>
-        <div>〔方法一〕使用<span class="span_bold"> filters </span>,<span class="span_bold"> kernelSize </span>和<span
-                class="span_bold"> strides </span>参数进行构造（支持两种不同的核形状和步进长度）
+
+        <div>基于 <a href="modelIntro_zh.html">TensorSpace 模型</a> 是否在初始化之前载入了预训练的模型，有不同的配置方法。查看 <a href="basicLayerConfig_zh.html">网络层配置</a> 文档了解网络层配置基本规则。</div>
+
+        <div><span class="span_bold">〔情况一〕</span>如果 TensorSpace 模型在初始化之前已经载入了预训练的模型，那么不需要在 Layer 中配置 <span class="span_bold">网络模型相关系数</span>。</div>
+
+        <div class="code-snippet">
+            <pre><code class="Javascript">TSP.layers.Conv2d();</code></pre>
         </div>
-        <div> 正方形（长宽相等）</div>
+
+        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前为载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。</div>
+
+        <div>两种方法构造一个新建一个层，输入参数都是必要的。</div>
+        <div>[方法一] 使用<span class="span_bold"> filters </span>,<span class="span_bold"> kernelSize </span>和<span
+                class="span_bold"> strides </span>参数进行构造
+        </div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Conv2d( { filters : Int, kernelSize: Int, strides: Int } );</code></pre>
         </div>
-        <div> 长宽不等的核和步进长度使用一个数组两个值来表示（第一个是宽，第二个是长）</div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">TSP.layers.Conv2d( { filters : Int, kernelSize: [Int, Int], strides: [Int, Int] } );</code></pre>
-        </div>
-        <div>〔方法二〕使用<span class="span_bold"> shape </span>参数进行构造</div>
+        <div>[方法二] 使用<span class="span_bold"> shape </span>参数进行构造</div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Conv2d( { shape : [ Int, Int, Int ] } );</code></pre>
         </div>
@@ -389,15 +395,6 @@
             <tbody>
             <tr>
                 <th scope="row">
-                    <p>filters</p>
-
-                </th>
-                <td><span class="highlight-text">Int</span></td>
-                <td>特征提取过滤器的数量</td>
-                <td>filters: 16</td>
-            </tr>
-            <tr>
-                <th scope="row">
                     <p>name</p>
 
                 </th>
@@ -411,11 +408,20 @@
             </tr>
             <tr>
                 <th scope="row">
+                    <p>filters</p>
+
+                </th>
+                <td><span class="highlight-text">Int</span></td>
+                <td>特征提取过滤器的数量，<br><span class="span_bold">网络模型相关系数</span></td>
+                <td>filters: 16</td>
+            </tr>
+            <tr>
+                <th scope="row">
                     <p>padding</p>
 
                 </th>
                 <td><span class="highlight-text">String</span></td>
-                <td>是否使用padding</td>
+                <td>Padding模式，<br><span class="span_bold">网络模型相关系数</span></td>
                 <td>
                     <p><span class="span_bold">valid</span> [默认值] 不使用padding，丢弃无法提取特征的部分，会改变输出的形状</p>
                     <p><span class="span_bold">same</span>: 使用padding，在不够的位置补零 ，输出的形状不变</p>
@@ -427,7 +433,7 @@
 
                 </th>
                 <td><span class="highlight-text">Int[]</span></td>
-                <td>当前层的输出形状</td>
+                <td>当前层的输出形状，<br><span class="span_bold">网络模型相关系数</span></td>
                 <td>dataFormat默认通道值在最后，例如，shape = [ 28, 28, 6 ]，则表示输出为6个特征图，每幅图大小28*28</td>
             </tr>
             <tr>
@@ -436,8 +442,8 @@
 
                 </th>
                 <td><span class="highlight-text">Int | Int[]</span></td>
-                <td>卷积核的尺寸</td>
-                <td>2d卷积核，举个例子，kernelSize: 3 或者 kernelSize: [1, 7]</td>
+                <td>卷积核的尺寸，<br><span class="span_bold">网络模型相关系数</span></td>
+                <td>2d卷积核，举个例子，<br>如果配置一个<span class="span_bold">正方形卷积核</span>，将 kernelSize 设置成 3<br>如果配置一个<span class="span_bold">矩形卷积核</span>，将 kernelSize 设置成 [1, 7]</td>
             </tr>
             <tr>
                 <th scope="row">
@@ -445,8 +451,8 @@
 
                 </th>
                 <td><span class="highlight-text">Int | Int[]</span></td>
-                <td>卷积移动框的移动步长</td>
-                <td>在不同方向的步长，默认情况自动推断 strides = [1, 1]，举个例子，strides: 2 或者 strides: [1, 2]</td>
+                <td>卷积移动框的移动步长，<br><span class="span_bold">网络模型相关系数</span></td>
+                <td>在不同方向的步长，默认情况自动推断 strides = [1, 1]，举个例子，<br>如果<span class="span_bold">长宽方向的步长相等</span>，将 strides 配置成 2<br>如果<span class="span_bold">长宽方向的步长不相等</span>，将 strides 配置成 [1, 2]</td>
             </tr>
             <tr>
                 <th scope="row">
@@ -477,7 +483,7 @@
                 </th>
                 <td><span class="highlight-text">String</span></td>
                 <td>本层初始化状态，<a href="basicLayerStatus_zh.html#initStatus">查看详情</a></td>
-                <td><span class="span_bold">close</span>[默认值] : 收缩，<br><span class="span_bold">open</span>：展开</td>
+                <td><span class="span_bold">close</span>[默认值] : 收缩<br><span class="span_bold">open</span>：展开</td>
             </tr>
             <tr>
                 <th scope="row">

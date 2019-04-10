@@ -354,7 +354,6 @@
     <main>
         <header>Reshape</header>
 
-        <div class="sub-title">构造器</div>
         <div>
             <span class="highlight-text">Reshape</span> 为工厂对象，
             根据参数 <span class="highlight-text">targetShape</span> 形状创建相对应的对象。在构造对象的时候可以使用 <span class="highlight-text">shape</span>
@@ -366,11 +365,24 @@
             <p>如果输入为3维，例如 <span class="highlight-text">targetShape=[32, 32, 180]</span>，
                 那么创建<span class="highlight-text">TSP.layers.Reshape3d</span>，输出为3维；</p>
         </div>
-        <div>〔方法一〕使用<span class="highlight-text"> targetShape </span>参数进行构造</div>
+
+        <div class="sub-title">构造器</div>
+
+        <div>基于 <a href="modelIntro_zh.html">TensorSpace 模型</a> 是否在初始化之前载入了预训练的模型，有不同的配置方法。查看 <a href="basicLayerConfig_zh.html">网络层配置</a> 文档了解网络层配置基本规则。</div>
+
+        <div><span class="span_bold">〔情况一〕</span>如果 TensorSpace 模型在初始化之前已经载入了预训练的模型，那么不需要在 Layer 中配置 <span class="span_bold">网络模型相关系数</span>。</div>
+
+        <div class="code-snippet">
+            <pre><code class="Javascript">TSP.layers.Reshape()</code></pre>
+        </div>
+
+        <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前为载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。</div>
+
+        <div>[方法一] 使用<span class="highlight-text"> targetShape </span>参数进行构造</div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Reshape( { targetShape : Int[] } )</code></pre>
         </div>
-        <div>〔方法二〕使用<span class="span_bold"> shape </span>参数进行构造</div>
+        <div>[方法二] 使用<span class="span_bold"> shape </span>参数进行构造</div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Reshape( { shape : Int[] } );</code></pre>
         </div>
@@ -393,10 +405,10 @@
             <tr>
                 <th scope="row">
                     <p>targetShape</p>
-                    <p><a href="#iconOptional">⭐️</a><a href="#iconModel">📦</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Int[]</span></td>
-                <td>输出的形状</td>
+                <td>输出的形状，<br><span class="span_bold">网络模型相关系数</span></td>
                 <td>例如，<span class="highlight-text">targetShape = [24, 24]</span> 表示把输入转换成 24*24 的矩阵</td>
             </tr>
             <tr>
@@ -441,7 +453,7 @@
                 </th>
                 <td><span class="highlight-text">String</span></td>
                 <td>本层初始化状态，<a href="basicLayerStatus_zh.html#initStatus">查看详情</a></td>
-                <td><span class="span_bold">close</span>[默认值] : 收缩，<br><span class="span_bold">open</span>：展开</td>
+                <td><span class="span_bold">close</span>[默认值] : 收缩<br><span class="span_bold">open</span>：展开</td>
             </tr>
             <tr>
                 <th scope="row">

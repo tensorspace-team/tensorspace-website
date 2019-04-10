@@ -357,12 +357,23 @@
             only change the calculate method not the structure of the model, so they both use this API.
         </div>
         <div class="sub-title">Constructor</div>
+
+        <div>Based on whether <a href="modelIntro.html">TensorSpace Model</a> load a pre-trained model before initialization, configure Layer in different ways. Checkout more about <a href="basicLayerConfig.html">Layer Configuration</a> documentation about the basic configuration rules.</div>
+
+        <div><span class="span_bold">〔Case 1〕</span>If TensorSpace Model load a pre-trained model before initialization, there is no need to configure <span class="span_bold">network model related</span> parameters.</div>
+
+        <div class="code-snippet">
+            <pre><code class="Javascript">TSP.layers.Pooling1d();</code></pre>
+        </div>
+
+        <div><span class="span_bold">〔Case 2〕</span>If there is no pre-trained model before initialization, it is required to configure <span class="span_bold">network model related</span> parameters.</div>
+
         <div>Two methods to create a new layer. Arguments are required.</div>
-        <div>〔Method 1〕Use <span class="span_bold">poolSize</span> and <span class="span_bold">strides</span></div>
+        <div>[Method 1] Use <span class="span_bold">poolSize</span> and <span class="span_bold">strides</span></div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Pooling1d( { poolSize : Int, strides: Int } );</code></pre>
         </div>
-        <div>〔Method 2〕Use <span class="span_bold">shape</span></div>
+        <div>[Method 2] Use <span class="span_bold">shape</span></div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Pooling1d( { shape : [ Int, Int ] } );</code></pre>
         </div>
@@ -421,7 +432,7 @@
 
                 </th>
                 <td><span class="highlight-text">String</span></td>
-                <td>Padding mode</td>
+                <td>Padding mode,<br><span class="span_bold">Network Model Related</span></td>
                 <td>
                     <p><span class="span_bold">valid</span>[default]: Without padding. It drops the right-most columns
                         (or bottom-most rows).</p>
@@ -434,7 +445,7 @@
 
                 </th>
                 <td><span class="highlight-text">Int[]</span></td>
-                <td>Output shape</td>
+                <td>Output shape,<br><span class="span_bold">Network Model Related</span></td>
                 <td>shape = [ 28 ].</td>
             </tr>
             <tr>
