@@ -403,7 +403,17 @@
                 </th>
                 <td><span class="highlight-text">[Int[]]</span></td>
                 <td>裁剪的值，<br><span class="span_bold">网络模型相关系数</span></td>
-                <td>例如，cropping : [ [2, 3], [1, 2] ]表示在第一纬左右各裁剪2和3，在第二维度上下各裁剪1和2</td>
+                <td>例如，<span class="span_bold">cropping : [ [2, 3], [1, 2] ]</span><br>表示在第一纬左右各裁剪2和3，在第二维度上下各裁剪1和2</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <p>shape</p>
+
+                </th>
+                <td><span class="highlight-text">Int[]</span></td>
+                <td>当前层的输出形状，<br><span class="span_bold">网络模型相关系数</span></td>
+                <td>例如，<span class="span_bold">shape: [ 28, 28, 6 ]</span><br>则表示输出为6个特征图，每幅图大小28*28，dataFormat默认通道值在最后
+                </td>
             </tr>
             <tr>
                 <th scope="row">

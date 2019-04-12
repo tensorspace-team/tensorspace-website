@@ -383,7 +383,7 @@
         <div><span class="span_bold">〔情况二〕</span>如果 TensorSpace 模型在初始化之前未载入预训练的模型，那么需要配置必要的<span class="span_bold">网络模型相关系数</span>。
         </div>
 
-        <div>[方法一] 使用<span class="highlight-text"> targetShape </span>参数进行构造</div>
+        <div>[方法一] 使用<span class="span_bold"> targetShape </span>参数进行构造</div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Reshape( { targetShape : Int[] } )</code></pre>
         </div>
@@ -415,6 +415,15 @@
                 <td><span class="highlight-text">Int[]</span></td>
                 <td>输出的形状，<br><span class="span_bold">网络模型相关系数</span></td>
                 <td>例如，<span class="highlight-text">targetShape = [24, 24]</span> 表示把输入转换成 24*24 的矩阵</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <p>shape</p>
+
+                </th>
+                <td><span class="highlight-text">Int[]</span></td>
+                <td>输出的形状，<br><span class="span_bold">网络模型相关系数</span></td>
+                <td>使用方法与 <span class="span_bold"> targetShape </span>相同</td>
             </tr>
             <tr>
                 <th scope="row">

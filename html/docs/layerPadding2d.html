@@ -404,8 +404,21 @@
                 </th>
                 <td><span class="highlight-text">[Int, Int]</span></td>
                 <td>Amount of zeros padded to the edge,<br><span class="span_bold">Network Model Related</span></td>
-                <td>For example, padding = [ 2, 3 ] represents padding zero number to (left, right, top, bottom), in
+                <td>For example, <span class="span_bold">padding: [ 2, 3 ]</span><br>means padding zero number to (left,
+                    right, top, bottom), in
                     this example, (2, 2, 3, 3).
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <p>shape</p>
+
+                </th>
+                <td><span class="highlight-text">Int[]</span></td>
+                <td>Output shape,<br><span class="span_bold">Network Model Related</span></td>
+                <td>For example, <span class="span_bold">shape: [ 28, 28, 6 ]</span><br>means the output is
+                    3-dimensional, 6 feature maps and each
+                    one is 28 by 28. Data format is channel last.
                 </td>
             </tr>
             <tr>

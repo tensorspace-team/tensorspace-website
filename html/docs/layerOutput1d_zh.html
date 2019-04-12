@@ -402,7 +402,7 @@
                 </th>
                 <td><span class="highlight-text">Int</span></td>
                 <td>输出层节点的数量，<br><span class="span_bold">网络模型相关系数</span></td>
-                <td>例如，units = 100，本层全链接层有100个神经元节点</td>
+                <td>例如，<span class="span_bold">units: 100</span><br>本层全链接层有100个神经元节点</td>
             </tr>
             <tr>
                 <th scope="row">
@@ -463,6 +463,15 @@
                         class="span_bold">建议添加</span>，以便从模型中获取层对象<br>在<span class="highlight-text">函数式模型</span>中，必须给每个层添加
                     name 属性，且添加的名称 name 的值需要和预训练网络中对应层的名称相同
                 </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <p>shape</p>
+
+                </th>
+                <td><span class="highlight-text">Int[]</span></td>
+                <td>输出的形状，<br><span class="span_bold">网络模型相关系数</span></td>
+                <td>例如，<span class="span_bold">shape: 100</span><br>表示输出是一个向量，1维长度100</td>
             </tr>
             <tr>
                 <th scope="row">

@@ -453,7 +453,8 @@
                 </th>
                 <td><span class="highlight-text">Int[]</span></td>
                 <td>当前层的输出形状，<br><span class="span_bold">网络模型相关系数</span></td>
-                <td>例如，shape = [ 28, 28 ]，则表示输出尺寸固定为28*28</td>
+                <td>例如，<span class="span_bold">shape: [ 28, 28, 6 ]</span><br>则表示输出为6个特征图，每幅图大小28*28，dataFormat默认通道值在最后
+                </td>
             </tr>
             <tr>
                 <th scope="row">

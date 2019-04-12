@@ -417,8 +417,18 @@
                 </th>
                 <td><span class="highlight-text">Int | Int[]</span></td>
                 <td>卷积移动框的移动步长，<br><span class="span_bold">网络模型相关系数</span></td>
-                <td>在不同方向的步长，默认情况自动推断 strides = [1, 1]，举个例子，<br>如果<span class="span_bold">长宽方向的步长相等</span>，将 strides 配置成
+                <td>在不同方向的步长，默认情况自动推断 strides: [1, 1]，举个例子，<br>如果<span class="span_bold">长宽方向的步长相等</span>，将 strides 配置成
                     2<br>如果<span class="span_bold">长宽方向的步长不相等</span>，将 strides 配置成 [1, 2]
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <p>shape</p>
+
+                </th>
+                <td><span class="highlight-text">Int[]</span></td>
+                <td>当前层的输出形状，<br><span class="span_bold">网络模型相关系数</span></td>
+                <td>例如，<span class="span_bold">shape: [ 28, 28, 6 ]</span><br>则表示输出为6个特征图，每幅图大小28*28，dataFormat默认通道值在最后
                 </td>
             </tr>
             <tr>

@@ -402,8 +402,18 @@
                 </th>
                 <td><span class="highlight-text">[Int, Int]</span></td>
                 <td>四周加0的数量，<br><span class="span_bold">网络模型相关系数</span></td>
-                <td>例如，padding=[ 2, 2 ]，第一个值表示向<span class="span_bold">左右</span>分别加2个零，第二个值表示向<span
+                <td>例如，<span class="span_bold">padding: [ 2, 2 ]</span><br>第一个值表示向<span class="span_bold">左右</span>分别加2个零，第二个值表示向<span
                         class="span_bold">上下</span>加2个0
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <p>shape</p>
+
+                </th>
+                <td><span class="highlight-text">Int[]</span></td>
+                <td>当前层的输出形状，<br><span class="span_bold">网络模型相关系数</span></td>
+                <td>例如，<span class="span_bold">shape: [ 28, 28, 6 ]</span><br>则表示输出为6个特征图，每幅图大小28*28，dataFormat默认通道值在最后
                 </td>
             </tr>
             <tr>

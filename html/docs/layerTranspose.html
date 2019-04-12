@@ -459,11 +459,23 @@
                 </th>
                 <td><span class="highlight-text">Int | Int[]</span></td>
                 <td>The strides of the convolution,<br><span class="span_bold">Network Model Related</span></td>
-                <td>Strides in both dimensions, [default] Automatic inference strides = [1, 1]. For example,<br><span
+                <td>Strides in both dimensions, [default] Automatic inference strides: [1, 1]. For example,<br><span
                         class="span_bold">Strides in width and height is same</span>, configure strides to be 2<br><span
                         class="span_bold">Strides in width and height is different</span>, configure strides to be [1,
                     2]
 
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <p>shape</p>
+
+                </th>
+                <td><span class="highlight-text">Int[]</span></td>
+                <td>Output shape,<br><span class="span_bold">Network Model Related</span></td>
+                <td>For example, <span class="span_bold">shape: [ 28, 28, 6 ]</span><br>means the output is
+                    3-dimensional, 6 feature maps and each
+                    one is 28 by 28. Data format is channel last.
                 </td>
             </tr>
             <tr>

@@ -404,8 +404,21 @@
                 </th>
                 <td><span class="highlight-text">Float[]</span></td>
                 <td>UpSampling factor of row and col,<br><span class="span_bold">Network Model Related</span></td>
-                <td><span class="span_bold">size: [1.5, 2]</span> means the width becomes 1.5 times and height becomes 2
+                <td>For example, <span class="span_bold">size: [ 1.5, 2 ]</span><br>means the width becomes 1.5 times
+                    and height becomes 2
                     times
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <p>shape</p>
+
+                </th>
+                <td><span class="highlight-text">Int[]</span></td>
+                <td>Output shape,<br><span class="span_bold">Network Model Related</span></td>
+                <td>For example, <span class="span_bold">shape: [ 28, 28, 6 ]</span><br>means the output is
+                    3-dimensional, 6 feature maps and each
+                    one is 28 by 28. Data format is channel last.
                 </td>
             </tr>
             <tr>

@@ -402,7 +402,17 @@
                 </th>
                 <td><span class="highlight-text">Float[]</span></td>
                 <td>行和列的上采样因子，<br><span class="span_bold">网络模型相关系数</span></td>
-                <td>例如，<span class="span_bold">size = [ 1.5, 2 ]</span>表示行变成原来的1.5倍，列尺寸变为原来的2倍</td>
+                <td>例如，<span class="span_bold">size: [ 1.5, 2 ]</span><br>表示行变成原来的1.5倍，列尺寸变为原来的2倍</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <p>shape</p>
+
+                </th>
+                <td><span class="highlight-text">Int[]</span></td>
+                <td>当前层的输出形状，<br><span class="span_bold">网络模型相关系数</span></td>
+                <td>例如，<span class="span_bold">shape: [ 28, 28, 6 ]</span><br>则表示输出为6个特征图，每幅图大小28*28，dataFormat默认通道值在最后
+                </td>
             </tr>
             <tr>
                 <th scope="row">
