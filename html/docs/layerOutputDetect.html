@@ -385,9 +385,9 @@
                 <td><span class="highlight-text">String</span></td>
                 <td>Name of the layer
                 </td>
-                <td>name: "layerName"<br>In <span class="highlight-text">Sequential Model</span>: <span
+                <td>For example, <span class="span_bold">name: "layerName"</span><br>In <span class="highlight-text">Sequential Model</span>: <span
                         class="span_bold">Highly recommend</span> to add a name attribute to make it easier to get Layer
-                    object from model.<br>In <span class="highlight-text">Functional Model</span>: It is required to
+                    object from model.<br>In <span class="highlight-text">Functional Model</span>: It is <span class="span_bold">required</span> to
                     configure name attribute for TensorSpace Layer, and the name should be <span class="span_bold">the same</span>
                     as the name of corresponding Layer in pre-trained model.
                 </td>
@@ -409,7 +409,7 @@
                 </th>
                 <td><span class="highlight-text">Dict</span></td>
                 <td>Close button appearance control dict. <a href="basicClose.html">More about close button</a></td>
-                <td><p><span class="span_bold">display</span>: <span class="highlight-text">Boolean</span>.
+                <td><p><span class="span_bold">display</span>: <span class="highlight-text">Bool</span>.
                     true[default] Show button, false Hide button
                 </p>
                     <p><span class="span_bold">ratio</span>: <span class="highlight-text">Int</span>. Times to close
@@ -438,7 +438,7 @@
                 </th>
                 <td><span class="highlight-text">Int</span></td>
                 <td>The speed of open and close animation</td>
-                <td>For example, 2000 means 2 seconds.<br><span class="span_bold">Note</span>: Configure animeTime in a
+                <td>For example, <span class="span_bold">animeTime: 2000</span><br>means the animation time will last 2 seconds.<br><span class="span_bold">Note</span>: Configure animeTime in a
                     specific layer will override
                     model's animeTime configuration.
                 </td>
