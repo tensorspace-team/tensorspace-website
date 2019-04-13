@@ -361,7 +361,8 @@
                 Configuration</a> documentation for more information about the basic configuration rules.
         </div>
 
-        <div><span class="span_bold">〔Case 1〕</span>If TensorSpace Model has loaded a pre-trained model before initialization,
+        <div><span class="span_bold">〔Case 1〕</span>If TensorSpace Model has loaded a pre-trained model before
+            initialization,
             there is no need to configure <span class="span_bold">network model related</span> parameters.
         </div>
 
@@ -411,9 +412,12 @@
                 <td><span class="highlight-text">String</span></td>
                 <td>Name of the layer
                 </td>
-                <td>For example, <span class="span_bold">name: "layerName"</span><br>In <span class="highlight-text">Sequential Model</span>: <span
-                        class="span_bold">Highly recommend</span> to add a name attribute to make it easier to get Layer
-                    object from model.<br>In <span class="highlight-text">Functional Model</span>: It is <span class="span_bold">required</span> to
+                <td>For example, <span class="span_bold">name: "layerName"</span><br>In <span class="highlight-text">Sequential Model</span>:
+                    <span
+                            class="span_bold">Highly recommend</span> to add a name attribute to make it easier to get
+                    Layer
+                    object from model.<br>In <span class="highlight-text">Functional Model</span>: It is <span
+                            class="span_bold">required</span> to
                     configure name attribute for TensorSpace Layer, and the name should be <span class="span_bold">the same</span>
                     as the name of corresponding Layer in pre-trained model.
                 </td>
@@ -464,7 +468,8 @@
                 </th>
                 <td><span class="highlight-text">Int</span></td>
                 <td>The speed of open and close animation</td>
-                <td>For example, <span class="span_bold">animeTime: 2000</span><br>means the animation time will last 2 seconds.<br><span class="span_bold">Note</span>: Configure animeTime in a
+                <td>For example, <span class="span_bold">animeTime: 2000</span><br>means the animation time will last 2
+                    seconds.<br><span class="span_bold">Note</span>: Configure animeTime in a
                     specific layer will override
                     model's animeTime configuration.
                 </td>
@@ -480,10 +485,12 @@
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The shape of output tensor is
             3-dimensional. <a href="basicDimension.html">3️⃣</a></div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The shape of output tensor is
-            3-dimensional. For example outputShape = [ 224, 224, 3 ] represents 3 feature maps and each one is 224 by
+            3-dimensional. For example <span class="span_bold">outputShape = [ 224, 224, 3 ]</span> represents 3 feature
+            maps and each one is 224 by
             224.
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After model.init() data is
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After <span class="span_bold">model.init()</span>
+            data is
             available, otherwise is undefined.
         </div>
 
@@ -493,7 +500,8 @@
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The intermediate raw data after this
             layer.
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After load and model.predict() data
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After load and <span
+                class="span_bold">model.predict()</span> data
             is available, otherwise is undefined.
         </div>
 

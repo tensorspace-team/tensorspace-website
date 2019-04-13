@@ -460,7 +460,8 @@
                 <td>层的命名
                 </td>
                 <td>name: “layerName”<br>在<span class="highlight-text">顺序模型</span>中，<span
-                        class="span_bold">建议添加</span>，以便从模型中获取层对象<br>在<span class="highlight-text">函数式模型</span>中，<span class="span_bold">必须</span>给每个层添加
+                        class="span_bold">建议添加</span>，以便从模型中获取层对象<br>在<span class="highlight-text">函数式模型</span>中，<span
+                        class="span_bold">必须</span>给每个层添加
                     name 属性，且添加的名称 name 的值需要和预训练网络中对应层的名称相同
                 </td>
             </tr>
@@ -514,7 +515,7 @@
                 target="_blank">.inputShape</a> : <span class="highlight-text">Int[]</span></div>
         <div class="panel-heading"><i
                 class="material-icons">filter_center_focus</i>本层输入Tensor的形状，dataFormat默认通道值在最后，例如<span
-                class="highlight-text">inputShape = [ 28, 28, 3 ]</span> 表示输入为3个特征图，每个图大小为28*28
+                class="span_bold">inputShape = [ 28, 28, 3 ]</span> 表示输入为3个特征图，每个图大小为28*28
         </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>在 model.init() 后才可拿到数据，否则为undefined。
         </div>
@@ -525,7 +526,7 @@
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>本层输出Tensor的形状为1维 <a
                 href="basicDimension_zh.html">1️⃣</a></div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>本层输出Tensor的形状，例如<span
-                class="highlight-text">outputShape = [ 1000 ]</span> 表示经过此层处理后，有1000个1维输出
+                class="span_bold">outputShape = [ 1000 ]</span> 表示经过此层处理后，有1000个1维输出
         </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>在 model.init() 后才可拿到数据，否则为undefined。
         </div>

@@ -404,7 +404,10 @@ model.init();</code></pre>
 
         <div class="panel-heading"><i class="material-icons material-icons--outline">wb_sunny</i><b>Note:</b></div>
 
-        <div>当载入的预训练模型网络层形状不固定时，需要配置 TensorSpace 输入层的 shape。举个例子，<a href="https://keras.io/applications/#inceptionv3">Keras 应用中的 InceptionV3 预训练模型</a> 网络层形状不固定，可以接受输入层的形状在 [299, 299, 3] - [75, 75, 3] 之间，在 TensorSpace 中可视化此类模型时，需要配置 RGBInput 的 shape，具体配置方式如下：</div>
+        <div>当载入的预训练模型网络层形状不固定时，需要配置 TensorSpace 输入层的 shape。举个例子，<a href="https://keras.io/applications/#inceptionv3">Keras
+            应用中的 InceptionV3 预训练模型</a> 网络层形状不固定，可以接受输入层的形状在 [299, 299, 3] - [75, 75, 3] 之间，在 TensorSpace 中可视化此类模型时，需要配置
+            RGBInput 的 shape，具体配置方式如下：
+        </div>
 
         <div class="code-snippet">
             <pre><code class="javascript">model.add( new TSP.layers.RGBInput({
@@ -412,7 +415,10 @@ model.init();</code></pre>
 }) );</code></pre>
         </div>
 
-        <div>在这个 <a href="https://github.com/tensorspace-team/tensorspace/blob/master/examples/inceptionv3/inceptionv3.html">TensorSpace InceptionV3 可视化应用</a> 中，可以查看具体代码。</div>
+        <div>在这个 <a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/examples/inceptionv3/inceptionv3.html">TensorSpace
+            InceptionV3 可视化应用</a> 中，可以查看具体代码。
+        </div>
 
         <div id="noModel" class="sub-title">模型在初始化时未载入预训练模型</div>
 

@@ -402,7 +402,8 @@
                 <td>层的命名
                 </td>
                 <td>name: “layerName”<br>在<span class="highlight-text">顺序模型</span>中，<span
-                        class="span_bold">建议添加</span>，以便从模型中获取层对象<br>在<span class="highlight-text">函数式模型</span>中，<span class="span_bold">必须</span>给每个层添加
+                        class="span_bold">建议添加</span>，以便从模型中获取层对象<br>在<span class="highlight-text">函数式模型</span>中，<span
+                        class="span_bold">必须</span>给每个层添加
                     name 属性，且添加的名称 name 的值需要和预训练网络中对应层的名称相同
                 </td>
             </tr>
@@ -459,14 +460,14 @@
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    表示本层<span class="span_bold">输出Tensor</span>的形状为<span class="highlight-text">3维</span>。
-                    dataFormat默认通道值在最后，例如<span class="highlight-text"><span class="highlight-text">outputShape = [ 32, 32, 4 ]</span></span>
-                    表示经过此层处理后，有<span class="highlight-text">4</span>个特征图，
-                    每个图大小为<span class="highlight-text">32*32</span>。
+                    表示本层<span class="span_bold">输出Tensor</span>的形状为<span class="span_bold">3维</span>。
+                    dataFormat默认通道值在最后，例如<span class="span_bold">outputShape = [ 32, 32, 4 ]</span>
+                    表示经过此层处理后，有<span class="span_bold">4</span>个特征图，
+                    每个图大小为<span class="span_bold">32*32</span>。
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    在 <span class="highlight-text">model.init()</span> 后才可拿到数据，否则为
-                    <span class="highlight-text">undefined</span>。
+                    在 <span class="span_bold">model.init()</span> 后才可拿到数据，否则为
+                    <span class="span_bold">undefined</span>。
                 </li>
             </ul>
         </div>
@@ -482,8 +483,8 @@
                     表示本层的<span class="span_bold">层间输出</span>值数组，加法层不改变输出的形状，和被加层的形状相同。
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    在 <span class="highlight-text">model.init()</span> 后才可拿到数据，否则为
-                    <span class="highlight-text">undefined</span>。
+                    在 <span class="span_bold">model.init()</span> 后才可拿到数据，否则为
+                    <span class="span_bold">undefined</span>。
                 </li>
             </ul>
         </div>
