@@ -407,6 +407,27 @@ model.load({
 model.init();</code></pre>
         </div>
 
+        <div class="panel-heading"><i class="material-icons material-icons--outline">wb_sunny</i><b>Note:</b></div>
+
+        <div>If the pre-trained model has dynamical shape, it is <span class="highlight-text">required to configure the input shape in TensorSpace Input Layer</span>.
+            For example, the <a href="https://keras.io/applications/#inceptionv3">pre-trained InceptionV3 model from
+                Keras Application</a> has a dynamically shape, which make it has ability to accept input shape from
+            [299, 299, 3] to [75, 75, 3]. If you would like to visualize this kinds of models in TensorSpace, it is
+            required to configure a specific input shape for TensorSpace Input Layer. The input shape configuration
+            would be like:
+        </div>
+
+        <div class="code-snippet">
+            <pre><code class="javascript">model.add( new TSP.layers.RGBInput({
+  shape: [299, 299, 3]
+}) );</code></pre>
+        </div>
+
+        <div>Checkout this <a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/examples/inceptionv3/inceptionv3.html">InceptionV3
+            TensorSpace visualization example</a> for more information.
+        </div>
+
         <div id="noModel" class="sub-title">Init without a pre-trained model</div>
 
         <div>If TensorSpace model init without a pre-trained model, which will be an empty TensorSpace model, we need to
