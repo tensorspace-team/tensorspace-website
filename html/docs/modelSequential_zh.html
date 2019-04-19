@@ -120,10 +120,13 @@
             <li><a href="basicModel_zh.html">模型</a></li>
             <li><a href="basicLayer_zh.html">网络层</a></li>
             <li><a href="basicPreprocessing_zh.html">预处理</a></li>
+            <li><a href="basicTopo_zh.html">构建图结构</a></li>
+            <li><a href="basicLayerConfig_zh.html">网络层配置</a></li>
             <li><a href="basicLoad_zh.html">载入模型</a></li>
             <li><a href="basicPredict_zh.html">预测</a></li>
             <li><a href="basicClose_zh.html">网络层关闭按钮</a></li>
             <li><a href="basicPaging_zh.html">网络层分页</a></li>
+            <li><a href="basicLayerStatus_zh.html">网络层状态</a></li>
             <li><a href="basicMetrics_zh.html">网络层系数</a></li>
             <li><a href="basicDimension_zh.html">网络层维度</a></li>
             <li><a href="basicColor_zh.html">网络层颜色</a></li>
@@ -131,6 +134,20 @@
         </ul>
     </div>
     <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
+        <div id="converterLabelS">
+            TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="converterS">
+            <li><a href="../../converter/index_zh.html">简介</a></li>
+            <li><a href="../../converter/install_zh.html">安装</a></li>
+            <li><a href="../../converter/docker_zh.html">在 Docker 中使用</a></li>
+            <li><a href="../../converter/api_zh.html">Converter API</a></li>
+            <li><a href="../../converter/usage_zh.html">使用样例</a></li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
         <div id="preprocessingLabelS">
             模型预处理<img src="../../assets/img/docs/document_arrow.png">
         </div>
@@ -138,7 +155,6 @@
             <li><a href="preIntro_zh.html">简介</a></li>
             <li><a href="preTf_zh.html">TensorFlow</a></li>
             <li><a href="preKeras_zh.html">Keras</a></li>
-            <li><a href="preTfKeras_zh.html">tf.keras</a></li>
             <li><a href="preTfjs_zh.html">TensorFlow.js</a></li>
         </ul>
     </div>
@@ -234,10 +250,13 @@
                 <li><a href="basicModel_zh.html">模型</a></li>
                 <li><a href="basicLayer_zh.html">网络层</a></li>
                 <li><a href="basicPreprocessing_zh.html">预处理</a></li>
+                <li><a href="basicTopo_zh.html">构建图结构</a></li>
+                <li><a href="basicLayerConfig_zh.html">网络层配置</a></li>
                 <li><a href="basicLoad_zh.html">载入模型</a></li>
                 <li><a href="basicPredict_zh.html">预测</a></li>
                 <li><a href="basicClose_zh.html">网络层关闭按钮</a></li>
                 <li><a href="basicPaging_zh.html">网络层分页</a></li>
+                <li><a href="basicLayerStatus_zh.html">网络层状态</a></li>
                 <li><a href="basicMetrics_zh.html">网络层系数</a></li>
                 <li><a href="basicDimension_zh.html">网络层维度</a></li>
                 <li><a href="basicColor_zh.html">网络层颜色</a></li>
@@ -245,6 +264,20 @@
             </ul>
         </div>
         <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
+            <div id="converterLabel">
+                TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="converter">
+                <li><a href="../../converter/index_zh.html">简介</a></li>
+                <li><a href="../../converter/install_zh.html">安装</a></li>
+                <li><a href="../../converter/docker_zh.html">在 Docker 中使用</a></li>
+                <li><a href="../../converter/api_zh.html">Converter API</a></li>
+                <li><a href="../../converter/usage_zh.html">使用样例</a></li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
             <div id="preprocessingLabel">
                 模型预处理<img src="../../assets/img/docs/document_arrow.png">
             </div>
@@ -252,7 +285,6 @@
                 <li><a href="preIntro_zh.html">简介</a></li>
                 <li><a href="preTf_zh.html">TensorFlow</a></li>
                 <li><a href="preKeras_zh.html">Keras</a></li>
-                <li><a href="preTfKeras_zh.html">tf.keras</a></li>
                 <li><a href="preTfjs_zh.html">TensorFlow.js</a></li>
             </ul>
         </div>
@@ -332,7 +364,7 @@
             <pre><code class="Javascript">let seqModel = new TSP.models.Sequential( container, {
 
     ...
-    // necessary configurations
+    // optional configurations
     layerInitStatus: "close",
     aggregationStrategy: "max",
     layerShape: "rect",
@@ -346,23 +378,15 @@
         <div class="code-snippet">
             <pre><code class="Javascript">seqModel.add( new TSP.layers.GreyscaleInput( {
 
-    shape: [ 28, 28, 1 ],
     name: "initInput",
     color: 0xFFFFFF,
 
 } ) );
 
-seqModel.add( new TSP.layers.Padding2d( {
-
-    padding: [ 2, 2 ],
-
-} ) );
+seqModel.add( new TSP.layers.Padding2d() );
 
 let convLayer = new TSP.layers.Conv2d( {
 
-    kernelSize: 5,
-    filters: 6,
-    strides: 1,
     name: "conv2d1",
 
 } );
@@ -379,8 +403,14 @@ seqModel.add( convLayer );</code></pre>
         <div class="code-snippet">
             <pre><code class="Javascript">seqModel.load( {
 
-    type: "tfjs",
-    url: './lenetModel/mnist.json',
+    type: "tensorflow",
+    url: 'model.json',
+
+    onProgress: function( fraction ) {
+
+        console.log( "Loading progress: " + fraction );
+
+    },
 
     onComplete: function() {
 
@@ -390,7 +420,11 @@ seqModel.add( convLayer );</code></pre>
 
 } );
 
-seqModel.init();</code></pre>
+seqModel.init( function() {
+
+    console.log("TensorSpace's Model is initialized!");
+
+} );</code></pre>
         </div>
 
         <div>
@@ -456,7 +490,7 @@ seqModel.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L134">.animeTime</a>
-            : Double
+            : <span class="highlight-text">Double</span>
         </div>
         <div>
             <ul class="list-content">
@@ -468,7 +502,7 @@ seqModel.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L160">.color</a>
-            : color format
+            : Color Format
         </div>
         <div>
             <ul class="list-content">
@@ -480,7 +514,7 @@ seqModel.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L154">.stats</a>
-            : Boolean
+            : <span class="highlight-text">Bool</span>
         </div>
         <div>
             <ul class="list-content">
@@ -492,7 +526,7 @@ seqModel.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L15">.predictDataShapes</a>
-            : Array
+            : <span class="highlight-text">Array</span>
         </div>
         <div>
             <ul class="list-content">
@@ -504,7 +538,7 @@ seqModel.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L16">.feedInputs</a>
-            : Array
+            : <span class="highlight-text">Array</span>
         </div>
         <div>
             <ul class="list-content">
@@ -518,12 +552,12 @@ seqModel.init();</code></pre>
 
         <div id="init" class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L255">.init(
-            callback )</a> : void
+            complete_callback )</a> : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    <span class="highlight-text">init( callback )</span>方法使用所提供的配置信息创建模型中所有对象。
+                    <span class="highlight-text">init( complete_callback )</span>方法使用所提供的配置信息创建模型中所有对象。
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
                     详情参见<a href="basicModel_zh.html#createDetail">Model (concept)</a>。
@@ -533,7 +567,7 @@ seqModel.init();</code></pre>
 
         <div id="load" class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L141">.load(
-            model_config, callback )</a> : void
+            load_config )</a> : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
@@ -548,7 +582,7 @@ seqModel.init();</code></pre>
 
         <div id="predict" class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/Sequential.js#L48">.predict(
-            input_data, callback )</a> : void
+            input_data, complete_callback )</a> : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
@@ -563,7 +597,7 @@ seqModel.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/Sequential.js#L118">.reset()</a>
-            : void
+            : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
@@ -581,7 +615,7 @@ seqModel.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/Sequential.js#L239">.add(
-            layer )</a> : void
+            layer )</a> : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
@@ -599,7 +633,7 @@ seqModel.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L241">.getAllLayers()</a>
-            : Layer[]
+            : <span class="highlight-text">Layer[]</span>
         </div>
         <div>
             <ul class="list-content">
@@ -611,7 +645,7 @@ seqModel.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L221">.getLayerByName(
-            name )</a> : Layer
+            name )</a> : <span class="highlight-text">Layer</span>
         </div>
         <div>
             <ul class="list-content">

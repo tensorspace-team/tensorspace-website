@@ -34,14 +34,11 @@ function createModel() {
 	});
 
 	// input_1: [1,100]
-	model.add(new TSP.layers.Input1d({
-		shape: [100]
-	}));
+	model.add(new TSP.layers.Input1d());
 
 	// 0
 	// output: (128*7*7=) 6272
 	model.add(new TSP.layers.Dense({
-		units: 6272,
 		paging: true,
 		segmentLength: 400,
 		overview: true
@@ -49,47 +46,27 @@ function createModel() {
 
 	// 1
 	// output: 128*7*7 = 6272
-	model.add(new TSP.layers.Reshape({
-		targetShape: [7, 7, 128]
-	}));
+	model.add(new TSP.layers.Reshape());
 
 	// 2
 	// output: 128*14*14 = 25088
-	model.add(new TSP.layers.UpSampling2d({
-		size: [2, 2]
-	}));
+	model.add(new TSP.layers.UpSampling2d());
 
 	// 3
 	// output: 128*14*14 = 25088
-	model.add(new TSP.layers.Conv2d({
-		kernelSize: 3,
-		filters: 128,
-		strides: 1,
-		padding: "same"
-	}));
+	model.add(new TSP.layers.Conv2d());
 
 	// 4
 	// output: 128*28*28 = 100352
-	model.add(new TSP.layers.UpSampling2d({
-		size: [2, 2]
-	}));
+	model.add(new TSP.layers.UpSampling2d());
 
 	// 5
 	// output: 64*28*28 = 50176
-	model.add(new TSP.layers.Conv2d({
-		kernelSize: 3,
-		filters: 64,
-		strides: 1,
-		padding: "same"
-	}));
+	model.add(new TSP.layers.Conv2d());
 
 	// 6
 	// output: 1*28*28 = 784
 	model.add(new TSP.layers.Conv2d({
-		kernelSize: 3,
-		filters: 1,
-		strides: 1,
-		padding: "same",
 		name: "digitLayer"
 	}));
 

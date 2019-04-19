@@ -121,10 +121,13 @@
             <li><a href="basicModel.html">Model</a></li>
             <li><a href="basicLayer.html">Layer</a></li>
             <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+            <li><a href="basicTopo.html">Construct Topology</a></li>
+            <li><a href="basicLayerConfig.html">Layer Configuration</a></li>
             <li class="nowLabel">Load Model</li>
             <li><a href="basicPredict.html">Predict</a></li>
             <li><a href="basicClose.html">Close Button</a></li>
             <li><a href="basicPaging.html">Paging</a></li>
+            <li><a href="basicLayerStatus.html">Layer Status</a></li>
             <li><a href="basicMetrics.html">Layer Metrics</a></li>
             <li><a href="basicDimension.html">Layer Dimension</a></li>
             <li><a href="basicColor.html">Layer Color</a></li>
@@ -132,6 +135,20 @@
         </ul>
     </div>
     <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
+        <div id="converterLabelS">
+            TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="converterS">
+            <li><a href="../../converter/index.html">Introduction</a></li>
+            <li><a href="../../converter/install.html">Installation</a></li>
+            <li><a href="../../converter/docker.html">Running with Docker</a></li>
+            <li><a href="../../converter/api.html">Converter API</a></li>
+            <li><a href="../../converter/usage.html">Usage Examples</a></li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
         <div id="preprocessingLabelS">
             Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
         </div>
@@ -139,7 +156,6 @@
             <li><a href="preIntro.html">Introduction</a></li>
             <li><a href="preTf.html">TensorFlow</a></li>
             <li><a href="preKeras.html">Keras</a></li>
-            <li><a href="preTfKeras.html">tf.keras</a></li>
             <li><a href="preTfjs.html">TensorFlow.js</a></li>
         </ul>
     </div>
@@ -235,10 +251,13 @@
                 <li><a href="basicModel.html">Model</a></li>
                 <li><a href="basicLayer.html">Layer</a></li>
                 <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+                <li><a href="basicTopo.html">Construct Topology</a></li>
+                <li><a href="basicLayerConfig.html">Layer Configuration</a></li>
                 <li class="nowLabel">Load Model</li>
                 <li><a href="basicPredict.html">Predict</a></li>
                 <li><a href="basicClose.html">Close Button</a></li>
                 <li><a href="basicPaging.html">Paging</a></li>
+                <li><a href="basicLayerStatus.html">Layer Status</a></li>
                 <li><a href="basicMetrics.html">Layer Metrics</a></li>
                 <li><a href="basicDimension.html">Layer Dimension</a></li>
                 <li><a href="basicColor.html">Layer Color</a></li>
@@ -246,6 +265,20 @@
             </ul>
         </div>
         <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
+            <div id="converterLabel">
+                TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="converter">
+                <li><a href="../../converter/index.html">Introduction</a></li>
+                <li><a href="../../converter/install.html">Installation</a></li>
+                <li><a href="../../converter/docker.html">Running with Docker</a></li>
+                <li><a href="../../converter/api.html">Converter API</a></li>
+                <li><a href="../../converter/usage.html">Usage Examples</a></li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
             <div id="preprocessingLabel">
                 Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
             </div>
@@ -253,7 +286,6 @@
                 <li><a href="preIntro.html">Introduction</a></li>
                 <li><a href="preTf.html">TensorFlow</a></li>
                 <li><a href="preKeras.html">Keras</a></li>
-                <li><a href="preTfKeras.html">tf.keras</a></li>
                 <li><a href="preTfjs.html">TensorFlow.js</a></li>
             </ul>
         </div>
@@ -414,7 +446,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48"
-                target="_blank">.onProgress</a> : void
+                target="_blank">.onProgress</a> : <span class="highlight-text">void</span>
         </div>
 
         <div>
@@ -434,7 +466,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40"
-                target="_blank">.onComplete</a> : void
+                target="_blank">.onComplete</a> : <span class="highlight-text">void</span>
         </div>
 
         <div>
@@ -517,7 +549,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48"
-                target="_blank">.onProgress</a> : void
+                target="_blank">.onProgress</a> : <span class="highlight-text">void</span>
         </div>
 
         <div>
@@ -537,7 +569,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40"
-                target="_blank">.onComplete</a> : void
+                target="_blank">.onComplete</a> : <span class="highlight-text">void</span>
         </div>
 
         <div>
@@ -561,7 +593,7 @@
             <pre><code class="Javascript">model.load( {
 
     type: "tensorflow",
-    url: "/PATH_TO_MODEL/tensorflowjs_model.pb",
+    url: "/PATH_TO_MODEL/model.json",
     outputsName: [ "Maximum", "Const_1", "Maximum_1", "Const_2", "Maximum_2",
         "Const_3", "Maximum_3", "Const_4", "Maximum_4", "Const_5",
         "Maximum_5", "Const_6", "Const_7", "Const_8", "add_8" ],
@@ -624,7 +656,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/TfLoader.js#L47"
-                target="_blank">.outputsName</a> : String[]
+                target="_blank">.outputsName</a> : <span class="highlight-text">String[]</span>
         </div>
 
         <div>
@@ -648,7 +680,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L48"
-                target="_blank">.onProgress</a> : void
+                target="_blank">.onProgress</a> : <span class="highlight-text">void</span>
         </div>
 
         <div>
@@ -668,7 +700,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/loader/Loader.js#L40"
-                target="_blank">.onComplete</a> : void
+                target="_blank">.onComplete</a> : <span class="highlight-text">void</span>
         </div>
 
         <div>

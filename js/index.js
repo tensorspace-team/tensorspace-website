@@ -88,77 +88,28 @@ function createModel() {
 
 	} );
 
-	model.add( new TSP.layers.GreyscaleInput( {
+	model.add( new TSP.layers.GreyscaleInput() );
 
-		shape: [ 28, 28, 1 ],
-		name: "initInput",
+	model.add( new TSP.layers.Padding2d() );
 
-	} ) );
-
-	model.add( new TSP.layers.Padding2d( {
-
-		padding: [ 2, 2 ],
-
-	} ) );
-
-	conv2d =  new TSP.layers.Conv2d( {
-
-		kernelSize: 5,
-		filters: 6,
-		strides: 1,
-		name: "conv2d1"
-
-	} );
+	conv2d =  new TSP.layers.Conv2d();
 
 	model.add( conv2d );
 
-	model.add( new TSP.layers.Pooling2d( {
+	model.add( new TSP.layers.Pooling2d() );
 
-		poolSize: [ 2, 2 ],
-		strides: [ 2, 2 ],
+	model.add( new TSP.layers.Conv2d() );
 
-		name: "maxPool2d1"
+	model.add( new TSP.layers.Pooling2d() );
 
-	} ) );
+	model.add( new TSP.layers.Dense() );
 
-	model.add( new TSP.layers.Conv2d( {
-
-		kernelSize: 5,
-		filters: 16,
-		strides: 1,
-		name: "conv2d2"
-
-	} ) );
-
-	model.add( new TSP.layers.Pooling2d( {
-
-		poolSize: [ 2, 2 ],
-		strides: [ 2, 2 ],
-
-		name: "maxPool2d2"
-
-	} ) );
-
-	model.add( new TSP.layers.Dense( {
-
-		units: 120,
-		name: "dense1",
-
-	} ) );
-
-	model.add( new TSP.layers.Dense( {
-
-		units: 84,
-		name: "dense2",
-
-	} ) );
+	model.add( new TSP.layers.Dense() );
 
 	model.add( new TSP.layers.Output1d( {
-
-		units: 10,
+		
 		outputs: [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ],
-		initStatus: "open",
-		name: "output"
+		initStatus: "open"
 
 	} ) );
 

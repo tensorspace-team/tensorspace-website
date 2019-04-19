@@ -122,10 +122,13 @@
             <li><a href="basicModel.html">Model</a></li>
             <li><a href="basicLayer.html">Layer</a></li>
             <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+            <li><a href="basicTopo.html">Construct Topology</a></li>
+            <li><a href="basicLayerConfig.html">Layer Configuration</a></li>
             <li><a href="basicLoad.html">Load Model</a></li>
             <li><a href="basicPredict.html">Predict</a></li>
             <li><a href="basicClose.html">Close Button</a></li>
             <li><a href="basicPaging.html">Paging</a></li>
+            <li><a href="basicLayerStatus.html">Layer Status</a></li>
             <li><a href="basicMetrics.html">Layer Metrics</a></li>
             <li><a href="basicDimension.html">Layer Dimension</a></li>
             <li><a href="basicColor.html">Layer Color</a></li>
@@ -133,6 +136,20 @@
         </ul>
     </div>
     <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
+        <div id="converterLabelS">
+            TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="converterS">
+            <li><a href="../../converter/index.html">Introduction</a></li>
+            <li><a href="../../converter/install.html">Installation</a></li>
+            <li><a href="../../converter/docker.html">Running with Docker</a></li>
+            <li><a href="../../converter/api.html">Converter API</a></li>
+            <li><a href="../../converter/usage.html">Usage Examples</a></li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
         <div id="preprocessingLabelS">
             Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
         </div>
@@ -140,7 +157,6 @@
             <li><a href="preIntro.html">Introduction</a></li>
             <li><a href="preTf.html">TensorFlow</a></li>
             <li><a href="preKeras.html">Keras</a></li>
-            <li><a href="preTfKeras.html">tf.keras</a></li>
             <li><a href="preTfjs.html">TensorFlow.js</a></li>
         </ul>
     </div>
@@ -236,10 +252,13 @@
                 <li><a href="basicModel.html">Model</a></li>
                 <li><a href="basicLayer.html">Layer</a></li>
                 <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+                <li><a href="basicTopo.html">Construct Topology</a></li>
+                <li><a href="basicLayerConfig.html">Layer Configuration</a></li>
                 <li><a href="basicLoad.html">Load Model</a></li>
                 <li><a href="basicPredict.html">Predict</a></li>
                 <li><a href="basicClose.html">Close Button</a></li>
                 <li><a href="basicPaging.html">Paging</a></li>
+                <li><a href="basicLayerStatus.html">Layer Status</a></li>
                 <li><a href="basicMetrics.html">Layer Metrics</a></li>
                 <li><a href="basicDimension.html">Layer Dimension</a></li>
                 <li><a href="basicColor.html">Layer Color</a></li>
@@ -247,6 +266,20 @@
             </ul>
         </div>
         <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
+            <div id="converterLabel">
+                TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="converter">
+                <li><a href="../../converter/index.html">Introduction</a></li>
+                <li><a href="../../converter/install.html">Installation</a></li>
+                <li><a href="../../converter/docker.html">Running with Docker</a></li>
+                <li><a href="../../converter/api.html">Converter API</a></li>
+                <li><a href="../../converter/usage.html">Usage Examples</a></li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
             <div id="preprocessingLabel">
                 Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
             </div>
@@ -254,7 +287,6 @@
                 <li><a href="preIntro.html">Introduction</a></li>
                 <li><a href="preTf.html">TensorFlow</a></li>
                 <li><a href="preKeras.html">Keras</a></li>
-                <li><a href="preTfKeras.html">tf.keras</a></li>
                 <li><a href="preTfjs.html">TensorFlow.js</a></li>
             </ul>
         </div>
@@ -324,20 +356,71 @@
     <main>
         <header>TensorSpace.js Hello World</header>
 
+        <div class="sub-title">
+            Step 1: Preprocess the Pre-trained Model
+        </div>
+
+        <div>Before applying TensorSpace to visualize the pre-trained model, there is an important pipeline -
+            TensorSpace model preprocessing ( Checkout <a href="preIntro.html">Preprocessing Introduction</a> for more
+            information about TensorSpace preprocessing ). We can use <a href="../../converter/index.html">TensorSpace
+                Converter</a> to quickly complete the TensorSpace Preprocessing.
+        </div>
+
+        <div>For example, if we have a <a
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/examples/helloworld/rawModel">tf.keras</a>
+            model in hand, we can use the following TensorSpace-Converter conversion script to convert a tf.keras model
+            to the TensorSpace compatible format:
+        </div>
+
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+  --input_model_from="tensorflow" \
+  --input_model_format="tf_keras" \
+  --output_layer_names="padding_1,conv_1,maxpool_1,conv_2,maxpool_2,dense_1,dense_2,softmax" \
+  ./PATH/TO/MODEL/tf_keras_model.h5 \
+  ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div class="panel-heading"><i class="material-icons material-icons--outline">wb_sunny</i><b>Note:</b></div>
+
+        <div>
+            <ul class="list-content">
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    Make sure to install <span class="highlight-text">tensorspacejs</span> pip package, and setup a
+                    TensorSpace-Converter runtime environment before using TensorSpace-Converter to preprocess the
+                    pre-trained model.
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    Based on different training libraries, we provide different preprocessing tutorials: <a
+                            href="preTf.html">TensorFlow Tutorial</a>, <a href="preKeras.html">Keras Tutorial</a>, <a
+                            href="preTfjs.html">TensorFlow.js Tutorial</a>.
+                </li>
+                <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
+                    Checkout <a href="../../converter/index.html">TensorSpace-Converter</a> for more information about
+                    TensorSpace-Converter.
+                </li>
+            </ul>
+        </div>
+
+        <img class="bash-demo" src="../../assets/img/converter/hello_converter.gif">
+        <div class="img-label">
+            <span class="img-label-number">Fig. 1</span> - TensorSpace-Converter Usage
+        </div>
+
+        <div class="sub-title">
+            Step 2: Using TensorSpace to Visualize the Model
+        </div>
+
         <div>
             After <a href="startInstall.html">installing</a> TensorSpace in <a href="startSystem.html">appropriate
             environment</a> successfully, let's create our first interactive 3D TensorSpace model!
         </div>
 
         <div>
-            For the convenience, feel free to use the resources from our
+            For the convenience, we will use the the resources from this repository's
             <a href="https://github.com/tensorspace-team/tensorspace/tree/master/examples/helloworld">HelloWorld</a>
-            directory.
-        </div>
-
-        <div>
-            We will use the
-            <a href="https://github.com/tensorspace-team/tensorspace/blob/master/examples/helloworld/model">
+            directory, which includes
+            <a href="https://github.com/tensorspace-team/tensorspace/blob/master/examples/helloworld/convertedModel">
                 preprocessed TensorSpace compatible LeNet model
             </a>
             and
@@ -356,46 +439,44 @@ let model = new TSP.models.Sequential( container );</code></pre>
         </div>
 
         <div>
-            Next, based on the LeNet structure: Input + 2 * (Conv2D & Maxpooling) + 3 * (Dense),
+            Next, based on the LeNet structure: Input + Padding2D + 2 * (Conv2D & Maxpooling) + 3 * (Dense),
             we build the structure of the model:
         </div>
         <div class="code-snippet">
-            <pre><code class="Javascript">model.add( new TSP.layers.GreyscaleInput({ shape: [28, 28, 1] }) );
-model.add( new TSP.layers.Padding2d({ padding: [2, 2] }) );
-model.add( new TSP.layers.Conv2d({ kernelSize: 5, filters: 6, strides: 1 }) );
-model.add( new TSP.layers.Pooling2d({ poolSize: [2, 2], strides: [2, 2] }) );
-model.add( new TSP.layers.Conv2d({ kernelSize: 5, filters: 16, strides: 1 }) );
-model.add( new TSP.layers.Pooling2d({ poolSize: [2, 2], strides: [2, 2] }) );
-model.add( new TSP.layers.Dense({ units: 120 }) );
-model.add( new TSP.layers.Dense({ units: 84 }) );
+            <pre><code class="Javascript">model.add( new TSP.layers.GreyscaleInput() );
+model.add( new TSP.layers.Padding2d() );
+model.add( new TSP.layers.Conv2d() );
+model.add( new TSP.layers.Pooling2d() );
+model.add( new TSP.layers.Conv2d() );
+model.add( new TSP.layers.Pooling2d() );
+model.add( new TSP.layers.Dense() );
+model.add( new TSP.layers.Dense() );
 model.add( new TSP.layers.Output1d({
-    units: 10,
     outputs: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 }) );</code></pre>
         </div>
 
         <div>
             Last, we can load our <a
-                href="https://github.com/tensorspace-team/tensorspace/blob/master/examples/helloworld/model/mnist.json">preprocessed
+                href="https://github.com/tensorspace-team/tensorspace/blob/master/examples/helloworld/convertedModel">preprocessed
             TensorSpace compatible model</a>
             and use <span class="highlight-text">init()</span> method to create the model:
         </div>
         <div class="code-snippet">
             <pre><code class="Javascript">model.load({
-    type: "tfjs",
-    url: './lenetModel/mnist.json',
-    onComplete: function() {
-        console.log( "\"Hello World!\" from TensorSpace Loader." );
-    }
+    type: "tensorflow",
+    url: './PATH/TO/MODEL/model.json'
 });
-model.init();</code></pre>
+model.init(function() {
+    console.log("Hello World from TensorSpace"!);
+});</code></pre>
         </div>
 
         <div>We can get the following model in the browser:</div>
 
         <img class="tag-img" src="../../assets/img/docs/HelloWorld_empty_lenet.png">
         <div class="img-label">
-            <span class="img-label-number">Fig. 1</span> - LeNet model without any input data
+            <span class="img-label-number">Fig. 2</span> - LeNet model without any input data
         </div>
 
         <div>
@@ -424,7 +505,7 @@ model.init();</code></pre>
 
         <img class="tag-img" src="../../assets/img/docs/HelloWorld_5.png">
         <div class="img-label">
-            <span class="img-label-number">Fig. 2</span> - LeNet model with input data "5"
+            <span class="img-label-number">Fig. 3</span> - LeNet model with input data "5"
         </div>
 
         <div class="codepen-wrapper">

@@ -120,10 +120,13 @@
             <li><a href="basicModel_zh.html">模型</a></li>
             <li><a href="basicLayer_zh.html">网络层</a></li>
             <li><a href="basicPreprocessing_zh.html">预处理</a></li>
+            <li><a href="basicTopo_zh.html">构建图结构</a></li>
+            <li><a href="basicLayerConfig_zh.html">网络层配置</a></li>
             <li><a href="basicLoad_zh.html">载入模型</a></li>
             <li><a href="basicPredict_zh.html">预测</a></li>
             <li><a href="basicClose_zh.html">网络层关闭按钮</a></li>
             <li><a href="basicPaging_zh.html">网络层分页</a></li>
+            <li><a href="basicLayerStatus_zh.html">网络层状态</a></li>
             <li><a href="basicMetrics_zh.html">网络层系数</a></li>
             <li><a href="basicDimension_zh.html">网络层维度</a></li>
             <li><a href="basicColor_zh.html">网络层颜色</a></li>
@@ -131,6 +134,20 @@
         </ul>
     </div>
     <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
+        <div id="converterLabelS">
+            TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="converterS">
+            <li><a href="../../converter/index_zh.html">简介</a></li>
+            <li><a href="../../converter/install_zh.html">安装</a></li>
+            <li><a href="../../converter/docker_zh.html">在 Docker 中使用</a></li>
+            <li><a href="../../converter/api_zh.html">Converter API</a></li>
+            <li><a href="../../converter/usage_zh.html">使用样例</a></li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
         <div id="preprocessingLabelS">
             模型预处理<img src="../../assets/img/docs/document_arrow.png">
         </div>
@@ -138,7 +155,6 @@
             <li><a href="preIntro_zh.html">简介</a></li>
             <li><a href="preTf_zh.html">TensorFlow</a></li>
             <li><a href="preKeras_zh.html">Keras</a></li>
-            <li><a href="preTfKeras_zh.html">tf.keras</a></li>
             <li><a href="preTfjs_zh.html">TensorFlow.js</a></li>
         </ul>
     </div>
@@ -234,10 +250,13 @@
                 <li><a href="basicModel_zh.html">模型</a></li>
                 <li><a href="basicLayer_zh.html">网络层</a></li>
                 <li><a href="basicPreprocessing_zh.html">预处理</a></li>
+                <li><a href="basicTopo_zh.html">构建图结构</a></li>
+                <li><a href="basicLayerConfig_zh.html">网络层配置</a></li>
                 <li><a href="basicLoad_zh.html">载入模型</a></li>
                 <li><a href="basicPredict_zh.html">预测</a></li>
                 <li><a href="basicClose_zh.html">网络层关闭按钮</a></li>
                 <li><a href="basicPaging_zh.html">网络层分页</a></li>
+                <li><a href="basicLayerStatus_zh.html">网络层状态</a></li>
                 <li><a href="basicMetrics_zh.html">网络层系数</a></li>
                 <li><a href="basicDimension_zh.html">网络层维度</a></li>
                 <li><a href="basicColor_zh.html">网络层颜色</a></li>
@@ -245,6 +264,20 @@
             </ul>
         </div>
         <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
+            <div id="converterLabel">
+                TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="converter">
+                <li><a href="../../converter/index_zh.html">简介</a></li>
+                <li><a href="../../converter/install_zh.html">安装</a></li>
+                <li><a href="../../converter/docker_zh.html">在 Docker 中使用</a></li>
+                <li><a href="../../converter/api_zh.html">Converter API</a></li>
+                <li><a href="../../converter/usage_zh.html">使用样例</a></li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
             <div id="preprocessingLabel">
                 模型预处理<img src="../../assets/img/docs/document_arrow.png">
             </div>
@@ -252,7 +285,6 @@
                 <li><a href="preIntro_zh.html">简介</a></li>
                 <li><a href="preTf_zh.html">TensorFlow</a></li>
                 <li><a href="preKeras_zh.html">Keras</a></li>
-                <li><a href="preTfKeras_zh.html">tf.keras</a></li>
                 <li><a href="preTfjs_zh.html">TensorFlow.js</a></li>
             </ul>
         </div>
@@ -322,36 +354,42 @@
     <main>
         <header>安装</header>
         <div class="sub-title">
-            基本使用场景
+            基本使用场景下安装
         </div>
 
-        <div><span class="span_bold">途径一</span>: 通过 CDN</div>
+        <div><span class="span_bold">第一步</span>：下载依赖库</div>
+
+        <div>下载依赖库文件 TensorFlow.js (<a href="https://cdnjs.com/libraries/tensorflow">tf.min.js</a>), Three.js (<a
+                href="https://cdnjs.com/libraries/three.js">three.min.js</a>), Tween.js (<a
+                href="https://cdnjs.com/libraries/tween.js">tween.min.js</a>), TrackballControls (<a
+                href="https://github.com/mrdoob/three.js/blob/master/examples/js/controls/TrackballControls.js">TrackballControls.js</a>)。
+        </div>
+
+        <div><span class="span_bold">第二步</span>：下载 TensorSpace</div>
+
+        <div>可以通过这些途径下载 <span class="highlight-text">tensorspace.min.js</span>： <a
+                href="https://github.com/tensorspace-team/tensorspace/tree/master/dist">Github</a>，<a
+                href="https://www.npmjs.com/package/tensorspace">NPM</a>，<a href="https://tensorspace.org/#download">TensorSpace
+            网站</a>，或者 CDN：
+        </div>
 
         <div class="code-snippet">
-            <pre><code class="html">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/1.0.0/tf.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://tensorspace.org/assets/jslib/TrackballControls.js"&gt;&lt;/script&gt;
-&lt;!-- 将”VERSION”替换成需要的版本 --&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/tensorspace@VERSION/dist/tensorspace.min.js"&gt;&lt;/script&gt;</code></pre>
+            <pre><code class="html">&lt;!-- 将”VERSION”替换成需要的版本 --&gt;
+&lt;script src="tensorspace.min.js"&gt;&lt;/script&gt;</code></pre>
         </div>
 
-        <div><span class="span_bold">途径二</span>: 下载 <span class="highlight-text">tensorspace.min.js</span> 并在页面中引入</div>
-        <div>可以通过 <a href="https://github.com/tensorspace-team/tensorspace/tree/master/dist">Github</a>, <a
-                href="https://www.npmjs.com/package/tensorspace">NPM</a> 或者 <a href="https://tensorspace.org/#download">TensorSpace
-            网站</a> 这些途径下载 tensorspace.min.js。
-        </div>
+        <div><span class="span_bold">第三步</span>：在页面中引入库文件</div>
+
         <div class="code-snippet">
             <pre><code class="html">&lt;script src="tf.min.js"&gt;&lt;/script&gt;
 &lt;script src="three.min.js"&gt;&lt;/script&gt;
 &lt;script src="Tween.min.js"&gt;&lt;/script&gt;
 &lt;script src="TrackballControls.js"&gt;&lt;/script&gt;
-&lt;!-- Replace "VERSION"  with the version you want to use. --&gt;
 &lt;script src="tensorspace.min.js"&gt;&lt;/script&gt;</code></pre>
         </div>
 
         <div class="sub-title">
-            在渐进式框架中使用 TensorSpace
+            在渐进式框架中安装
         </div>
 
         <div><span class="span_bold">第一步</span>: 安装 TensorSpace</div>

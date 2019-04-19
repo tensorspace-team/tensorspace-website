@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TensorSpace Converter - 预处理 TensorFlow</title>
+
+    <meta name="description" content="Documentation page of TensorSpace.js">
+    <meta name="author" content="syt123450 / https://github.com/syt123450">
+    <link rel='icon' href='../assets/img/common/logo.ico' type=‘image/x-ico’>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <script src="../assets/jslib/jquery.min.js"></script>
+    <link rel="stylesheet" href="../assets/csslib/bootstrap.min.css">
+    <script src="../assets/jslib/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../assets/csslib/material.fonts.css">
+    <link rel="stylesheet" href="../assets/csslib/material.min.css">
+    <script src="../assets/jslib/material.min.js"></script>
+
+    <script src="../js/websiteUtil.js"></script>
+    <script src="../js/commonDoc.js"></script>
+    <script src="../js/converterDoc.js"></script>
+
+    <link rel="stylesheet" href="../assets/csslib/mono-blue.css">
+    <script src="../assets/jslib/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/commonDoc.css">
+    <link rel="stylesheet" href="../css/docsFont_zh.css">
+
+</head>
+<body>
+
+<nav>
+
+    <div class="container">
+
+        <div id="logo">
+            <a href="../index_zh.html">
+                <img src="../assets/img/common/logoSmall.png">
+                <div>TensorSpace.js</div>
+            </a>
+        </div>
+
+        <ul class="hidden-xs">
+            <li class="now"><a href="../html/docs/startIntro_zh.html">文档</a></li>
+            <li><a href="../html/playground/index_zh.html">体验TensorSpace</a></li>
+            <!-- <li><a href="../gallery_zh.html">应用展示</a></li> -->
+            <li><a href="../index_zh.html#download">下载</a></li>
+            <!-- <li><a href="../developer_zh.html">参与开发</a></li> -->
+
+            <a href="https://github.com/tensorspace-team/tensorspace-converter" class="github-corner"
+               aria-label="View source on Github">
+                <svg viewBox="0 0 250 250" aria-hidden="true">
+                    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+                    <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                          fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+                    <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                          fill="currentColor" class="octo-body"></path>
+                </svg>
+            </a>
+
+        </ul>
+
+    </div>
+
+    <ul id="more" class="nav nav-tabs visible-xs">
+        <li>
+            <a>
+                <span class="glyphicon glyphicon-th-large"></span>
+            </a>
+        </li>
+    </ul>
+
+    <ul id="nav-collapse" class="nav navbar-nav">
+        <li><a href="../index_zh.html">主页</a></li>
+        <li><a href="../index_zh.html#download">下载</a></li>
+        <!-- <li><a href="../developer_zh.html">参与开发</a></li> -->
+    </ul>
+
+    <div class="language">
+        <div>
+            <div><a href="usage.html">EN</a></div>
+        </div>
+        <div class="selected">
+            <div>中</div>
+        </div>
+    </div>
+
+</nav>
+
+<div id="smallGuide">
+    <span class="glyphicon glyphicon-list"></span>
+</div>
+
+<div id="hideNav">
+
+    <img id="ContentLogo" src="../assets/img/docs/logo_white.png">
+
+    <header>TensorSpace.js</header>
+
+    <div>
+        <div id="startLabelS">
+            开始使用<img src="../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="startS">
+            <li><a href="../html/docs/startIntro_zh.html">简介</a></li>
+            <li><a href="../html/docs/startSystem_zh.html">环境要求</a></li>
+            <li><a href="../html/docs/startInstall_zh.html">安装</a></li>
+            <li><a href="../html/docs/startHello_zh.html">TensorSpace Hello World</a></li>
+            <li><a href="../html/docs/startOther_zh.html">其他文档资源</a></li>
+        </ul>
+    </div>
+    <div>
+        <div id="basicLabelS">
+            基本概念<img src="../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="basicS">
+            <li><a href="../html/docs/basicIntro_zh.html">简介</a></li>
+            <li><a href="../html/docs/basicModel_zh.html">模型</a></li>
+            <li><a href="../html/docs/basicLayer_zh.html">网络层</a></li>
+            <li><a href="../html/docs/basicPreprocessing_zh.html">预处理</a></li>
+            <li><a href="../html/docs/basicTopo_zh.html">构建图结构</a></li>
+            <li><a href="../html/docs/basicLayerConfig_zh.html">网络层配置</a></li>
+            <li><a href="../html/docs/basicLoad_zh.html">载入模型</a></li>
+            <li><a href="../html/docs/basicPredict_zh.html">预测</a></li>
+            <li><a href="../html/docs/basicClose_zh.html">网络层关闭按钮</a></li>
+            <li><a href="../html/docs/basicPaging_zh.html">网络层分页</a></li>
+            <li><a href="../html/docs/basicLayerStatus_zh.html">网络层状态</a></li>
+            <li><a href="../html/docs/basicMetrics_zh.html">网络层系数</a></li>
+            <li><a href="../html/docs/basicDimension_zh.html">网络层维度</a></li>
+            <li><a href="../html/docs/basicColor_zh.html">网络层颜色</a></li>
+            <li><a href="../html/docs/basicStats_zh.html">性能监控</a></li>
+        </ul>
+    </div>
+    <div class="open initLabel">
+        <img class="new-tag" src="../assets/img/common/new.png">
+        <div id="converterLabelS">
+            TensorSpace Converter<img src="../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="converterS">
+            <li><a href="index_zh.html">简介</a></li>
+            <li><a href="install_zh.html">安装</a></li>
+            <li><a href="docker_zh.html">在 Docker 中使用</a></li>
+            <li><a href="api_zh.html">Converter API</a></li>
+            <li class="nowLabel">使用样例</li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../assets/img/common/new.png">
+        <div id="preprocessingLabelS">
+            模型预处理<img src="../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="preprocessingS">
+            <li><a href="../html/docs/preIntro_zh.html">简介</a></li>
+            <li><a href="../html/docs/preTf_zh.html">TensorFlow</a></li>
+            <li><a href="../html/docs/preKeras_zh.html">Keras</a></li>
+            <li><a href="../html/docs/preTfjs_zh.html">TensorFlow.js</a></li>
+        </ul>
+    </div>
+    <div>
+        <div id="modelLabelS">
+            模型<img src="../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="modelS">
+            <li><a href="../html/docs/modelIntro_zh.html">简介</a></li>
+            <li><a href="../html/docs/modelFunctional_zh.html">函数式模型</a></li>
+            <li><a href="../html/docs/modelSequential_zh.html">顺序模型</a></li>
+        </ul>
+    </div>
+    <div>
+        <div id="layerLabelS">
+            网络层<img src="../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="layerS">
+            <li><a href="../html/docs/layerIntro_zh.html">简介</a></li>
+            <li><a href="../html/docs/layerConv1d_zh.html">Conv1d</a></li>
+            <li><a href="../html/docs/layerConv2d_zh.html">Conv2d</a></li>
+            <li><a href="../html/docs/layerTranspose_zh.html">Conv2dTranspose</a></li>
+            <li><a href="../html/docs/layerDepthwise_zh.html">DepthwiseConv2d</a></li>
+            <li><a href="../html/docs/layerCropping1d_zh.html">Cropping1d</a></li>
+            <li><a href="../html/docs/layerCropping2d_zh.html">Cropping2d</a></li>
+            <li><a href="../html/docs/layerDense_zh.html">Dense</a></li>
+            <li><a href="../html/docs/layerFlatten_zh.html">Flatten</a></li>
+            <li><a href="../html/docs/layerGlobalPooling1d_zh.html">GlobalPooling1d</a></li>
+            <li><a href="../html/docs/layerGlobalPooling2d_zh.html">GlobalPooling2d</a></li>
+            <li><a href="../html/docs/layerPadding1d_zh.html">Padding1d</a></li>
+            <li><a href="../html/docs/layerPadding2d_zh.html">Padding2d</a></li>
+            <li><a href="../html/docs/layerPooling1d_zh.html">Pooling1d</a></li>
+            <li><a href="../html/docs/layerPooling2d_zh.html">Pooling2d</a></li>
+            <li><a href="../html/docs/layerReshape_zh.html">Reshape</a></li>
+            <li><a href="../html/docs/layerUpSampling1d_zh.html">UpSampling1d</a></li>
+            <li><a href="../html/docs/layerUpSampling2d_zh.html">UpSampling2d</a></li>
+            <li><a href="../html/docs/layerActivation1d_zh.html">Activation1d</a></li>
+            <li><a href="../html/docs/layerActivation2d_zh.html">Activation2d</a></li>
+            <li><a href="../html/docs/layerActivation3d_zh.html">Activation3d</a></li>
+            <li><a href="../html/docs/layerLayer1d_zh.html">Layer1d</a></li>
+            <li><a href="../html/docs/layerLayer2d_zh.html">Layer2d</a></li>
+            <li><a href="../html/docs/layerLayer3d_zh.html">Layer3d</a></li>
+            <li><a href="../html/docs/layerInput1d_zh.html">Input1d</a></li>
+            <li><a href="../html/docs/layerGreyscaleInput_zh.html">GreyscaleInput</a></li>
+            <li><a href="../html/docs/layerRGBInput_zh.html">RGBInput</a></li>
+            <li><a href="../html/docs/layerOutput1d_zh.html">Output1d</a></li>
+            <li><a href="../html/docs/layerOutputDetect_zh.html">OutputDetection</a></li>
+            <li><a href="../html/docs/layerYoloGrid_zh.html">YoloGrid</a></li>
+        </ul>
+    </div>
+    <div>
+        <div id="mergeLabelS">
+            网络层融合<img src="../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="mergeS">
+            <li><a href="../html/docs/mergeIntro_zh.html">简介</a></li>
+            <li><a href="../html/docs/mergeAdd_zh.html">Add</a></li>
+            <li><a href="../html/docs/mergeSub_zh.html">Subtract</a></li>
+            <li><a href="../html/docs/mergeMul_zh.html">Multiply</a></li>
+            <li><a href="../html/docs/mergeMax_zh.html">Maximum</a></li>
+            <li><a href="../html/docs/mergeAver_zh.html">Average</a></li>
+            <li><a href="../html/docs/mergeConcate_zh.html">Concatenate</a></li>
+        </ul>
+    </div>
+
+    <img id="close" src="../assets/img/docs/close.png">
+
+</div>
+
+<div id="curtain"></div>
+
+<div id="documentArea">
+
+    <aside>
+        <div>
+            <div id="startLabel">
+                开始使用<img src="../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="start">
+                <li><a href="../html/docs/startIntro_zh.html">简介</a></li>
+                <li><a href="../html/docs/startSystem_zh.html">环境要求</a></li>
+                <li><a href="../html/docs/startInstall_zh.html">安装</a></li>
+                <li><a href="../html/docs/startHello_zh.html">TensorSpace Hello World</a></li>
+                <li><a href="../html/docs/startOther_zh.html">其他文档资源</a></li>
+            </ul>
+        </div>
+        <div>
+            <div id="basicLabel">
+                基本概念<img src="../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="basic">
+                <li><a href="../html/docs/basicIntro_zh.html">简介</a></li>
+                <li><a href="../html/docs/basicModel_zh.html">模型</a></li>
+                <li><a href="../html/docs/basicLayer_zh.html">网络层</a></li>
+                <li><a href="../html/docs/basicPreprocessing_zh.html">预处理</a></li>
+                <li><a href="../html/docs/basicTopo_zh.html">构建图结构</a></li>
+                <li><a href="../html/docs/basicLayerConfig_zh.html">网络层配置</a></li>
+                <li><a href="../html/docs/basicLoad_zh.html">载入模型</a></li>
+                <li><a href="../html/docs/basicPredict_zh.html">预测</a></li>
+                <li><a href="../html/docs/basicClose_zh.html">网络层关闭按钮</a></li>
+                <li><a href="../html/docs/basicPaging_zh.html">网络层分页</a></li>
+                <li><a href="../html/docs/basicLayerStatus_zh.html">网络层状态</a></li>
+                <li><a href="../html/docs/basicMetrics_zh.html">网络层系数</a></li>
+                <li><a href="../html/docs/basicDimension_zh.html">网络层维度</a></li>
+                <li><a href="../html/docs/basicColor_zh.html">网络层颜色</a></li>
+                <li><a href="../html/docs/basicStats_zh.html">性能监控</a></li>
+            </ul>
+        </div>
+        <div class="open initLabel">
+            <img class="new-tag" src="../assets/img/common/new.png">
+            <div id="converterLabel">
+                TensorSpace Converter<img src="../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="converter">
+                <li><a href="index_zh.html">简介</a></li>
+                <li><a href="install_zh.html">安装</a></li>
+                <li><a href="docker_zh.html">在 Docker 中使用</a></li>
+                <li><a href="api_zh.html">Converter API</a></li>
+                <li class="nowLabel">使用样例</li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../assets/img/common/new.png">
+            <div id="preprocessingLabel">
+                模型预处理<img src="../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="preprocessing">
+                <li><a href="../html/docs/preIntro_zh.html">简介</a></li>
+                <li><a href="../html/docs/preTf_zh.html">TensorFlow</a></li>
+                <li><a href="../html/docs/preKeras_zh.html">Keras</a></li>
+                <li><a href="../html/docs/preTfjs_zh.html">TensorFlow.js</a></li>
+            </ul>
+        </div>
+        <div>
+            <div id="modelLabel">
+                模型<img src="../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="model">
+                <li><a href="../html/docs/modelIntro_zh.html">简介</a></li>
+                <li><a href="../html/docs/modelFunctional_zh.html">函数式模型</a></li>
+                <li><a href="../html/docs/modelSequential_zh.html">顺序模型</a></li>
+            </ul>
+        </div>
+        <div>
+            <div id="layerLabel">
+                网络层<img src="../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="layer">
+                <li><a href="../html/docs/layerIntro_zh.html">简介</a></li>
+                <li><a href="../html/docs/layerConv1d_zh.html">Conv1d</a></li>
+                <li><a href="../html/docs/layerConv2d_zh.html">Conv2d</a></li>
+                <li><a href="../html/docs/layerTranspose_zh.html">Conv2dTranspose</a></li>
+                <li><a href="../html/docs/layerDepthwise_zh.html">DepthwiseConv2d</a></li>
+                <li><a href="../html/docs/layerCropping1d_zh.html">Cropping1d</a></li>
+                <li><a href="../html/docs/layerCropping2d_zh.html">Cropping2d</a></li>
+                <li><a href="../html/docs/layerDense_zh.html">Dense</a></li>
+                <li><a href="../html/docs/layerFlatten_zh.html">Flatten</a></li>
+                <li><a href="../html/docs/layerGlobalPooling1d_zh.html">GlobalPooling1d</a></li>
+                <li><a href="../html/docs/layerGlobalPooling2d_zh.html">GlobalPooling2d</a></li>
+                <li><a href="../html/docs/layerPadding1d_zh.html">Padding1d</a></li>
+                <li><a href="../html/docs/layerPadding2d_zh.html">Padding2d</a></li>
+                <li><a href="../html/docs/layerPooling1d_zh.html">Pooling1d</a></li>
+                <li><a href="../html/docs/layerPooling2d_zh.html">Pooling2d</a></li>
+                <li><a href="../html/docs/layerReshape_zh.html">Reshape</a></li>
+                <li><a href="../html/docs/layerUpSampling1d_zh.html">UpSampling1d</a></li>
+                <li><a href="../html/docs/layerUpSampling2d_zh.html">UpSampling2d</a></li>
+                <li><a href="../html/docs/layerActivation1d_zh.html">Activation1d</a></li>
+                <li><a href="../html/docs/layerActivation2d_zh.html">Activation2d</a></li>
+                <li><a href="../html/docs/layerActivation3d_zh.html">Activation3d</a></li>
+                <li><a href="../html/docs/layerLayer1d_zh.html">Layer1d</a></li>
+                <li><a href="../html/docs/layerLayer2d_zh.html">Layer2d</a></li>
+                <li><a href="../html/docs/layerLayer3d_zh.html">Layer3d</a></li>
+                <li><a href="../html/docs/layerInput1d_zh.html">Input1d</a></li>
+                <li><a href="../html/docs/layerGreyscaleInput_zh.html">GreyscaleInput</a></li>
+                <li><a href="../html/docs/layerRGBInput_zh.html">RGBInput</a></li>
+                <li><a href="../html/docs/layerOutput1d_zh.html">Output1d</a></li>
+                <li><a href="../html/docs/layerOutputDetect_zh.html">OutputDetection</a></li>
+                <li><a href="../html/docs/layerYoloGrid_zh.html">YoloGrid</a></li>
+            </ul>
+        </div>
+        <div>
+            <div id="mergeLabel">
+                网络层融合<img src="../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="merge">
+                <li><a href="../html/docs/mergeIntro_zh.html">简介</a></li>
+                <li><a href="../html/docs/mergeAdd_zh.html">Add</a></li>
+                <li><a href="../html/docs/mergeSub_zh.html">Subtract</a></li>
+                <li><a href="../html/docs/mergeMul_zh.html">Multiply</a></li>
+                <li><a href="../html/docs/mergeMax_zh.html">Maximum</a></li>
+                <li><a href="../html/docs/mergeAver_zh.html">Average</a></li>
+                <li><a href="../html/docs/mergeConcate_zh.html">Concatenate</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <main>
+        <header>使用样例</header>
+        <div>这部分将介绍如何使用 TensorSpace-Converter 来处理不同类型的模型。TensorSpace 支持预处理使用 TensorFlow, Keras, TensorFlow.js 训练的模型。
+        </div>
+        <div class="panel-heading"><i class="material-icons">flare</i>
+            <a href="#tensorflow">
+                转化 TensorFlow 模型
+            </a>
+        </div>
+        <div class="panel-heading"><i class="material-icons">flare</i>
+            <a href="#keras">
+                转化 Keras 模型
+            </a>
+        </div>
+        <div class="panel-heading"><i class="material-icons">flare</i>
+            <a href="#tfjs">
+                转化 TensorFlow.js 模型
+            </a>
+        </div>
+        <img id="tensorflow" class="logo-img" src="../assets/img/converter/converter_logo_tf.png">
+        <div class="sub-title">TensorFlow</div>
+        <div>当使用 TensorFlow 训练并保存一个模型时，TensorSpace-Converter 支持转化以下格式的模型：saved model，frozen model，模型结构权重合并的
+            HDF5，模型结构和权重分开保存的 HDF5。TensorSpace-Converter 使用不同的转换指令来转换这四种模型。在 TensorFlow 的图结构中，可能没有 <span
+                    class="highlight-text">layer</span> 的概念，不过，一个特定的 <span class="highlight-text">tensor</span> 可以对应一个
+            <span class="highlight-text">layer</span> 的输出，在这种情况下，可以取出相对应的 <span class="highlight-text">tensor</span>
+            名称，然后设置到 TensorSpace-Converter 的 <span class="highlight-text">output_layer_names</span> 参数中。
+        </div>
+
+        <div class="model-type-title"><span class="span_bold">tf.keras model</span></div>
+        <div>对于模型结构和权重合并保存的 HDF5 模型，会有一个 <span class="highlight-text">xxx.h5</span> 文件。在配置 TensorSpace-Converter 转换脚本时，将
+            <span class="highlight-text">input_model_format</span> 设置成 <span class="highlight-text">tf_keras</span>。示例转化脚本：
+        </div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="tensorflow" \
+    --input_model_format="tf_keras" \
+    --output_layer_names="layer1Name,layer2Name,layer3Name" \
+    ./PATH/TO/MODEL/xxx.h5 \
+    ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div class="model-type-title"><span class="span_bold">tf.keras (separated)</span></div>
+        <div>对于模型结构和权重分开保存的 HDF5 模型，会有一个模型结构文件 <span class="highlight-text">xxx.json</span> 和一个权重文件 <span
+                class="highlight-text">eee.h5</span>。在配置 TensorSpace-Converter 转换脚本时，将 <span class="highlight-text">input_model_format</span>
+            设置成 <span class="highlight-text">tf_keras_separated</span>。对于这种模型类型，因为由两个模型文件，在设置 TensorSpace-Converter 的
+            <span class="highlight-text">input_path</span> 时，合并两个文件的路径，并用英文半角逗号“,”分开，将 .json 文件的路径在前，.h5 文件的路径在后。示例转化脚本：
+        </div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="tensorflow" \
+    --input_model_format="tf_keras_separated" \
+    --output_layer_names="layer1Name,layer2Name,layer3Name" \
+    ./PATH/TO/MODEL/xxx.json,./PATH/TO/MODEL/eee.h5 \
+    ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div class="model-type-title"><span class="span_bold">frozen model</span></div>
+        <div>对于 TensorFlow frozen model。在配置 TensorSpace-Converter 转换脚本时，将 <span class="highlight-text">input_model_format</span>
+            设置成 <span class="highlight-text">tf_frozen</span>。示例转化脚本：
+        </div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="tensorflow" \
+    --input_model_format="tf_frozen" \
+    --output_layer_names="layer1Name,layer2Name,layer3Name" \
+    ./PATH/TO/MODEL/xxx.pb \
+    ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div class="model-type-title"><span class="span_bold">saved model</span></div>
+        <div>对于 TensorFlow saved model。在配置 TensorSpace-Converter 转换脚本时，将 <span
+                class="highlight-text">input_model_format</span> 设置成 <span class="highlight-text">tf_saved</span>。示例转化脚本：
+        </div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="tensorflow" \
+    --input_model_format="tf_saved" \
+    --output_layer_names="layer1Name,layer2Name,layer3Name" \
+    ./PATH/TO/SAVED/MODEL/FOLDER \
+    ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div>这篇 <a href="../html/docs/preTf.html">TensorFlow 预处理教程</a>，通过一个实际的例子，介绍了如何使用 TensorSpace-Converter 来预处理
+            TensorFlow 模型。
+        </div>
+
+        <img id="keras" class="logo-img" src="../assets/img/converter/converter_logo_keras.png">
+        <div class="sub-title">Keras</div>
+        <div>当使用 Keras 训练并生成一个模型时，模型有两种保存形式：模型结构和权重保存在一个HDF5文件，模型结构和权重保存在不同的文件中。TensorSpace-Converter
+            使用不同的转换指令来转换这两种模型。
+        </div>
+        <div class="model-type-title"><span class="span_bold">Combined .h5</span></div>
+        <div>对于一个 Keras 模型，如果模型结构和权重保存在同一个 HDF5 文件中，模型将会是 <span class="highlight-text">xxx.h5</span>。在配置
+            TensorSpace-Converter 转换脚本时，将 <span class="highlight-text">input_model_format</span> 设置成 <span
+                    class="highlight-text">topology_weights_combined</span>。示例转换代码：
+        </div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="keras" \
+    --input_model_format="topology_weights_combined" \
+    --output_layer_names="layer1Name,layer2Name,layer3Name" \
+    ./PATH/TO/MODEL/xxx.h5 \
+    ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div class="model-type-title"><span class="span_bold">Separated .json & .h5</span></div>
+        <div>对于一个 Keras 模型，如果模型结构和权重分开保存，那么会有一个模型结构文件 <span class="highlight-text">xxx.json</span> 和一个模型权重文件 <span
+                class="highlight-text">xxx.h5</span>。在配置 TensorSpace-Converter 转换脚本时，将 <span class="highlight-text">input_model_format</span>
+            设置成 <span class="highlight-text">topology_weights_separated</span>。对于这种模型类型，因为由两个模型文件，在设置
+            TensorSpace-Converter 的 <span class="highlight-text">input_path</span> 时，合并两个文件的路径，并用英文半角逗号“,”分开，将 .json
+            文件的路径在前，.h5 文件的路径在后。示例转换代码：
+        </div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="keras" \
+    --input_model_format="topology_weights_separated" \
+    --output_layer_names="layer1Name,layer2Name,layer3Name" \
+    ./PATH/TO/MODEL/xxx.json,./PATH/TO/MODEL/eee.h5 \
+    ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div>这篇 <a href="../html/docs/preKeras.html">Keras 预处理教程</a>，通过一个实际的例子，介绍了如何使用 TensorSpace-Converter 来预处理 Keras
+            模型。
+        </div>
+
+        <img id="tfjs" class="logo-img" src="../assets/img/converter/converter_logo_tfjs.png">
+        <div class="sub-title">TensorFlow.js</div>
+        <div>当使用 TensorFlow.js 训练并保存一个模型后，会得到一个模型结构文件 <span class="highlight-text">xxx.json</span> 和一些权重文件 <span
+                class="highlight-text">xxx.weight.bin</span>。当使用 TensorSpace-Converter
+            来预处理这类模型时，需要将模型结构文件（xxx.json）和权重文件（xxx.weight.bin）放在同一个目录下，然后将模型结构文件的路径设置为 <span class="highlight-text">input_path</span>。示例转换代码：
+        </div>
+        <div class="code-snippet">
+            <pre><code class="Bash">$ tensorspacejs_converter \
+    --input_model_from="tfjs" \
+    --output_layer_names="layer1Name,layer2Name,layer3Name" \
+    ./PATH/TO/MODEL/xxx.json \
+    ./PATH/TO/SAVE/DIR</code></pre>
+        </div>
+
+        <div>这篇 <a href="../html/docs/preTfjs.html">TensorFlow.js 预处理教程</a>，通过一个实际的例子，介绍了如何使用 TensorSpace-Converter 来预处理
+            TensorFlow.js 模型。
+        </div>
+
+    </main>
+</div>
+
+<button id="topButton" title="Go to top" class="ripple"><i class="material-icons material-icons--outline">keyboard_arrow_up</i>
+</button>
+
+</body>
+
+</html>

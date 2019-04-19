@@ -122,10 +122,13 @@
             <li><a href="basicModel.html">Model</a></li>
             <li><a href="basicLayer.html">Layer</a></li>
             <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+            <li><a href="basicTopo.html">Construct Topology</a></li>
+            <li><a href="basicLayerConfig.html">Layer Configuration</a></li>
             <li><a href="basicLoad.html">Load Model</a></li>
             <li><a href="basicPredict.html">Predict</a></li>
             <li><a href="basicClose.html">Close Button</a></li>
             <li><a href="basicPaging.html">Paging</a></li>
+            <li><a href="basicLayerStatus.html">Layer Status</a></li>
             <li><a href="basicMetrics.html">Layer Metrics</a></li>
             <li><a href="basicDimension.html">Layer Dimension</a></li>
             <li><a href="basicColor.html">Layer Color</a></li>
@@ -133,6 +136,20 @@
         </ul>
     </div>
     <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
+        <div id="converterLabelS">
+            TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="converterS">
+            <li><a href="../../converter/index.html">Introduction</a></li>
+            <li><a href="../../converter/install.html">Installation</a></li>
+            <li><a href="../../converter/docker.html">Running with Docker</a></li>
+            <li><a href="../../converter/api.html">Converter API</a></li>
+            <li><a href="../../converter/usage.html">Usage Examples</a></li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
         <div id="preprocessingLabelS">
             Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
         </div>
@@ -140,7 +157,6 @@
             <li><a href="preIntro.html">Introduction</a></li>
             <li><a href="preTf.html">TensorFlow</a></li>
             <li><a href="preKeras.html">Keras</a></li>
-            <li><a href="preTfKeras.html">tf.keras</a></li>
             <li><a href="preTfjs.html">TensorFlow.js</a></li>
         </ul>
     </div>
@@ -236,10 +252,13 @@
                 <li><a href="basicModel.html">Model</a></li>
                 <li><a href="basicLayer.html">Layer</a></li>
                 <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+                <li><a href="basicTopo.html">Construct Topology</a></li>
+                <li><a href="basicLayerConfig.html">Layer Configuration</a></li>
                 <li><a href="basicLoad.html">Load Model</a></li>
                 <li><a href="basicPredict.html">Predict</a></li>
                 <li><a href="basicClose.html">Close Button</a></li>
                 <li><a href="basicPaging.html">Paging</a></li>
+                <li><a href="basicLayerStatus.html">Layer Status</a></li>
                 <li><a href="basicMetrics.html">Layer Metrics</a></li>
                 <li><a href="basicDimension.html">Layer Dimension</a></li>
                 <li><a href="basicColor.html">Layer Color</a></li>
@@ -247,6 +266,20 @@
             </ul>
         </div>
         <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
+            <div id="converterLabel">
+                TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="converter">
+                <li><a href="../../converter/index.html">Introduction</a></li>
+                <li><a href="../../converter/install.html">Installation</a></li>
+                <li><a href="../../converter/docker.html">Running with Docker</a></li>
+                <li><a href="../../converter/api.html">Converter API</a></li>
+                <li><a href="../../converter/usage.html">Usage Examples</a></li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
             <div id="preprocessingLabel">
                 Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
             </div>
@@ -254,7 +287,6 @@
                 <li><a href="preIntro.html">Introduction</a></li>
                 <li><a href="preTf.html">TensorFlow</a></li>
                 <li><a href="preKeras.html">Keras</a></li>
-                <li><a href="preTfKeras.html">tf.keras</a></li>
                 <li><a href="preTfjs.html">TensorFlow.js</a></li>
             </ul>
         </div>
@@ -326,7 +358,7 @@
 
         <div>
             TensorSpace is a neural network 3D visualization framework built by TensorFlow.js, Three.js and Tween.js.
-            TensorSpace provides Keras-like APIs to build deep learning layers, load pre-trained models, and generate
+            TensorSpace provides Layer APIs to build deep learning layers, load pre-trained models, and generate
             a 3D visualization in the browser. By applying TensorSpace API, it is more intuitive to visualize and
             understand any pre-trained models built by TensorFlow, Keras, TensorFlow.js, etc.
         </div>
@@ -351,7 +383,7 @@
 
         <img class="tag-img" src="../../assets/img/docs/startIntro.png">
         <div class="img-label">
-            <span class="img-label-number">Fig. 1</span> - TensorSpace Work Flow
+            <span class="img-label-number">Fig. 1</span> - TensorSpace Workflow
         </div>
 
     </main>

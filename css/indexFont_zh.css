@@ -33,3 +33,8 @@
 #download > div > div > div.code {
     font-family: PingFang-SC-Regular, sans-serif;
 }
+
+.span_bold {
+    font-family: PingFang-SC-Bold, sans-serif;
+    font-weight: bold;
+}

@@ -122,10 +122,13 @@
             <li><a href="basicModel.html">Model</a></li>
             <li><a href="basicLayer.html">Layer</a></li>
             <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+            <li><a href="basicTopo.html">Construct Topology</a></li>
+            <li><a href="basicLayerConfig.html">Layer Configuration</a></li>
             <li><a href="basicLoad.html">Load Model</a></li>
             <li><a href="basicPredict.html">Predict</a></li>
             <li><a href="basicClose.html">Close Button</a></li>
             <li><a href="basicPaging.html">Paging</a></li>
+            <li><a href="basicLayerStatus.html">Layer Status</a></li>
             <li><a href="basicMetrics.html">Layer Metrics</a></li>
             <li><a href="basicDimension.html">Layer Dimension</a></li>
             <li><a href="basicColor.html">Layer Color</a></li>
@@ -133,6 +136,20 @@
         </ul>
     </div>
     <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
+        <div id="converterLabelS">
+            TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="converterS">
+            <li><a href="../../converter/index.html">Introduction</a></li>
+            <li><a href="../../converter/install.html">Installation</a></li>
+            <li><a href="../../converter/docker.html">Running with Docker</a></li>
+            <li><a href="../../converter/api.html">Converter API</a></li>
+            <li><a href="../../converter/usage.html">Usage Examples</a></li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
         <div id="preprocessingLabelS">
             Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
         </div>
@@ -140,7 +157,6 @@
             <li><a href="preIntro.html">Introduction</a></li>
             <li><a href="preTf.html">TensorFlow</a></li>
             <li><a href="preKeras.html">Keras</a></li>
-            <li><a href="preTfKeras.html">tf.keras</a></li>
             <li><a href="preTfjs.html">TensorFlow.js</a></li>
         </ul>
     </div>
@@ -236,10 +252,13 @@
                 <li><a href="basicModel.html">Model</a></li>
                 <li><a href="basicLayer.html">Layer</a></li>
                 <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+                <li><a href="basicTopo.html">Construct Topology</a></li>
+                <li><a href="basicLayerConfig.html">Layer Configuration</a></li>
                 <li><a href="basicLoad.html">Load Model</a></li>
                 <li><a href="basicPredict.html">Predict</a></li>
                 <li><a href="basicClose.html">Close Button</a></li>
                 <li><a href="basicPaging.html">Paging</a></li>
+                <li><a href="basicLayerStatus.html">Layer Status</a></li>
                 <li><a href="basicMetrics.html">Layer Metrics</a></li>
                 <li><a href="basicDimension.html">Layer Dimension</a></li>
                 <li><a href="basicColor.html">Layer Color</a></li>
@@ -247,6 +266,20 @@
             </ul>
         </div>
         <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
+            <div id="converterLabel">
+                TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="converter">
+                <li><a href="../../converter/index.html">Introduction</a></li>
+                <li><a href="../../converter/install.html">Installation</a></li>
+                <li><a href="../../converter/docker.html">Running with Docker</a></li>
+                <li><a href="../../converter/api.html">Converter API</a></li>
+                <li><a href="../../converter/usage.html">Usage Examples</a></li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
             <div id="preprocessingLabel">
                 Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
             </div>
@@ -254,7 +287,6 @@
                 <li><a href="preIntro.html">Introduction</a></li>
                 <li><a href="preTf.html">TensorFlow</a></li>
                 <li><a href="preKeras.html">Keras</a></li>
-                <li><a href="preTfKeras.html">tf.keras</a></li>
                 <li><a href="preTfjs.html">TensorFlow.js</a></li>
             </ul>
         </div>
@@ -324,37 +356,45 @@
     <main>
         <header>Install TensorSpace</header>
         <div class="sub-title">
-            Basic Use Case
+            Install in the Basic Case
         </div>
 
-        <div><span class="span_bold">Option 1</span>: From CDN</div>
+        <div><span class="span_bold">Step 1</span>: Download Dependencies</div>
+
+        <div>Download dependencies build files TensorFlow.js (<a
+                href="https://cdnjs.com/libraries/tensorflow">tf.min.js</a>), Three.js (<a
+                href="https://cdnjs.com/libraries/three.js">three.min.js</a>), Tween.js (<a
+                href="https://cdnjs.com/libraries/tween.js">tween.min.js</a>), TrackballControls (<a
+                href="https://github.com/mrdoob/three.js/blob/master/examples/js/controls/TrackballControls.js">TrackballControls.js</a>).
+        </div>
+
+        <div><span class="span_bold">Step 2</span>: Download TensorSpace</div>
+
+        <div>Download TensorSpace build file <span class="highlight-text">tensorspace.min.js</span> from <a
+                href="https://github.com/tensorspace-team/tensorspace/tree/master/dist">Github</a>, <a
+                href="https://www.npmjs.com/package/tensorspace">NPM</a>, <a href="https://tensorspace.org/#download">TensorSpace
+            official website</a> or CDN:
+        </div>
 
         <div class="code-snippet">
-            <pre><code class="html">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/1.0.0/tf.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://tensorspace.org/assets/jslib/TrackballControls.js"&gt;&lt;/script&gt;
-&lt;!-- Replace "VERSION"  with the version you want to use. --&gt;
+            <pre><code class="html">&lt;!-- Replace "VERSION" with the version you want to use. --&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/tensorspace@VERSION/dist/tensorspace.min.js"&gt;&lt;/script&gt;</code></pre>
         </div>
 
-        <div><span class="span_bold">Option 2</span>: Download and include <span class="highlight-text">tensorspace.min.js</span>
-            in web page.
-        </div>
-        <div>Get tensorspace.min.js from <a href="https://github.com/tensorspace-team/tensorspace/tree/master/dist">Github</a>,
-            <a href="https://www.npmjs.com/package/tensorspace">NPM</a> or <a href="https://tensorspace.org/#download">TensorSpace
-                official website</a></div>
+        <div><span class="span_bold">Step 3</span>: Include Build Files</div>
+
+        <div>Include all build files in web page.</div>
+
         <div class="code-snippet">
             <pre><code class="html">&lt;script src="tf.min.js"&gt;&lt;/script&gt;
 &lt;script src="three.min.js"&gt;&lt;/script&gt;
 &lt;script src="Tween.min.js"&gt;&lt;/script&gt;
 &lt;script src="TrackballControls.js"&gt;&lt;/script&gt;
-&lt;!-- Replace "VERSION"  with the version you want to use. --&gt;
 &lt;script src="tensorspace.min.js"&gt;&lt;/script&gt;</code></pre>
         </div>
 
         <div class="sub-title">
-            Using TensorSpace in Progressive Framework
+            Install in the Progressive Framework
         </div>
 
         <div><span class="span_bold">Step 1</span>: Install TensorSpace</div>

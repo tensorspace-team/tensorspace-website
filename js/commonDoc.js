@@ -3,6 +3,8 @@ var chapterLookUp = {
 	"#startLabelS": "#startS",
 	"#basicLabel": "#basic",
 	"#basicLabelS": "#basicS",
+	"#converterLabel": "#converter",
+	"#converterLabelS": "#converterS",
 	"#preprocessingLabel": "#preprocessing",
 	"#preprocessingLabelS": "#preprocessingS",
 	"#modelLabel": "#model",

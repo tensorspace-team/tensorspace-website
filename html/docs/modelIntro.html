@@ -121,10 +121,13 @@
             <li><a href="basicModel.html">Model</a></li>
             <li><a href="basicLayer.html">Layer</a></li>
             <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+            <li><a href="basicTopo.html">Construct Topology</a></li>
+            <li><a href="basicLayerConfig.html">Layer Configuration</a></li>
             <li><a href="basicLoad.html">Load Model</a></li>
             <li><a href="basicPredict.html">Predict</a></li>
             <li><a href="basicClose.html">Close Button</a></li>
             <li><a href="basicPaging.html">Paging</a></li>
+            <li><a href="basicLayerStatus.html">Layer Status</a></li>
             <li><a href="basicMetrics.html">Layer Metrics</a></li>
             <li><a href="basicDimension.html">Layer Dimension</a></li>
             <li><a href="basicColor.html">Layer Color</a></li>
@@ -132,6 +135,20 @@
         </ul>
     </div>
     <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
+        <div id="converterLabelS">
+            TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="converterS">
+            <li><a href="../../converter/index.html">Introduction</a></li>
+            <li><a href="../../converter/install.html">Installation</a></li>
+            <li><a href="../../converter/docker.html">Running with Docker</a></li>
+            <li><a href="../../converter/api.html">Converter API</a></li>
+            <li><a href="../../converter/usage.html">Usage Examples</a></li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
         <div id="preprocessingLabelS">
             Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
         </div>
@@ -139,7 +156,6 @@
             <li><a href="preIntro.html">Introduction</a></li>
             <li><a href="preTf.html">TensorFlow</a></li>
             <li><a href="preKeras.html">Keras</a></li>
-            <li><a href="preTfKeras.html">tf.keras</a></li>
             <li><a href="preTfjs.html">TensorFlow.js</a></li>
         </ul>
     </div>
@@ -235,10 +251,13 @@
                 <li><a href="basicModel.html">Model</a></li>
                 <li><a href="basicLayer.html">Layer</a></li>
                 <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+                <li><a href="basicTopo.html">Construct Topology</a></li>
+                <li><a href="basicLayerConfig.html">Layer Configuration</a></li>
                 <li><a href="basicLoad.html">Load Model</a></li>
                 <li><a href="basicPredict.html">Predict</a></li>
                 <li><a href="basicClose.html">Close Button</a></li>
                 <li><a href="basicPaging.html">Paging</a></li>
+                <li><a href="basicLayerStatus.html">Layer Status</a></li>
                 <li><a href="basicMetrics.html">Layer Metrics</a></li>
                 <li><a href="basicDimension.html">Layer Dimension</a></li>
                 <li><a href="basicColor.html">Layer Color</a></li>
@@ -246,6 +265,20 @@
             </ul>
         </div>
         <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
+            <div id="converterLabel">
+                TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="converter">
+                <li><a href="../../converter/index.html">Introduction</a></li>
+                <li><a href="../../converter/install.html">Installation</a></li>
+                <li><a href="../../converter/docker.html">Running with Docker</a></li>
+                <li><a href="../../converter/api.html">Converter API</a></li>
+                <li><a href="../../converter/usage.html">Usage Examples</a></li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
             <div id="preprocessingLabel">
                 Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
             </div>
@@ -253,7 +286,6 @@
                 <li><a href="preIntro.html">Introduction</a></li>
                 <li><a href="preTf.html">TensorFlow</a></li>
                 <li><a href="preKeras.html">Keras</a></li>
-                <li><a href="preTfKeras.html">tf.keras</a></li>
                 <li><a href="preTfjs.html">TensorFlow.js</a></li>
             </ul>
         </div>
@@ -550,7 +582,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L134">.animeTime</a>
-            : Double
+            : <span class="highlight-text">Double</span>
         </div>
         <div>
             <ul class="list-content">
@@ -579,7 +611,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L160">.color</a>
-            : color format
+            : Color Format
         </div>
         <div>
             <ul class="list-content">
@@ -604,7 +636,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L154">.stats</a>
-            : Boolean
+            : <span class="highlight-text">Bool</span>
         </div>
         <div>
             <ul class="list-content">
@@ -625,7 +657,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L15">.predictDataShapes</a>
-            : Array
+            : <span class="highlight-text">Array</span>
         </div>
         <div>
             <ul class="list-content">
@@ -646,7 +678,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L16">.feedInputs</a>
-            : Array
+            : <span class="highlight-text">Array</span>
         </div>
         <div>
             <ul class="list-content">
@@ -670,7 +702,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L255">.init(
-            callbackFunction )</a> : void
+            complete_callback )</a> : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
@@ -686,7 +718,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L141">.load(
-            model_config )</a> : void
+            load_config )</a> : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
@@ -705,7 +737,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L314">.predict(
-            input_data )</a> : void
+            input_data, complete_callback )</a> : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
@@ -725,7 +757,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L355">.reset()</a>
-            : void
+            : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
@@ -746,7 +778,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L241">.getAllLayers()</a>
-            : Layer[]
+            : <span class="highlight-text">Layer[]</span>
         </div>
         <div>
             <ul class="list-content">
@@ -762,7 +794,7 @@
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L221">.getLayerByName(
-            name )</a> : Layer
+            name )</a> : <span class="highlight-text">Layer</span>
         </div>
         <div>
             <ul class="list-content">

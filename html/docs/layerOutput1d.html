@@ -120,10 +120,13 @@
             <li><a href="basicModel.html">Model</a></li>
             <li><a href="basicLayer.html">Layer</a></li>
             <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+            <li><a href="basicTopo.html">Construct Topology</a></li>
+            <li><a href="basicLayerConfig.html">Layer Configuration</a></li>
             <li><a href="basicLoad.html">Load Model</a></li>
             <li><a href="basicPredict.html">Predict</a></li>
             <li><a href="basicClose.html">Close Button</a></li>
             <li><a href="basicPaging.html">Paging</a></li>
+            <li><a href="basicLayerStatus.html">Layer Status</a></li>
             <li><a href="basicMetrics.html">Layer Metrics</a></li>
             <li><a href="basicDimension.html">Layer Dimension</a></li>
             <li><a href="basicColor.html">Layer Color</a></li>
@@ -131,6 +134,20 @@
         </ul>
     </div>
     <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
+        <div id="converterLabelS">
+            TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="converterS">
+            <li><a href="../../converter/index.html">Introduction</a></li>
+            <li><a href="../../converter/install.html">Installation</a></li>
+            <li><a href="../../converter/docker.html">Running with Docker</a></li>
+            <li><a href="../../converter/api.html">Converter API</a></li>
+            <li><a href="../../converter/usage.html">Usage Examples</a></li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
         <div id="preprocessingLabelS">
             Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
         </div>
@@ -138,7 +155,6 @@
             <li><a href="preIntro.html">Introduction</a></li>
             <li><a href="preTf.html">TensorFlow</a></li>
             <li><a href="preKeras.html">Keras</a></li>
-            <li><a href="preTfKeras.html">tf.keras</a></li>
             <li><a href="preTfjs.html">TensorFlow.js</a></li>
         </ul>
     </div>
@@ -234,10 +250,13 @@
                 <li><a href="basicModel.html">Model</a></li>
                 <li><a href="basicLayer.html">Layer</a></li>
                 <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+                <li><a href="basicTopo.html">Construct Topology</a></li>
+                <li><a href="basicLayerConfig.html">Layer Configuration</a></li>
                 <li><a href="basicLoad.html">Load Model</a></li>
                 <li><a href="basicPredict.html">Predict</a></li>
                 <li><a href="basicClose.html">Close Button</a></li>
                 <li><a href="basicPaging.html">Paging</a></li>
+                <li><a href="basicLayerStatus.html">Layer Status</a></li>
                 <li><a href="basicMetrics.html">Layer Metrics</a></li>
                 <li><a href="basicDimension.html">Layer Dimension</a></li>
                 <li><a href="basicColor.html">Layer Color</a></li>
@@ -245,6 +264,20 @@
             </ul>
         </div>
         <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
+            <div id="converterLabel">
+                TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="converter">
+                <li><a href="../../converter/index.html">Introduction</a></li>
+                <li><a href="../../converter/install.html">Installation</a></li>
+                <li><a href="../../converter/docker.html">Running with Docker</a></li>
+                <li><a href="../../converter/api.html">Converter API</a></li>
+                <li><a href="../../converter/usage.html">Usage Examples</a></li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
             <div id="preprocessingLabel">
                 Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
             </div>
@@ -252,7 +285,6 @@
                 <li><a href="preIntro.html">Introduction</a></li>
                 <li><a href="preTf.html">TensorFlow</a></li>
                 <li><a href="preKeras.html">Keras</a></li>
-                <li><a href="preTfKeras.html">tf.keras</a></li>
                 <li><a href="preTfjs.html">TensorFlow.js</a></li>
             </ul>
         </div>
@@ -322,17 +354,36 @@
     <main>
         <header>Output1d</header>
         <div class="sub-title">Constructor</div>
-        <div>〔Method 1〕Use <span class="span_bold">units</span> and <span class="span_bold">outputs</span></div>
+
+        <div>Based on whether <a href="modelIntro.html">TensorSpace Model</a> load a pre-trained model before
+            initialization, configure Layer in different ways. Checkout <a href="basicLayerConfig.html">Layer
+                Configuration</a> documentation for more information about the basic configuration rules.
+        </div>
+
+        <div><span class="span_bold">〔Case 1〕</span>If TensorSpace Model has loaded a pre-trained model before
+            initialization,
+            there is no need to configure <span class="span_bold">network model related</span> parameters.
+        </div>
+
+        <div class="code-snippet">
+            <pre><code class="Javascript">TSP.layers.Output1d( { outputs: String[] } );</code></pre>
+        </div>
+
+        <div><span class="span_bold">〔Case 2〕</span>If there is no pre-trained model before initialization, it is
+            required to configure <span class="span_bold">network model related</span> parameters.
+        </div>
+
+        <div>[Method 1] Use <span class="span_bold">units</span> and <span class="span_bold">outputs</span></div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Output1d( { units: Int, outputs: String[] } );</code></pre>
         </div>
-        <div>〔Method 2〕Use <span class="span_bold">shape</span> and <span class="span_bold">outputs</span></div>
+        <div>[Method 2] Use <span class="span_bold">shape</span> and <span class="span_bold">outputs</span></div>
         <div class="code-snippet">
             <pre><code class="Javascript">TSP.layers.Output1d( { shape : [ Int ], outputs: String[] } );</code></pre>
         </div>
         <img class="tag-img" src="../../assets/img/docs/Output1d.jpg">
         <div class="img-label">
-            <span class="img-label-number">Fig. 1</span> - Output1d layer collapse and expand
+            <span class="img-label-number">Fig. 1</span> - Output1d layer close and open
         </div>
         <div class="sub-title">Arguments</div>
         <table class="table table-striped table-bordered table-hover">
@@ -349,28 +400,42 @@
             <tr>
                 <th scope="row">
                     <p>units</p>
-                    <p><a href="#iconRequired">⭐</a><a href="#iconModel">📦</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Int</span></td>
-                <td>Amount of nodes of FC layer</td>
-                <td>units = 100 means there are 100 neural in the fully connect layer</td>
+                <td>Amount of nodes of FC layer,<br><span class="span_bold">Network Model Related</span></td>
+                <td>For example, <span class="span_bold">units: 100</span><br>means there are 100 neural in the fully
+                    connect layer
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <p>shape</p>
+
+                </th>
+                <td><span class="highlight-text">Int[]</span></td>
+                <td>Output shape,<br><span class="span_bold">Network Model Related</span></td>
+                <td>
+                    For example, <span class="span_bold">shape: [ 100 ]</span><br>
+                    means the output is 1-dimensional array by 100
+                </td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>outputs </p>
-                    <p><a href="#iconRequired">⭐</a><a href="#iconModel">📦</a>️</p>
+
                 </th>
-                <td>String[]</td>
+                <td><span class="highlight-text">String[]</span></td>
                 <td>Annotation beneath output nodes, click node to show output text</td>
-                <td>mnist outputs: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]</td>
+                <td>For example, configure MNIST, outputs: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]</td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>paging</p>
-                    <p><a href="#iconStyle">🎨</a><a href="#iconSuggest">🔧</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Bool</span></td>
-                <td>Enable Pagination, <a href="basicPaging.html">more about paging</a></td>
+                <td>Enable Pagination. <a href="basicPaging.html">More about paging</a></td>
                 <td>Since the long 1D layer could make the model hard to visualize, we use paging. <span
                         class="span_bold">true</span> Enable; <span class="span_bold">false</span> [Default] Disable
                 </td>
@@ -378,7 +443,7 @@
             <tr>
                 <th scope="row">
                     <p>segmentLength</p>
-                    <p><a href="#iconStyle">🎨</a><a href="#iconOptional">⚙️</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Int</span></td>
                 <td>Amount of nodes in one page, only take effect when "paging" is enabled</td>
@@ -387,7 +452,7 @@
             <tr>
                 <th scope="row">
                     <p>segmentIndex</p>
-                    <p><a href="#iconStyle">🎨</a><a href="#iconOptional">⚙️</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Int</span></td>
                 <td>The initial start index of first page, only take effect when "paging" is enabled</td>
@@ -396,63 +461,79 @@
             <tr>
                 <th scope="row">
                     <p>overview</p>
-                    <p><a href="#iconRequired">🎨</a><a href="#iconModel">⚙️</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Bool</span></td>
-                <td>Look layer Text from different angle, <a href="basicPaging.html">more about overview</a></td>
+                <td>Look layer Text from different angle. <a href="basicPaging.html">More about overview</a></td>
                 <td>false[Default]</td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>name</p>
-                    <p><a href="#iconSuggest">🔧</a></p>
+
                 </th>
                 <td><span class="highlight-text">String</span></td>
-                <td>Name of this layer. <span class="span_bold">Highly recommend</span> to arrange to make code more
-                    readable.
+                <td>Name of the layer
                 </td>
-                <td>name: "layerName"</td>
+                <td>For example, <span class="span_bold">name: "layerName"</span><br>In <span class="highlight-text">Sequential Model</span>:
+                    <span
+                            class="span_bold">Highly recommend</span> to add a name attribute to make it easier to get
+                    Layer
+                    object from model.<br>In <span class="highlight-text">Functional Model</span>: It is <span
+                            class="span_bold">required</span> to
+                    configure name attribute for TensorSpace Layer, and the name should be <span class="span_bold">the same</span>
+                    as the name of corresponding Layer in pre-trained model.
+                </td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>color</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconStyle">🎨</a>️</p>
+
                 </th>
-                <td>color format</td>
+                <td><span class="highlight-text">Color Format</span></td>
                 <td>Color of layer</td>
-                <td>Output1d default is #EEEEEE <span class="color-block" style="background-color: #EEEEEE"></span></td>
+                <td>Output1d's default color is #EEEEEE <span class="color-block"
+                                                              style="background-color: #EEEEEE"></span></td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>closeButton</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconStyle">🎨</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Dict</span></td>
-                <td>Close button appearance control dict, <a href="basicClose.html">more about close button</a></td>
-                <td><p><span class="span_bold">display</span> : Boolean. true[default] Show button, false Hide button
+                <td>Close button appearance control dict. <a href="basicClose.html">More about close button</a></td>
+                <td><p><span class="span_bold">display</span>: <span class="highlight-text">Bool</span>.
+                    true[default] Show button, false Hide button
                 </p>
-                    <p><span class="span_bold">ratio</span> : Int. Times to normal size, default is 1</p>
-                    <p>For example, 2 means twice the normal size</p>
+                    <p><span class="span_bold">ratio</span>: <span class="highlight-text">Int</span>. Times to close
+                        button's normal size, default is 1, for example, set ratio to be 2, close button will become
+                        twice the normal size</p>
+
                 </td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>initStatus</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconAnimation">️🎦</a></p>
+
                 </th>
                 <td><span class="highlight-text">String</span></td>
-                <td>Layer status at beginning. <span class="span_bold">Open</span> or <span
-                        class="span_bold">Close</span></td>
-                <td>close[default] : Closed at beginning</td>
+                <td>Layer initial status. <span class="span_bold">Open</span> or <span
+                        class="span_bold">Close</span>. <a href="basicLayerStatus.html#initStatus">More about Layer
+                    initial Status</a></td>
+                <td><span class="span_bold">close</span>[default]: Closed at beginning,<br><span
+                        class="span_bold">open</span>: Open at beginning
+                </td>
             </tr>
             <tr>
                 <th scope="row">
                     <p>animeTime</p>
-                    <p><a href="#iconOptional">⚙️</a><a href="#iconAnimation">🎦</a>️</p>
+
                 </th>
                 <td><span class="highlight-text">Int</span></td>
                 <td>The speed of open and close animation</td>
-                <td>For example, 2000 means 2 seconds. Note: Configure animeTime in a specific layer will override
+                <td>For example, <span class="span_bold">animeTime: 2000</span><br>means the animation time will last 2
+                    seconds.<br><span class="span_bold">Note</span>: Configure animeTime in a
+                    specific layer will override
                     model's animeTime configuration.
                 </td>
             </tr>
@@ -465,10 +546,11 @@
                 href="https://github.com/tensorspace-team/tensorspace/blob/10a1738e02dddcd1dc2c919611709dbab27c1c54/src/layer/abstract/Layer.js#L68"
                 target="_blank">.inputShape</a> : <span class="highlight-text">Int[]</span></div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The shape of input tensor, for
-            example <span class="highlight-text">inputShape = [ 28, 28, 3 ]</span> represents 3 feature maps and each
+            example <span class="span_bold">inputShape = [ 28, 28, 3 ]</span> represents 3 feature maps and each
             one is 28 by 28.
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After model.init() data is
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After <span class="span_bold">model.init()</span>
+            data is
             available, otherwise is undefined.
         </div>
 
@@ -478,10 +560,11 @@
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The shape of output tensor is
             1-dimensional. <a href="basicDimension.html">1️⃣</a></div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The shape of output tensor. For
-            example <span class="highlight-text">outputShape = [ 1000 ]</span> represents the output through this layer
+            example <span class="span_bold">outputShape = [ 1000 ]</span> represents the output of this layer
             has 1000 outputs.
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After model.init() data is
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After <span class="span_bold">model.init()</span>
+            data is
             available, otherwise is undefined.
         </div>
 
@@ -491,14 +574,15 @@
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The intermediate raw data after this
             layer.
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After load and model.predict() data
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>After load and <span
+                class="span_bold">model.predict()</span> data
             is available, otherwise is undefined.
         </div>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/Layer.js#L242"
                 target="_blank">.name</a> : <span class="highlight-text">String</span></div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The custom name for this layer.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>The customized name of this layer.
         </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Once created, you can get it.</div>
 
@@ -510,177 +594,80 @@
         </div>
         <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Once created, you can get it.</div>
 
-        <div class="sub-title">Method</div>
+        <div class="sub-title">Methods</div>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer.js#L74"
-                target="_blank">.apply( layer )</a> : void
+                target="_blank">.apply( previous_layer )</a> : <span class="highlight-text">void</span>
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>This method only used in <a
-                href="modelFunctional.html">Functional Model</a> (Non-sequential, Graph structure).
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Link this layer to <span
+                class="span_bold">previous layer</span>.
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Link this layer to layer which is
-            the <span class="span_bold">previous layer</span>.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>This method can be use to construct
+            topology in <a href="modelFunctional.html">Functional Model</a>.
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>To crete a link between this layer
-            and the previous layer. You don't need to use this method specifically to create links in <a
-                    href="modelSequential.html">Sequential Model</a>; Instead, you can simply add layers along the lines
-            of <span class="span_bold">Keras</span> or <span class="span_bold">TensorFlow.js</span> build the model
-            syntax.
-        </div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let inputLayer = new TSP.layers.Input1d( {
-
-    shape: [ 28 ]
-
-} );
-
-let output1d = new TSP.layers.Output1d( {
-
-    units: [ 10 ],
-    outputs: [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ]
-
-} );
-
-output1d.apply( inputLayer );</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> See <a
+                href="basicTopo.html">Construct Topology</a> for more details.
         </div>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer1d.js#L486"
-                target="_blank">.openLayer()</a> : void
+                target="_blank">.openLayer()</a> : <span class="highlight-text">void</span>
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Click on the layer directly to open
-            it by interacting directly with the object in the 3D scene.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Open Layer, if layer is already in
+            "open" status, the layer will keep open.
         </div>
-        <!--<img class="tag-img" src="../../assets/img/docs/Conv2d-open.gif">-->
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>In code, calling the method to open
-            it.
-        </div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">let output1d = new TSP.layers.Output1d( {
-
-    // configure some parameters for Output1d.
-
-} );
-
-model.add( output1d );
-
-// ... add more layers for model.
-
-model.init();
-
-// Call openLayer API to open layer.
-
-output1d.openLayer();</code></pre>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> See <a
+                href="basicLayerStatus.html">Layer Status</a> for more details.
         </div>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/38650f71af638527502fce69d9908a8228934b6f/src/layer/abstract/NativeLayer1d.js#L504"
-                target="_blank">.closeLayer()</a> : void
+                target="_blank">.closeLayer()</a> : <span class="highlight-text">void</span>
         </div>
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>To close by interacting directly
-            with objects in a 3D scene by clicking the close button.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Close Layer, if layer is already in
+            "close" status, the layer will keep close.
         </div>
-        <!--<img class="tag-img" src="../../assets/img/docs/Conv2d-close.gif">-->
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> In code, calling the method to
-            close it.
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> See <a
+                href="basicLayerStatus.html">Layer Status</a> for more details.
         </div>
+
+        <div class="sub-title">Examples</div>
+
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> If TensorSpace Model load a
+            pre-trained model before initialization, there is no need to configure network model related parameters.
+        </div>
+
         <div class="code-snippet">
-            <pre><code class="Javascript">let output1d = new TSP.layers.Output1d( {
+            <pre><code class="Javascript">let outputLayer = new TSP.layers.Output1d( {
 
-    // configure some parameters for Output1d.
+    // Required Output1d Configuration.
+    outputs: [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ],
+    // Recommend Configuration. Required for TensorSpace Functional Model.
+    name: "Output1d1",
+    // Optional Configuration.
+    initStatus: "open"
 
-} );
-
-model.add( output1d );
-
-// ... add more layers for model.
-
-model.init();
-
-// If this layer already opened, call closeLayer API to close layer.
-
-output1d.closeLayer();</code></pre>
+} );</code></pre>
         </div>
 
-        <div class="sub-title">Example</div>
-
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> Declare an instance of Output1d to
-            facilitate reuse
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i> If there is no pre-trained model
+            before initialization, it is required to configure network model related parameters.
         </div>
         <div class="code-snippet">
             <pre><code class="Javascript">let outputLayer = new TSP.layers.Output1d( {
 
+    // Required network model related Configuration.
     units: 10,
+    // Required Output1d Configuration.
     outputs: [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ],
-    name: "Output1d1",
+    // Recommend Configuration. Required for TensorSpace Functional Model.
+    name: "Output1d2",
+    // Optional Configuration.
     initStatus: "open"
 
-} );
-model.add( outputLayer );</code></pre>
+} );</code></pre>
         </div>
-
-        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>Add Output1d directly</div>
-        <div class="code-snippet">
-            <pre><code class="Javascript">model.add( new TSP.layers.Output1d( {
-
-    units: 10,
-    outputs: [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ],
-    name: "Output1d2"
-
-} ) );</code></pre>
-        </div>
-
-        <div id="tagExplain" class="sub-title">Tag Lookup</div>
-
-        <table class="table table-striped table-bordered table-hover">
-            <thead>
-            <tr>
-                <th scope="col">Tag Icon</th>
-                <th scope="col">Meaning</th>
-                <th scope="col">Instruction</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr id="iconRequired">
-                <th scope="row">⭐️</th>
-                <td>Required</td>
-                <td>Must be provided, cannot be empty. Meanwhile constructor works properly if this arguments provided.
-                    Control arguments use default value.
-                </td>
-            </tr>
-            <tr id="iconSuggest">
-                <th scope="row">🔧</th>
-                <td>Suggest</td>
-                <td>Recommended for giving. The API can work without them.</td>
-            </tr>
-            <tr id="iconOptional">
-                <th scope="row">⚙️</th>
-                <td>Optional</td>
-                <td>As an auxiliary adjustment parameter when used, selectively added according to the specific
-                    situation
-                    The parameters here have no effect on the structure of the layer (3D visualized form).
-                </td>
-            </tr>
-            <tr id="iconModel">
-                <th scope="row">📦</th>
-                <td>Model</td>
-                <td>Configure the properties of the Layer. It changes the output shape.</td>
-            </tr>
-            <tr id="iconStyle">
-                <th scope="row">🎨</th>
-                <td>Style</td>
-                <td>Override the properties in TSP.model (<a href="modelIntro.html#modelConfig">model configuration</a>)
-                </td>
-            </tr>
-            <tr id="iconAnimation">
-                <th scope="row">🎦</th>
-                <td>Animation</td>
-                <td>Override the properties in TSP.model (<a href="modelIntro.html#modelConfig">model configuration</a>)
-                </td>
-            </tr>
-            </tbody>
-        </table>
 
         <div class="sub-title">Source Code</div>
         <div><a href="https://github.com/tensorspace-team/tensorspace/blob/master/src/layer/output/Output1d.js"

@@ -120,10 +120,13 @@
             <li><a href="basicModel.html">Model</a></li>
             <li><a href="basicLayer.html">Layer</a></li>
             <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+            <li><a href="basicTopo.html">Construct Topology</a></li>
+            <li><a href="basicLayerConfig.html">Layer Configuration</a></li>
             <li><a href="basicLoad.html">Load Model</a></li>
             <li><a href="basicPredict.html">Predict</a></li>
             <li><a href="basicClose.html">Close Button</a></li>
             <li><a href="basicPaging.html">Paging</a></li>
+            <li><a href="basicLayerStatus.html">Layer Status</a></li>
             <li><a href="basicMetrics.html">Layer Metrics</a></li>
             <li><a href="basicDimension.html">Layer Dimension</a></li>
             <li><a href="basicColor.html">Layer Color</a></li>
@@ -131,6 +134,20 @@
         </ul>
     </div>
     <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
+        <div id="converterLabelS">
+            TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="converterS">
+            <li><a href="../../converter/index.html">Introduction</a></li>
+            <li><a href="../../converter/install.html">Installation</a></li>
+            <li><a href="../../converter/docker.html">Running with Docker</a></li>
+            <li><a href="../../converter/api.html">Converter API</a></li>
+            <li><a href="../../converter/usage.html">Usage Examples</a></li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
         <div id="preprocessingLabelS">
             Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
         </div>
@@ -138,7 +155,6 @@
             <li><a href="preIntro.html">Introduction</a></li>
             <li><a href="preTf.html">TensorFlow</a></li>
             <li><a href="preKeras.html">Keras</a></li>
-            <li><a href="preTfKeras.html">tf.keras</a></li>
             <li><a href="preTfjs.html">TensorFlow.js</a></li>
         </ul>
     </div>
@@ -234,10 +250,13 @@
                 <li><a href="basicModel.html">Model</a></li>
                 <li><a href="basicLayer.html">Layer</a></li>
                 <li><a href="basicPreprocessing.html">Preprocessing</a></li>
+                <li><a href="basicTopo.html">Construct Topology</a></li>
+                <li><a href="basicLayerConfig.html">Layer Configuration</a></li>
                 <li><a href="basicLoad.html">Load Model</a></li>
                 <li><a href="basicPredict.html">Predict</a></li>
                 <li><a href="basicClose.html">Close Button</a></li>
                 <li><a href="basicPaging.html">Paging</a></li>
+                <li><a href="basicLayerStatus.html">Layer Status</a></li>
                 <li><a href="basicMetrics.html">Layer Metrics</a></li>
                 <li><a href="basicDimension.html">Layer Dimension</a></li>
                 <li><a href="basicColor.html">Layer Color</a></li>
@@ -245,6 +264,20 @@
             </ul>
         </div>
         <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
+            <div id="converterLabel">
+                TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="converter">
+                <li><a href="../../converter/index.html">Introduction</a></li>
+                <li><a href="../../converter/install.html">Installation</a></li>
+                <li><a href="../../converter/docker.html">Running with Docker</a></li>
+                <li><a href="../../converter/api.html">Converter API</a></li>
+                <li><a href="../../converter/usage.html">Usage Examples</a></li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
             <div id="preprocessingLabel">
                 Model Preprocessing<img src="../../assets/img/docs/document_arrow.png">
             </div>
@@ -252,7 +285,6 @@
                 <li><a href="preIntro.html">Introduction</a></li>
                 <li><a href="preTf.html">TensorFlow</a></li>
                 <li><a href="preKeras.html">Keras</a></li>
-                <li><a href="preTfKeras.html">tf.keras</a></li>
                 <li><a href="preTfjs.html">TensorFlow.js</a></li>
             </ul>
         </div>
@@ -334,9 +366,10 @@
             <pre><code class="Javascript">let model = new TSP.model.Model( container, {
 
     ...
-    // necessary configurations
+    // required configurations
     inputs: [ input ],
     outputs: [ addLayer ],
+    // optional configurations
     layerShape: "rect",
     layerInitStatus: "close",
     stats: true
@@ -351,18 +384,10 @@
         </div>
 
         <div class="code-snippet">
-            <pre><code class="Javascript">let input = new TSP.layers.GreyscaleInput( {
-
-        shape: [ 28, 28, 1 ]
-
-} );
+            <pre><code class="Javascript">let input = new TSP.layers.GreyscaleInput();
 
 let layer1 = new TSP.layers.Conv2d( {
 
-	kernelSize: 2,
-	filters: 36,
-	strides: 1,
-	padding: "same",
 	name: "conv1"
 
 } );
@@ -371,10 +396,6 @@ layer1.apply( input );
 
 let layer2 = new TSP.layers.Conv2d( {
 
-	kernelSize: 2,
-	filters: 36,
-	strides: 1,
-	padding: "same",
 	name: "conv2"
 
 } );
@@ -383,10 +404,6 @@ layer2.apply( input );
 
 let layer3 = new TSP.layers.Conv2d( {
 
-	kernelSize: 2,
-	filters: 4,
-	strides: 1,
-	padding: "same",
 	name: "conv3"
 
 } );
@@ -420,8 +437,14 @@ let model = new TSP.model.Model(container, {
         <div class="code-snippet">
             <pre><code class="Javascript">model.load( {
 
-    type: "tfjs",
-    url: './lenetModel/mnist.json',
+    type: "tensorflow",
+    url: 'model.json',
+
+    onProgress: function( fraction ) {
+
+        console.log( "Loading progress: " + fraction );
+
+    },
 
     onComplete: function() {
 
@@ -431,7 +454,11 @@ let model = new TSP.model.Model(container, {
 
 } );
 
-model.init();</code></pre>
+model.init( function() {
+
+    console.log("TensorSpace's Model is initialized!");
+
+} );</code></pre>
         </div>
 
         <div>
@@ -444,7 +471,7 @@ model.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/Model.js#L257">.inputs</a>
-            : Layer[]
+            : <span class="highlight-text">Layer[]</span>
         </div>
         <div>
             <ul class="list-content">
@@ -464,7 +491,7 @@ model.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/Model.js#L267">.outputs</a>
-            : Layer[]
+            : <span class="highlight-text">Layer[]</span>
         </div>
         <div>
             <ul class="list-content">
@@ -539,7 +566,7 @@ model.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L134">.animeTime</a>
-            : Double
+            : <span class="highlight-text">Double</span>
         </div>
         <div>
             <ul class="list-content">
@@ -551,7 +578,7 @@ model.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L160">.color</a>
-            : color format
+            : Color Format
         </div>
         <div>
             <ul class="list-content">
@@ -563,7 +590,7 @@ model.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L154">.stats</a>
-            : Boolean
+            : <span class="highlight-text">Bool</span>
         </div>
         <div>
             <ul class="list-content">
@@ -575,7 +602,7 @@ model.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L15">.predictDataShapes</a>
-            : Array
+            : <span class="highlight-text">Array</span>
         </div>
         <div>
             <ul class="list-content">
@@ -587,7 +614,7 @@ model.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/configure/ModelConfiguration.js#L16">.feedInputs</a>
-            : Array
+            : <span class="highlight-text">Array</span>
         </div>
         <div>
             <ul class="list-content">
@@ -601,12 +628,12 @@ model.init();</code></pre>
 
         <div id="init" class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L255">.init(
-            callback )</a> : void
+            complete_callback )</a> : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
-                    The <span class="highlight-text">init( callback )</span> method use the provided
+                    The <span class="highlight-text">init( complete_callback )</span> method use the provided
                     configurations to create the actual objects of the model.
                 </li>
                 <li class="panel-heading"><i class="material-icons">filter_center_focus</i>
@@ -617,7 +644,7 @@ model.init();</code></pre>
 
         <div id="load" class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L141">.load(
-            model_config, callback )</a> : void
+            load_config )</a> : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
@@ -636,7 +663,7 @@ model.init();</code></pre>
 
         <div id="predict" class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/Model.js#L65">.predict(
-            input_data, callback )</a> : void
+            input_data, complete_callback )</a> : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
@@ -653,7 +680,7 @@ model.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/Model.js#L137">.reset()</a>
-            : void
+            : <span class="highlight-text">void</span>
         </div>
         <div>
             <ul class="list-content">
@@ -674,7 +701,7 @@ model.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L241">.getAllLayers()</a>
-            : Layer[]
+            : <span class="highlight-text">Layer[]</span>
         </div>
         <div>
             <ul class="list-content">
@@ -686,7 +713,7 @@ model.init();</code></pre>
 
         <div class="property-title"><a
                 href="https://github.com/tensorspace-team/tensorspace/blob/master/src/tsp-model/AbstractModel.js#L221">.getLayerByName(
-            name )</a> : Layer
+            name )</a> : <span class="highlight-text">Layer</span>
         </div>
         <div>
             <ul class="list-content">

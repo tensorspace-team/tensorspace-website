@@ -105,96 +105,40 @@ function createModel() {
 
 	} );
 
-	model.add( new TSP.layers.RGBInput( {
+	model.add( new TSP.layers.RGBInput() );
 
-		shape: [ 227, 227, 3 ]
+	model.add( new TSP.layers.Conv2d() );
 
-	} ) );
+	model.add( new TSP.layers.Pooling2d() );
 
-	model.add( new TSP.layers.Conv2d( {
+	model.add( new TSP.layers.Conv2d() );
 
-		filters: 96,
-		kernelSize: 11,
-		strides: 4
+	model.add( new TSP.layers.Pooling2d() );
 
-	} ) );
+	model.add( new TSP.layers.Conv2d() );
 
-	model.add( new TSP.layers.Pooling2d( {
+	model.add( new TSP.layers.Conv2d() );
 
-		poolSize: [ 3, 3 ],
-		strides: [ 2, 2 ]
+	model.add( new TSP.layers.Conv2d() );
 
-	} ) );
-
-	model.add( new TSP.layers.Conv2d( {
-
-		filters: 256,
-		kernelSize: 5,
-		strides: 1,
-		padding: "same"
-
-	} ) );
-
-	model.add( new TSP.layers.Pooling2d( {
-
-		poolSize: [ 3, 3 ],
-		strides: [ 2, 2 ]
-
-	} ) );
-
-	model.add( new TSP.layers.Conv2d( {
-
-		filters: 384,
-		kernelSize: 3,
-		strides: 1,
-		padding: "same"
-
-	} ) );
-
-	model.add( new TSP.layers.Conv2d( {
-
-		filters: 384,
-		kernelSize: 3,
-		strides: 1,
-		padding: "same"
-
-	} ) );
-
-	model.add( new TSP.layers.Conv2d( {
-
-		filters: 256,
-		kernelSize: 3,
-		strides: 1,
-		padding: "same"
-
-	} ) );
-
-	model.add( new TSP.layers.Pooling2d( {
-
-		poolSize: [ 3, 3 ],
-		strides: [ 2, 2 ]
-
-	} ) );
+	model.add( new TSP.layers.Pooling2d() );
 
 	model.add( new TSP.layers.Dense( {
-
-		units: 4096,
+		
 		paging: true,
 		segmentLength: 400
 
 	} ) );
 
 	model.add( new TSP.layers.Dense( {
-
-		units: 4096,
+		
 		paging: true,
 		segmentLength: 400
 
 	} ) );
 
 	model.add( new TSP.layers.Output1d( {
-
-		units: 1000,
+		
 		paging: true,
 		segmentLength: 400,
 		outputs: imagenetResult

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本概念 - 网络层状态</title>
+
+    <meta name="description" content="Documentation page of TensorSpace.js">
+    <meta name="author" content="syt123450 / https://github.com/syt123450">
+    <meta name="author" content="zchholmes / https://github.com/zchholmes">
+    <meta name="author" content="lq3297401 / https://github.com/lq3297401">
+    <link rel='icon' href='../../assets/img/common/logo.ico' type=‘image/x-ico’>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <script src="../../assets/jslib/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../assets/csslib/bootstrap.min.css">
+    <script src="../../assets/jslib/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../../assets/csslib/material.fonts.css">
+    <link rel="stylesheet" href="../../assets/csslib/material.min.css">
+    <script src="../../assets/jslib/material.min.js"></script>
+
+    <script src="../../js/websiteUtil.js"></script>
+    <script src="../../js/commonDoc.js"></script>
+
+    <link rel="stylesheet" href="../../assets/csslib/mono-blue.css">
+    <script src="../../assets/jslib/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/commonDoc.css">
+    <link rel="stylesheet" href="../../css/docsFont_zh.css">
+
+</head>
+<body>
+
+<nav>
+
+    <div class="container">
+
+        <div id="logo">
+            <a href="../../index_zh.html">
+                <img src="../../assets/img/common/logoSmall.png">
+                <div>TensorSpace.js</div>
+            </a>
+        </div>
+
+        <ul class="hidden-xs">
+            <li class="now"><a href="startIntro_zh.html">文档</a></li>
+            <li><a href="../playground/index_zh.html">体验TensorSpace</a></li>
+            <!-- <li><a href="../gallery_zh.html">应用展示</a></li> -->
+            <li><a href="../../index_zh.html#download">下载</a></li>
+            <!-- <li><a href="../developer_zh.html">参与开发</a></li> -->
+
+            <a href="https://github.com/tensorspace-team/tensorspace" class="github-corner"
+               aria-label="View source on Github">
+                <svg viewBox="0 0 250 250" aria-hidden="true">
+                    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+                    <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                          fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+                    <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                          fill="currentColor" class="octo-body"></path>
+                </svg>
+            </a>
+
+        </ul>
+
+    </div>
+
+    <ul id="more" class="nav nav-tabs visible-xs">
+        <li>
+            <a>
+                <span class="glyphicon glyphicon-th-large"></span>
+            </a>
+        </li>
+    </ul>
+
+    <ul id="nav-collapse" class="nav navbar-nav">
+        <li><a href="../../index_zh.html">主页</a></li>
+        <li><a href="../../index_zh.html#download">下载</a></li>
+        <!-- <li><a href="../developer_zh.html">参与开发</a></li> -->
+    </ul>
+
+    <div class="language">
+        <div>
+            <div><a href="basicLayerStatus.html">EN</a></div>
+        </div>
+        <div class="selected">
+            <div>中</div>
+        </div>
+    </div>
+
+</nav>
+
+<div id="smallGuide">
+    <span class="glyphicon glyphicon-list"></span>
+</div>
+
+<div id="hideNav">
+
+    <img id="ContentLogo" src="../../assets/img/docs/logo_white.png">
+
+    <header>TensorSpace.js</header>
+
+    <div>
+        <div id="startLabelS">
+            开始使用<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="startS">
+            <li><a href="startIntro_zh.html">简介</a></li>
+            <li><a href="startSystem_zh.html">环境要求</a></li>
+            <li><a href="startInstall_zh.html">安装</a></li>
+            <li><a href="startHello_zh.html">TensorSpace Hello World</a></li>
+            <li><a href="startOther_zh.html">其他文档资源</a></li>
+        </ul>
+    </div>
+    <div class="open initLabel">
+        <div id="basicLabelS">
+            基本概念<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="basicS">
+            <li><a href="basicIntro_zh.html">简介</a></li>
+            <li><a href="basicModel_zh.html">模型</a></li>
+            <li><a href="basicLayer_zh.html">网络层</a></li>
+            <li><a href="basicPreprocessing_zh.html">预处理</a></li>
+            <li><a href="basicTopo_zh.html">构建图结构</a></li>
+            <li><a href="basicLayerConfig_zh.html">网络层配置</a></li>
+            <li><a href="basicLoad_zh.html">载入模型</a></li>
+            <li><a href="basicPredict_zh.html">预测</a></li>
+            <li><a href="basicClose_zh.html">网络层关闭按钮</a></li>
+            <li><a href="basicPaging_zh.html">网络层分页</a></li>
+            <li class="nowLabel">网络层状态</li>
+            <li><a href="basicMetrics_zh.html">网络层系数</a></li>
+            <li><a href="basicDimension_zh.html">网络层维度</a></li>
+            <li><a href="basicColor_zh.html">网络层颜色</a></li>
+            <li><a href="basicStats_zh.html">性能监控</a></li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
+        <div id="converterLabelS">
+            TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="converterS">
+            <li><a href="../../converter/index_zh.html">简介</a></li>
+            <li><a href="../../converter/install_zh.html">安装</a></li>
+            <li><a href="../../converter/docker_zh.html">在 Docker 中使用</a></li>
+            <li><a href="../../converter/api_zh.html">Converter API</a></li>
+            <li><a href="../../converter/usage_zh.html">使用样例</a></li>
+        </ul>
+    </div>
+    <div>
+        <img class="new-tag" src="../../assets/img/common/new.png">
+        <div id="preprocessingLabelS">
+            模型预处理<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="preprocessingS">
+            <li><a href="preIntro_zh.html">简介</a></li>
+            <li><a href="preTf_zh.html">TensorFlow</a></li>
+            <li><a href="preKeras_zh.html">Keras</a></li>
+            <li><a href="preTfjs_zh.html">TensorFlow.js</a></li>
+        </ul>
+    </div>
+    <div>
+        <div id="modelLabelS">
+            模型<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="modelS">
+            <li><a href="modelIntro_zh.html">简介</a></li>
+            <li><a href="modelFunctional_zh.html">函数式模型</a></li>
+            <li><a href="modelSequential_zh.html">顺序模型</a></li>
+        </ul>
+    </div>
+    <div>
+        <div id="layerLabelS">
+            网络层<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="layerS">
+            <li><a href="layerIntro_zh.html">简介</a></li>
+            <li><a href="layerConv1d_zh.html">Conv1d</a></li>
+            <li><a href="layerConv2d_zh.html">Conv2d</a></li>
+            <li><a href="layerTranspose_zh.html">Conv2dTranspose</a></li>
+            <li><a href="layerDepthwise_zh.html">DepthwiseConv2d</a></li>
+            <li><a href="layerCropping1d_zh.html">Cropping1d</a></li>
+            <li><a href="layerCropping2d_zh.html">Cropping2d</a></li>
+            <li><a href="layerDense_zh.html">Dense</a></li>
+            <li><a href="layerFlatten_zh.html">Flatten</a></li>
+            <li><a href="layerGlobalPooling1d_zh.html">GlobalPooling1d</a></li>
+            <li><a href="layerGlobalPooling2d_zh.html">GlobalPooling2d</a></li>
+            <li><a href="layerPadding1d_zh.html">Padding1d</a></li>
+            <li><a href="layerPadding2d_zh.html">Padding2d</a></li>
+            <li><a href="layerPooling1d_zh.html">Pooling1d</a></li>
+            <li><a href="layerPooling2d_zh.html">Pooling2d</a></li>
+            <li><a href="layerReshape_zh.html">Reshape</a></li>
+            <li><a href="layerUpSampling1d_zh.html">UpSampling1d</a></li>
+            <li><a href="layerUpSampling2d_zh.html">UpSampling2d</a></li>
+            <li><a href="layerActivation1d_zh.html">Activation1d</a></li>
+            <li><a href="layerActivation2d_zh.html">Activation2d</a></li>
+            <li><a href="layerActivation3d_zh.html">Activation3d</a></li>
+            <li><a href="layerLayer1d_zh.html">Layer1d</a></li>
+            <li><a href="layerLayer2d_zh.html">Layer2d</a></li>
+            <li><a href="layerLayer3d_zh.html">Layer3d</a></li>
+            <li><a href="layerInput1d_zh.html">Input1d</a></li>
+            <li><a href="layerGreyscaleInput_zh.html">GreyscaleInput</a></li>
+            <li><a href="layerRGBInput_zh.html">RGBInput</a></li>
+            <li><a href="layerOutput1d_zh.html">Output1d</a></li>
+            <li><a href="layerOutputDetect_zh.html">OutputDetection</a></li>
+            <li><a href="layerYoloGrid_zh.html">YoloGrid</a></li>
+        </ul>
+    </div>
+    <div>
+        <div id="mergeLabelS">
+            网络层融合<img src="../../assets/img/docs/document_arrow.png">
+        </div>
+        <ul id="mergeS">
+            <li><a href="mergeIntro_zh.html">简介</a></li>
+            <li><a href="mergeAdd_zh.html">Add</a></li>
+            <li><a href="mergeSub_zh.html">Subtract</a></li>
+            <li><a href="mergeMul_zh.html">Multiply</a></li>
+            <li><a href="mergeMax_zh.html">Maximum</a></li>
+            <li><a href="mergeAver_zh.html">Average</a></li>
+            <li><a href="mergeConcate_zh.html">Concatenate</a></li>
+        </ul>
+    </div>
+
+    <img id="close" src="../../assets/img/docs/close.png">
+
+</div>
+
+<div id="curtain"></div>
+
+<div id="documentArea">
+
+    <aside>
+        <div>
+            <div id="startLabel">
+                开始使用<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="start">
+                <li><a href="startIntro_zh.html">简介</a></li>
+                <li><a href="startSystem_zh.html">环境要求</a></li>
+                <li><a href="startInstall_zh.html">安装</a></li>
+                <li><a href="startHello_zh.html">TensorSpace Hello World</a></li>
+                <li><a href="startOther_zh.html">其他文档资源</a></li>
+            </ul>
+        </div>
+        <div class="open initLabel">
+            <div id="basicLabel">
+                基本概念<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="basic">
+                <li><a href="basicIntro_zh.html">简介</a></li>
+                <li><a href="basicModel_zh.html">模型</a></li>
+                <li><a href="basicLayer_zh.html">网络层</a></li>
+                <li><a href="basicPreprocessing_zh.html">预处理</a></li>
+                <li><a href="basicTopo_zh.html">构建图结构</a></li>
+                <li><a href="basicLayerConfig_zh.html">网络层配置</a></li>
+                <li><a href="basicLoad_zh.html">载入模型</a></li>
+                <li><a href="basicPredict_zh.html">预测</a></li>
+                <li><a href="basicClose_zh.html">网络层关闭按钮</a></li>
+                <li><a href="basicPaging_zh.html">网络层分页</a></li>
+                <li class="nowLabel">网络层状态</li>
+                <li><a href="basicMetrics_zh.html">网络层系数</a></li>
+                <li><a href="basicDimension_zh.html">网络层维度</a></li>
+                <li><a href="basicColor_zh.html">网络层颜色</a></li>
+                <li><a href="basicStats_zh.html">性能监控</a></li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
+            <div id="converterLabel">
+                TensorSpace Converter<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="converter">
+                <li><a href="../../converter/index_zh.html">简介</a></li>
+                <li><a href="../../converter/install_zh.html">安装</a></li>
+                <li><a href="../../converter/docker_zh.html">在 Docker 中使用</a></li>
+                <li><a href="../../converter/api_zh.html">Converter API</a></li>
+                <li><a href="../../converter/usage_zh.html">使用样例</a></li>
+            </ul>
+        </div>
+        <div>
+            <img class="new-tag" src="../../assets/img/common/new.png">
+            <div id="preprocessingLabel">
+                模型预处理<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="preprocessing">
+                <li><a href="preIntro_zh.html">简介</a></li>
+                <li><a href="preTf_zh.html">TensorFlow</a></li>
+                <li><a href="preKeras_zh.html">Keras</a></li>
+                <li><a href="preTfjs_zh.html">TensorFlow.js</a></li>
+            </ul>
+        </div>
+        <div>
+            <div id="modelLabel">
+                模型<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="model">
+                <li><a href="modelIntro_zh.html">简介</a></li>
+                <li><a href="modelFunctional_zh.html">函数式模型</a></li>
+                <li><a href="modelSequential_zh.html">顺序模型</a></li>
+            </ul>
+        </div>
+        <div>
+            <div id="layerLabel">
+                网络层<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="layer">
+                <li><a href="layerIntro_zh.html">简介</a></li>
+                <li><a href="layerConv1d_zh.html">Conv1d</a></li>
+                <li><a href="layerConv2d_zh.html">Conv2d</a></li>
+                <li><a href="layerTranspose_zh.html">Conv2dTranspose</a></li>
+                <li><a href="layerDepthwise_zh.html">DepthwiseConv2d</a></li>
+                <li><a href="layerCropping1d_zh.html">Cropping1d</a></li>
+                <li><a href="layerCropping2d_zh.html">Cropping2d</a></li>
+                <li><a href="layerDense_zh.html">Dense</a></li>
+                <li><a href="layerFlatten_zh.html">Flatten</a></li>
+                <li><a href="layerGlobalPooling1d_zh.html">GlobalPooling1d</a></li>
+                <li><a href="layerGlobalPooling2d_zh.html">GlobalPooling2d</a></li>
+                <li><a href="layerPadding1d_zh.html">Padding1d</a></li>
+                <li><a href="layerPadding2d_zh.html">Padding2d</a></li>
+                <li><a href="layerPooling1d_zh.html">Pooling1d</a></li>
+                <li><a href="layerPooling2d_zh.html">Pooling2d</a></li>
+                <li><a href="layerReshape_zh.html">Reshape</a></li>
+                <li><a href="layerUpSampling1d_zh.html">UpSampling1d</a></li>
+                <li><a href="layerUpSampling2d_zh.html">UpSampling2d</a></li>
+                <li><a href="layerActivation1d_zh.html">Activation1d</a></li>
+                <li><a href="layerActivation2d_zh.html">Activation2d</a></li>
+                <li><a href="layerActivation3d_zh.html">Activation3d</a></li>
+                <li><a href="layerLayer1d_zh.html">Layer1d</a></li>
+                <li><a href="layerLayer2d_zh.html">Layer2d</a></li>
+                <li><a href="layerLayer3d_zh.html">Layer3d</a></li>
+                <li><a href="layerInput1d_zh.html">Input1d</a></li>
+                <li><a href="layerGreyscaleInput_zh.html">GreyscaleInput</a></li>
+                <li><a href="layerRGBInput_zh.html">RGBInput</a></li>
+                <li><a href="layerOutput1d_zh.html">Output1d</a></li>
+                <li><a href="layerOutputDetect_zh.html">OutputDetection</a></li>
+                <li><a href="layerYoloGrid_zh.html">YoloGrid</a></li>
+            </ul>
+        </div>
+        <div>
+            <div id="mergeLabel">
+                网络层融合<img src="../../assets/img/docs/document_arrow.png">
+            </div>
+            <ul id="merge">
+                <li><a href="mergeIntro_zh.html">简介</a></li>
+                <li><a href="mergeAdd_zh.html">Add</a></li>
+                <li><a href="mergeSub_zh.html">Subtract</a></li>
+                <li><a href="mergeMul_zh.html">Multiply</a></li>
+                <li><a href="mergeMax_zh.html">Maximum</a></li>
+                <li><a href="mergeAver_zh.html">Average</a></li>
+                <li><a href="mergeConcate_zh.html">Concatenate</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <main>
+        <header>网络层状态</header>
+
+        <div>TensorSpace Layer 具有两种状态：<span class="highlight-text">open</span>（展开） 和 <span
+                class="highlight-text">close</span>（闭合），默认为 “close”。我们可以在模型初始化之前 <a href="#initStatus">设置 Layer
+            的初始状态</a>，也可以在模型初始化后 <a href="#changeStatus">改变 Layer 的状态</a>。
+        </div>
+
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>
+            <a href="#initStatus">设置初始状态</a>
+            <div class="panel-heading"><i class="material-icons">flare</i>
+                <a href="#setInModel">
+                    在 Model 中设置
+                </a>
+            </div>
+            <div class="panel-heading"><i class="material-icons">flare</i>
+                <a href="#setInLayer">
+                    在特定的 Layer 中设置
+                </a>
+            </div>
+        </div>
+        <div class="panel-heading"><i class="material-icons">filter_center_focus</i>
+            <a href="#changeStatus">Change Status</a>
+            <div class="panel-heading"><i class="material-icons">flare</i>
+                <a href="#clickLayer">
+                    3D场景中点击
+                </a>
+            </div>
+            <div class="panel-heading"><i class="material-icons">flare</i>
+                <a href="#controlAPI">
+                    使用 API 控制
+                </a>
+            </div>
+        </div>
+
+        <div id="initStatus" class="sub-title">设置初始状态</div>
+
+        <div>有两种设置 Layer 初始状态的方式：设置 TensorSpace Model 属性，或者设置特定 TensorSpace Layer 属性。</div>
+
+        <div id="setInModel" class="model-type-title"><span class="span_bold">在 Model 中设置</span></div>
+
+        <div>设置 TensorSpace 模型的 <span class="highlight-text">layerInitStatus</span> 属性，<span
+                class="highlight-text">open</span> 或 <span class="highlight-text">close</span>，默认为
+            “close”。“close”表示模型中所有的 Layer 都呈现为闭合状态，“open” 表示模型中所有的 Layer 都呈现为展开状态。
+        </div>
+
+        <div class="code-snippet">
+            <pre><code class="Javascript">let model = new TSP.models.Sequential( container, {
+  // 或 "close"
+  layerInitStatus: "open"
+} );</code></pre>
+        </div>
+
+        <img class="tag-img" src="../../assets/img/docs/Model_collapsed_layer.png">
+        <div class="img-label">
+            <span class="img-label-number">图1</span> - 所有 Layer 都初始化为闭合状态
+        </div>
+
+        <img class="tag-img" src="../../assets/img/docs/Model_expanded_layer.png">
+        <div class="img-label">
+            <span class="img-label-number">图2</span> - 所有 Layer 都初始化为展开状态
+        </div>
+
+        <div id="setInLayer" class="model-type-title"><span class="span_bold">在特定的 Layer 中设置</span></div>
+
+        <div>设置 TensorSpace Layer 的 <span class="highlight-text">initStatus</span> 属性，<span
+                class="highlight-text">open</span> 或 <span class="highlight-text">close</span>，默认为 “close”，如果在 Layer
+            中设置了 initStatus 属性，将会覆盖模型中的 <span class="highlight-text">layerInitStatus</span> 属性，即模型中的 layerInitStatus
+            属性对这个 Layer 不生效。
+        </div>
+
+        <div class="code-snippet">
+            <pre><code class="Javascript">let conv2dLayer = new TSP.layers.Conv2d({
+  // 或 close
+  initStatus: "open"
+});</code></pre>
+        </div>
+
+        <img class="tag-img" src="../../assets/img/docs/layer_expand.png">
+        <div class="img-label">
+            <span class="img-label-number">图3</span> - Set a specific Layer's initStatus to be open
+        </div>
+
+        <div id="changeStatus" class="sub-title">改变状态</div>
+
+        <div>在 TensorSpace 模型初始化后，有两种改变 TensorSpace Layer 状态的方式：在3D场景中点击 Layer，或者调用 API 控制。</div>
+
+        <div id="clickLayer" class="model-type-title"><span class="span_bold">3D场景中点击</span></div>
+
+        <div>在 3D 场景中点击闭合的 Layer 将会使 Layer 展开。</div>
+
+        <img class="tag-img" src="../../assets/img/docs/Conv2d_open.gif">
+        <div class="img-label">
+            <span class="img-label-number">图4</span> - 点击展开 Conv2d Layer
+        </div>
+
+        <img class="tag-img" src="../../assets/img/docs/RGBInput_open.gif">
+        <div class="img-label">
+            <span class="img-label-number">图5</span> - 点击展开 RGBInput Layer
+        </div>
+
+        <div>在 3D 场景中点击关闭按钮将会使 Layer 闭合。</div>
+
+        <img class="tag-img" src="../../assets/img/docs/Conv2d_close.gif">
+        <div class="img-label">
+            <span class="img-label-number">图6</span> - 点击关闭按钮闭合 Conv2d Layer
+        </div>
+
+        <img class="tag-img" src="../../assets/img/docs/RGBInput_close.gif">
+        <div class="img-label">
+            <span class="img-label-number">图7</span> - 点击关闭按钮闭合 RGBInput Layer
+        </div>
+
+        <div id="controlAPI" class="model-type-title"><span class="span_bold">使用 API 控制</span></div>
+
+        <div>调用 <span class="highlight-text">.openLayer()</span> API 展开 Layer，如果 Layer 已经处于 “open” 状态，Layer 将会保持 “open”
+            状态。
+        </div>
+
+        <div class="code-snippet">
+            <pre><code class="Javascript">let conv2dLayer = new TSP.layers.Conv2d( config );
+model.add( conv2dLayer );
+
+// ... 给模型添加更多的layer。
+
+model.init();
+
+// 调用openLayer API来展开layer。
+conv2dLayer.openLayer();</code></pre>
+        </div>
+
+        <div>调用 <span class="highlight-text">.closeLayer()</span> API 闭合 Layer，如果 Layer 已经处于 “close” 状态，Layer 将会保持
+            “close” 状态。
+        </div>
+
+        <div class="code-snippet">
+            <pre><code class="Javascript">let conv2dLayer = new TSP.layers.Conv2d( config );
+model.add( conv2dLayer );
+
+// ... 给模型添加更多的layer。
+
+model.init();
+
+// 调用closeLayer API来闭合layer。
+conv2dLayer.closeLayer();</code></pre>
+        </div>
+
+    </main>
+</div>
+
+<button id="topButton" title="Go to top" class="ripple"><i class="material-icons material-icons--outline">keyboard_arrow_up</i>
+</button>
+
+</body>
+
+</html>
